@@ -1,37 +1,46 @@
 .release {
-    width: 30vh;
-    height: 30vh;
-    background: white;
-    color: slategray;
+  width: 30vh;
+  height: 30vh;
+  background: white;
+  color: slategray;
 }
 
 .App {
     text-align: center;
-    font-family: sans-serif;
-    background-color: lightgray;
-    color: slategray;
+    font-family: sans-serif, "Helvetica";
+    background-color: #FFFFFF;
+    color: #2C2A2D;
   }
   
-  .Header {
-    min-height: 10vh;
-    display: flex;
-    flex-direction: row;
-    /* align-items: center; */
-    justify-content: space-between;
-    font-size: calc(4px + 2vmin);
-    color: slategray;
-    background-color: lightgray;
-  }
+.Header {
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: calc(4px + 2vmin);
+  padding: 2vh 2vh 2vh 2vh;
+}
+
+#navLinks {
+  display: flex;
+
+  justify-content: space-between;
+  width: 30vh;
+}
+
+/* #logo {
+  margin-left: 5vh;
+  display: flex;
+  height: 10vh;
+  width: 10vh;
+}
   
-  #logo {
-    padding-left: 5vh;
-    display: flex;
-  }
-  
-  #links {
-    padding-right: 5vh;
-    display: flex;
-  }
+#links {
+  padding-right: 5vh;
+  display: flex;
+  align-items: center;
+} */
   
   
   

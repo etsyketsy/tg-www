@@ -1,28 +1,37 @@
 import React, { Component } from 'react';
 import './index.css';
+import logo from '../../assets/logo.gif';
 
 
-const Release = props => {
 
-  return (
-      <div className="release">
-          {
-              props.release
-          }
+class Release extends Component {
+  render() {
+    return (
+      <div className="Release">
+
       </div>
-  )
+    )
+  }
 }
 
-function Header() {
-  return (
-    <div className="Header">
-        <div id="logo">logogoeshere</div>
-        <div id="links">other links</div>
-    </div>
-  );
+class Header extends Component {
+
+  render() {
+    return (
+      <div className="Header">
+          <img src={logo} alt="Logo" id="logo"/>
+          <div id="navLinks">
+            <a id="news">NEWS</a>
+            <a id="about">ABOUT</a>
+            <a id="store">STORE</a>
+          </div>
+      </div>
+    );
+  }
 }
 
 class App extends Component {
+
 
   render () {
     return (
