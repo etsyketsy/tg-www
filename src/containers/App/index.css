@@ -1,0 +1,37 @@
+.release {
+    width: 30vh;
+    height: 30vh;
+    background: white;
+    color: slategray;
+}
+
+.App {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: lightgray;
+    color: slategray;
+  }
+  
+  .Header {
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-between;
+    font-size: calc(4px + 2vmin);
+    color: slategray;
+    background-color: lightgray;
+  }
+  
+  #logo {
+    padding-left: 5vh;
+    display: flex;
+  }
+  
+  #links {
+    padding-right: 5vh;
+    display: flex;
+  }
+  
+  
+  
