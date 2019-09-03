@@ -1,3 +1,5 @@
+
+
 .release {
   width: 30vh;
   height: 30vh;
@@ -5,15 +7,16 @@
   color: slategray;
 }
 
-.App {
+.app {
     text-align: center;
     font-family: sans-serif, "Helvetica";
     background-color: #FFFFFF;
     color: #2C2A2D;
   }
   
-.Header {
+.header {
   min-height: 10vh;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -21,25 +24,31 @@
   padding: 2vh 2vh 2vh 2vh;
 }
 
-#navLinks {
+.releaseDisplay {
+  width: 100%;
+  min-width: 84px;
   display: flex;
-  justify-content: space-around;
-  width: 20vh;
-  padding-right: 2vh;
+  justify-content: stretch;
+  flex-flow: row wrap;
+  padding-left: 1.5vh;
+  padding-right: 1vh;
 }
 
-/* #logo {
-  margin-left: 5vh;
-  display: flex;
-  height: 10vh;
-  width: 10vh;
+.releaseDisplay::after {
+  content: "";
+  flex: auto;
 }
-  
-#links {
-  padding-right: 5vh;
+
+.release {
+  padding: 1vh;
+  min-height: 20vh;
+  min-width: 20vh;
+}
+
+#navLinks {
   display: flex;
-  align-items: center;
-} */
-  
-  
-  
+  justify-content: space-between;
+  width: 20%;
+  min-width: 30vh;
+  padding-right: 2vh;
+}
