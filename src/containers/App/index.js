@@ -27,12 +27,12 @@ class Header extends Component {
       <div className="header">
           <img src={logo} alt="Logo" id="logo"/>
           <div id="navLinks">
-            <div id="news">NEWS</div>
-            <div id="news">RELEASES</div>
-            <div id="news">ARTISTS</div>
-            <div id="news">AUDIO</div>
-            <div id="about">ABOUT</div>
-            <div id="store">STORE</div>
+            <div>NEWS</div>
+            <div>RELEASES</div>
+            <div>ARTISTS</div>
+            <div>AUDIO</div>
+            <div>ABOUT</div>
+            <div>STORE</div>
           </div>
       </div>
     );
@@ -44,7 +44,7 @@ class News extends Component {
 
   render() {
     return (
-      <div className="news">
+      <div className="content" id="news">
         <div className="sectionHeader">News</div>
         <div className="freeText">newsnewsnewsnewsnewsnewsnewsnews</div>
       </div>
@@ -52,19 +52,52 @@ class News extends Component {
   }
 }
 
+class Artists extends Component {
 
-// const todoItem = props => {
-//   return (
-//       <li className={props.todo.completed ? 'TodoItem-completed' : ''}
-//           onClick={() => props.markCompleted(props.todo.id)}>
-//           {
-//               props.todo.item
-//           }
-//       </li>
-//   )
-// }
+  render() {
+    return (
+      <div className="content" id="artists">
+        <div className="sectionHeader">Artists</div>
+        <div className="artistDisplay">artists go here...</div>
+      </div>
+    )
+  }
+}
 
-// export default todoItem
+class About extends Component {
+
+  render() {
+    return (
+      <div className="content" id="about">
+        <div className="sectionHeader">About TG</div>
+        <div className="aboutDisplay">about info here...</div>
+      </div>
+    )
+  }
+}
+
+class Contact extends Component {
+
+  render() {
+    return (
+      <div className="content" id="contact">
+        <div className="sectionHeader">Contact</div>
+        <div className="contactDisplay">
+            Management, A&R: <br></br>
+            Jihad M. Rabah, jihad@twelvegaugehc.com
+            <br></br>
+            <br></br>
+            Distribution/Wholesale Inquiries: <br></br>
+            Deathwish Direct, distro@deathwishinc.com
+            <br></br><br></br>
+            Online Store Contact: <br></br>
+            Jihad M. Rabah, jihad@twelvegaugehc.com
+        </div>
+      </div>
+    )
+  }
+}
+
 const Release = props => {
   return (
     <div className="release" 
@@ -98,7 +131,7 @@ class Releases extends Component {
 
   render() {
     return (
-      <div id="Releases">
+      <div className="content" id="releases">
         <div className="sectionHeader">Releases</div>
         <div className="releaseDisplay">
           { releases.map((release, index, hoverHandler) => {
@@ -121,7 +154,10 @@ class App extends Component {
       <div className="app">
         <Header />
         <News />
-        <Releases/>
+        <Releases />
+        <Artists />
+        <About />
+        <Contact />>
 
       </div>
     )

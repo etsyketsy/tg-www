@@ -18,14 +18,43 @@
   padding: 2vh 2vh 2vh 2vh;
 }
 
-.releaseDisplay {
-  width: 100%;
-  min-width: 84px;
+.content {
+  text-align: left;
   display: flex;
+  flex-direction: column;
+  padding-left: 3vh;
+  padding-bottom: 4vh;
+  width: 100%
+}
+
+.sectionHeader {
+  display: flex;
+  padding-bottom: 1vh;
+}
+
+#releases {
+  display: flex;
+  flex-flow: column;
+  padding-left: 3vh;
+}
+
+.release {
+  display: flex; 
+  flex-flow: column;
+  align-items: center;
   justify-content: stretch;
-  flex-flow: row wrap;
-  padding-left: 1.5vh;
+  padding-bottom: 2vh;
+  font-size: 1.75vh;
   padding-right: 1vh;
+}
+
+.releaseDisplay {
+  min-width: 84vh;
+  max-height: 55vh;
+  display: flex;
+  justify-content: space-between;
+  /* flex-flow: row wrap; */
+  /* padding-left: 1.5vh; */
 }
 
 .releaseDisplay::after {
@@ -33,18 +62,6 @@
   flex: auto;
 }
 
-.release {
-  display: flex;
-  flex-flow: column;
-  /* min-height: 30vh;
-  min-width: 30vh; */
-  max-height: 50vh;
-  max-width: 40vh;
-  align-items: center;
-  justify-content: stretch;
-  padding-bottom: 2vh;
-  font-size: 1.25vh;
-}
 .cover {
   width: 20vh;
   height: 20vh;
@@ -57,10 +74,21 @@
   align-content: center;
 }
 
+.news {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3vh;
+  padding-bottom: 4vh;
+  width: 100%
+}
+
 #navLinks {
   display: flex;
   justify-content: space-between;
-  width: 20%;
-  min-width: 30vh;
+  width: 55%;
+  min-width: 40vh;
   padding-right: 2vh;
 }
+
+
