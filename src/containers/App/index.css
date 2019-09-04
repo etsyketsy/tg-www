@@ -1,11 +1,5 @@
 
 
-.release {
-  width: 30vh;
-  height: 30vh;
-  background: white;
-  color: #2C2A2D;
-}
 
 .app {
     text-align: center;
@@ -42,8 +36,8 @@
 .release {
   display: flex;
   flex-flow: column;
-  /* min-height: 25vh;
-  min-width: 20vh; */
+  /* min-height: 30vh;
+  min-width: 30vh; */
   max-height: 50vh;
   max-width: 40vh;
   align-items: center;
@@ -51,10 +45,9 @@
   padding-bottom: 2vh;
   font-size: 1.25vh;
 }
-
 .cover {
-  width: 90%;
-  height:90%;
+  width: 20vh;
+  height: 20vh;
 }
 
 .description {
