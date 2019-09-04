@@ -1,62 +1,64 @@
 import React, { Component } from 'react';
 import './index.css';
 import logo from '../../assets/logo.gif';
-import * as albumArt from '../../assets/albumArt';
-// import 	TG01	from	'../../assets/albumArt/TG001';
-// import 	TG02	from	'../../assets/albumArt/TG002';
-// import 	TG03	from	'../../assets/albumArt/TG003;'
-// import 	TG04	from	../../assets/albumArt/TG004
-// import 	TG05	from	../../assets/albumArt/TG005
-// import 	TG06	from	../../assets/albumArt/TG006
-// import 	TG07	from	../../assets/albumArt/TG007
-// import 	TG08	from	../../assets/albumArt/TG008
-// import 	TG09	from	../../assets/albumArt/TG009
-// import 	TG10	from	../../assets/albumArt/TG010
-// import 	TG11	from	../../assets/albumArt/TG011
-// import 	TG12	from	../../assets/albumArt/TG012
-// import 	TG13	from	../../assets/albumArt/TG013
-// import 	TG14	from	../../assets/albumArt/TG014
-// import 	TG15	from	../../assets/albumArt/TG015
-// import 	TG16	from	../../assets/albumArt/TG016
-// import 	TG17	from	../../assets/albumArt/TG017
-// import 	TG18	from	../../assets/albumArt/TG018
-// import 	TG19	from	../../assets/albumArt/TG019
-// import 	TG20	from	../../assets/albumArt/TG020
-// import 	TG21	from	../../assets/albumArt/TG021
-// import 	TG22	from	../../assets/albumArt/TG022
-// import 	TG23	from	../../assets/albumArt/TG023
-// import 	TG24	from	../../assets/albumArt/TG024
-// import 	TG25	from	../../assets/albumArt/TG025
-// import 	TG26	from	../../assets/albumArt/TG026
-// import 	TG27	from	../../assets/albumArt/TG027
-// import 	TG28	from	../../assets/albumArt/TG028
-// import 	TG29	from	../../assets/albumArt/TG029
-// import 	TG30	from	../../assets/albumArt/TG030
-// import 	TG31	from	../../assets/albumArt/TG031
-// import 	TG32	from	../../assets/albumArt/TG032
-// import 	TG33	from	../../assets/albumArt/TG033
-// import 	TG34	from	../../assets/albumArt/TG034
-// import 	TG35	from	../../assets/albumArt/TG035
-// import 	TG36	from	../../assets/albumArt/TG036
-// import 	TG37	from	../../assets/albumArt/TG037
-// import 	TG38	from	../../assets/albumArt/TG038
-// import 	TG39	from	../../assets/albumArt/TG039
-// import 	TG40	from	../../assets/albumArt/TG040
-// import 	TG41	from	../../assets/albumArt/TG041
-// import 	TG42	from	../../assets/albumArt/TG042
-// import 	TG43	from	../../assets/albumArt/TG043
+import 	TG001	from	'../../assets/albumArt/TG-001.jpg';
+import 	TG002	from	'../../assets/albumArt/TG-002.jpg';
+import 	TG003	from	'../../assets/albumArt/TG-003.jpg';
+import 	TG004	from	'../../assets/albumArt/TG-004.jpg';
+import 	TG005	from	'../../assets/albumArt/TG-005.jpg';
+import 	TG006	from	'../../assets/albumArt/TG-006.jpg';
+import 	TG007	from	'../../assets/albumArt/TG-007.jpg';
+import 	TG008	from	'../../assets/albumArt/TG-008.jpg';
+import 	TG009	from	'../../assets/albumArt/TG-009.jpg';
+import 	TG010	from	'../../assets/albumArt/TG-010.jpg';
+import 	TG011	from	'../../assets/albumArt/TG-011.jpg';
+import 	TG012	from	'../../assets/albumArt/TG-012.jpg';
+import 	TG013	from	'../../assets/albumArt/TG-013.jpg';
+import 	TG014	from	'../../assets/albumArt/TG-014.jpg';
+import 	TG015	from	'../../assets/albumArt/TG-015.jpg';
+import 	TG016	from	'../../assets/albumArt/TG-016.jpg';
+import 	TG017	from	'../../assets/albumArt/TG-017.jpg';
+import 	TG018	from	'../../assets/albumArt/TG-018.jpg';
+import 	TG019	from	'../../assets/albumArt/TG-019.jpg';
+import 	TG020	from	'../../assets/albumArt/TG-020.jpg';
+import 	TG021	from	'../../assets/albumArt/TG-021.jpg';
+import 	TG022	from	'../../assets/albumArt/TG-022.jpg';
+import 	TG023	from	'../../assets/albumArt/TG-023.jpg';
+import 	TG024	from	'../../assets/albumArt/TG-024.jpg';
+import 	TG025	from	'../../assets/albumArt/TG-025.jpg';
+import 	TG026	from	'../../assets/albumArt/TG-026.jpg';
+import 	TG027	from	'../../assets/albumArt/TG-027.jpg';
+import 	TG028	from	'../../assets/albumArt/TG-028.jpg';
+import 	TG029	from	'../../assets/albumArt/TG-029.jpg';
+import 	TG030	from	'../../assets/albumArt/TG-030.jpg';
+import 	TG031	from	'../../assets/albumArt/TG-031.jpg';
+import 	TG032	from	'../../assets/albumArt/TG-032.jpg';
+import 	TG033	from	'../../assets/albumArt/TG-033.jpg';
+import 	TG034	from	'../../assets/albumArt/TG-034.jpg';
+import 	TG035	from	'../../assets/albumArt/TG-035.jpg';
+import 	TG036	from	'../../assets/albumArt/TG-036.jpg';
+import 	TG037	from	'../../assets/albumArt/TG-037.jpg';
+import 	TG038	from	'../../assets/albumArt/TG-038.jpg';
+import 	TG039	from	'../../assets/albumArt/TG-039.jpg';
+import 	TG040	from	'../../assets/albumArt/TG-040.jpg';
+import 	TG041	from	'../../assets/albumArt/TG-041.jpg';
+import 	TG042	from	'../../assets/albumArt/TG-042.jpg';
+import 	TG043	from	'../../assets/albumArt/TG-043.jpg';
+
 
 const releases = [
-  {name: 'Self-Titled', releaseNumber: 'TG040', artist: 'Frail Hands', img: TG040},
-  {name: 'Courtside Seats', releaseNumber: 'TG043', artist: 'Heavy Heavy Low Low', img: TG043},
+  {name: 'Courtside Seats', releaseNumber: 'TG043', artist: 'Heavy Heavy Low Low', img:TG043},
   {name: 'Hourglass', releaseNumber: 'TG042', artist: 'Ghost Spirit', img:TG042},
   {name: '2020', releaseNumber: 'TG041', artist: 'Shin Guard', img:TG041},
+  {name: 'Self-Titled', releaseNumber: 'TG040', artist: 'Frail Hands', img: TG040},
   {name: 'Split 12"', releaseNumber: 'TG039', artist: 'Ghost Spirit & Frail Hands', img:TG039},
   {name: 'Duration and Delusion', releaseNumber: 'TG012', artist: 'Nervous', img:TG038},
   {name: 'Heavy Muscle', releaseNumber: 'TG012', artist: 'Power', img:TG037},
+  {name: 'Human Performance IV', releaseNumber: 'TG036', artist:'Sabertooth Zombie' , img:TG036},
   {name: 'See You When I See You', releaseNumber: 'TG035', artist:'Youth Funeral' , img:TG035},
   {name: 'Nervous', releaseNumber: 'TG034', artist: 'Nervous' , img:TG034},
   {name: 'The Future Is Bright', releaseNumber:'TG033', artist: 'No Sir', img:TG033},
+  {name: 'Bremerton Zoo', releaseNumber:'TG032', artist: 'Power', img:TG032},
   {name: 'Split', releaseNumber:'TG031', artist: 'Another Mistake & Overlooked', img:TG031},
   {name: 'Vesuvius', releaseNumber:'TG030', artist:'Vesuvius', img:TG030},
   {name: 'Human Performance III', releaseNumber:'TG029', artist:'Sabertooth Zombie', img:TG029},
@@ -87,7 +89,7 @@ const releases = [
   {name: 'Split', releaseNumber:'TG004', artist: 'Countdown & Tiefighter', img:TG004},
   {name: 'Split', releaseNumber:'TG003', artist: 'Set It Straight & Eagles Dare', img:TG003},
   {name: 'We Play For Keeps', releaseNumber:'TG002', artist: 'Yourlastbreath', img:TG002},
-  {name: 'Courtside Seats', releaseNumber:'TG001', artist: 'Heavy Heavy Low Low', img:TG001},
+  {name: 'Courtside Seats', releaseNumber:'TG001', artist: 'Heavy Heavy Low Low', img: TG001},
 ]
 
 class Header extends Component {
