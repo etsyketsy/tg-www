@@ -28,7 +28,6 @@
 }
 
 .sectionHeader {
-  display: flex;
   padding-bottom: 1vh;
 }
 
@@ -45,10 +44,10 @@
   justify-content: stretch;
   padding-bottom: 2vh;
   font-size: 1.75vh;
-  padding-right: 1vh;
+  margin-right: 1vh;
 }
 
-.releaseDisplay {
+.displayGrid {
   min-width: 84vh;
   max-height: 55vh;
   display: flex;
@@ -57,15 +56,28 @@
   /* padding-left: 1.5vh; */
 }
 
-.releaseDisplay::after {
+.displayGrid::after {
   content: "";
   flex: auto;
 }
-
 .cover {
   width: 20vh;
   height: 20vh;
 }
+
+.artist {
+  display: flex; 
+  flex-flow: column;
+  text-align: center;
+  justify-content: center;
+  font-size: 1.75vh;
+  border: 1px solid slategray;
+  min-width: 20vh;
+  min-height: 20vh;
+  margin-right: 1vh;
+}
+
+
 
 .description {
   min-height: 3vh;
@@ -91,4 +103,10 @@
   padding-right: 2vh;
 }
 
-
+#about {
+  width: 80%;
+}
+#lastRow {
+  display: flex;
+  flex-direction: row;
+}
