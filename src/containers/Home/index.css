@@ -1,5 +1,6 @@
-
-
+a {
+  text-decoration: none;
+}
 
 .app {
     text-align: center;
@@ -15,20 +16,22 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2vh 2vh 2vh 2vh;
+  padding: 3vh 2vh 2vh 3vh;
+  margin-bottom: 10vh;
 }
 
 .content {
   text-align: left;
   display: flex;
   flex-direction: column;
-  padding-left: 3vh;
-  padding-bottom: 4vh;
+  padding: 3vh 1vh 4vh 3vh;
+  /* padding-bottom: 4vh; */
   width: 100%
 }
 
 .sectionHeader {
   padding-bottom: 1vh;
+  font-size: 5vh;
 }
 
 #releases {
@@ -86,15 +89,6 @@
   align-content: center;
 }
 
-.news {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  padding-left: 3vh;
-  padding-bottom: 4vh;
-  width: 100%
-}
-
 #navLinks {
   display: flex;
   justify-content: space-between;
@@ -106,6 +100,7 @@
 #about {
   width: 80%;
 }
+
 #lastRow {
   display: flex;
   flex-direction: row;

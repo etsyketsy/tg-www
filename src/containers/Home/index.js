@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 import logo from '../../assets/logo.gif';
 import 	TG001	from	'../../assets/albumArt/TG-001.jpg';
@@ -92,25 +93,6 @@ const releases = [
   {name: 'Courtside Seats', releaseNumber:'TG001', artist: 'Heavy Heavy Low Low', img: TG001},
 ]
 
-class Header extends Component {
-
-  render() {
-    return (
-      <div className="header">
-          <img src={logo} alt="Logo" id="logo"/>
-          <div id="navLinks">
-            <div>NEWS</div>
-            <div>RELEASES</div>
-            <div>ARTISTS</div>
-            <div>AUDIO</div>
-            <div>ABOUT</div>
-            <div>STORE</div>
-          </div>
-      </div>
-    );
-  }
-}
-
 
 class News extends Component {
 
@@ -185,6 +167,7 @@ class About extends Component {
   }
 }
 
+
 class Contact extends Component {
 
   render() {
@@ -253,7 +236,27 @@ class Releases extends Component {
 }
 
 
-class App extends Component {
+class Header extends Component {
+
+  render() {
+    return (
+      <div className="header">
+          <img src={logo} alt="Logo" id="logo"/>
+          <div id="navLinks">
+            <Link to="news">NEWS</Link>
+            <Link to="releases">RELEASES</Link>
+            <Link to="artists">ARTISTS</Link>
+            <Link to="audio">AUDIO</Link>
+            <Link to="about">ABOUT</Link>
+            <Link to="store">STORE</Link>
+          </div>
+      </div>
+    );
+  }
+}
+
+
+class Home extends Component {
 
   render () {
     return (
@@ -266,10 +269,10 @@ class App extends Component {
           <About />
           <Contact />
         </div>
-
       </div>
     )
   }
 }
 
-export default App;
+export default Home;
+export { Home, News, Releases, Artists, About };
