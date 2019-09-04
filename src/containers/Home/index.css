@@ -1,14 +1,16 @@
-a {
-  text-decoration: none;
-}
-
 .app {
     text-align: center;
     font-family: sans-serif, "Helvetica";
     background-color: #FFFFFF;
     color: #2C2A2D;
+    width: 100%;
   }
   
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
 .header {
   min-height: 10vh;
   width: 100%;
@@ -31,7 +33,7 @@ a {
 
 .sectionHeader {
   padding-bottom: 1vh;
-  font-size: 5vh;
+  font-size: 3.75vh;
 }
 
 #releases {
@@ -64,8 +66,8 @@ a {
   flex: auto;
 }
 .cover {
-  width: 20vh;
-  height: 20vh;
+  width: 30vh;
+  height: 30vh;
 }
 
 .artist {
@@ -94,7 +96,7 @@ a {
   justify-content: space-between;
   width: 40%;
   min-width: 40vh;
-  padding-right: 2vh;
+  padding-right: 4vh;
 }
 
 #about {

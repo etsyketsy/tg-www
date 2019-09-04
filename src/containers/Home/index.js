@@ -199,7 +199,7 @@ const Release = props => {
         <img src={props.release.img} className="cover" alt= {props.release.name}/>
         <div className="description">
           <div>{props.release.name}</div>
-          <div>by {props.release.artist}</div>
+          <div>{props.release.artist}</div>
         </div>
     </div>  
   )
