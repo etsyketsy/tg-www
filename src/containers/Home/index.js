@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/';
 import Releases from '../Releases/index.js';
+import Artists from '../Artists/index.js';
 import './index.css';
 
 
@@ -16,46 +17,7 @@ class News extends Component {
   }
 }
 
-const Artist = props => {
-  return (
-    <div className="artist" 
-      onMouseOver={props.onMouseOver}
-      id={props.artist.artist}
-    >
-      <div className="description">
-        <div>{props.artist.artist}</div>
-      </div>
-    </div>  
-  )
-}
 
-class Artists extends Component {
-
-    // function detecting mouse movements
-    hoverHandler = event => {
-      console.log(event.currentTarget.id)
-      this.setState({
-        item: event.currentTarget.artist,
-        active: true,
-      })
-    }
-  
-    render() {
-      return (
-        <div className="content" id="artists">
-          <div className="sectionHeader">Artists</div>
-          <div className="displayGrid">
-            {/* { releaseData.map((artist, index, hoverHandler) => {
-              return (
-                <Artist artist={artist}  key={index} onMouseOver={this.hoverHandler}/>
-              )
-            })} */}
-          </div>
-        </div>
-        
-      )
-    }
-}
 
 class About extends Component {
 
@@ -120,4 +82,4 @@ class Home extends Component {
 }
 
 export default Home;
-export { Home, News, Artists, About };
+export {Home, News, About}
