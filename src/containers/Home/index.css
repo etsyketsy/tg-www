@@ -11,23 +11,11 @@
     color: inherit;
   }
 
-.header {
-  min-height: 10vh;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3vh 2vh 2vh 3vh;
-  margin-bottom: 10vh;
-}
-
 .content {
   text-align: left;
   display: flex;
   flex-direction: column;
   padding: 3vh 1vh 4vh 3vh;
-  /* padding-bottom: 4vh; */
   width: 100%
 }
 

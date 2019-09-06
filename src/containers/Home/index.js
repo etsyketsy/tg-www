@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+
+import Header from '../Header/';
 import './index.css';
 import logo from '../../assets/logo.gif';
 import 	TG001	from	'../../assets/albumArt/TG-001.jpg';
@@ -232,26 +234,6 @@ class Releases extends Component {
       </div>
       
     )
-  }
-}
-
-
-class Header extends Component {
-
-  render() {
-    return (
-      <div className="header">
-          <img src={logo} alt="Logo" id="logo"/>
-          <div id="navLinks">
-            <Link to="news">NEWS</Link>
-            <Link to="releases">RELEASES</Link>
-            <Link to="artists">ARTISTS</Link>
-            <Link to="audio">AUDIO</Link>
-            <Link to="about">ABOUT</Link>
-            <Link to="store">STORE</Link>
-          </div>
-      </div>
-    );
   }
 }
 
