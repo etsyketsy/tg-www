@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
-import { Home, News, About } from './containers/Home';
+import { Home, About } from './containers/Home';
 import Releases from './containers/Releases/index.js';
 import Artists from './containers/Artists/index.js';
+import News from './containers/News/index.js'
 import * as serviceWorker from './serviceWorker';
 
 

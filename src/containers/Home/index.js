@@ -2,21 +2,8 @@ import React, { Component } from 'react';
 import Header from '../Header/';
 import Releases from '../Releases/index.js';
 import Artists from '../Artists/index.js';
+import News from '../News/index.js';
 import './index.css';
-
-
-class News extends Component {
-
-  render() {
-    return (
-      <div className="content" id="news">
-        <div className="sectionHeader">News</div>
-        <div className="freeText">newsfromtumblrnewsfromtumblrnewsfromtumblrnewsfromtumblrnewsfromtumblr</div>
-      </div>
-    )
-  }
-}
-
 
 
 class About extends Component {
@@ -82,4 +69,4 @@ class Home extends Component {
 }
 
 export default Home;
-export {Home, News, About}
+export {Home, About}
