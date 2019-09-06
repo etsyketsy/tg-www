@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
-import { Home, News, Releases, Artists, About } from './containers/Home';
+import { Home, News, Artists, About } from './containers/Home';
+// import { Releases } from './containers/Releases/index.js';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -11,7 +12,7 @@ ReactDOM.render(
         <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/news' component={News} />
-            <Route exact path='/releases' component={Releases} />
+            {/* <Route exact path='/releases' component={Releases} /> */}
             <Route exact path='/artists' component={Artists} />
             <Route exact path='/about' component={About} />
         </Switch>
