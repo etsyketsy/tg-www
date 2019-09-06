@@ -1,4 +1,4 @@
-.header {
+.Header {
     min-height: 10vh;
     width: 100%;
     display: flex;
@@ -7,4 +7,12 @@
     align-items: center;
     padding: 3vh 2vh 2vh 3vh;
     margin-bottom: 10vh;
+  }
+
+  #navLinks {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    min-width: 40vh;
+    padding-right: 4vh;
   }
