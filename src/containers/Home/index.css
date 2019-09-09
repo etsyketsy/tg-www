@@ -24,35 +24,14 @@
   font-size: 3.75vh;
 }
 
-#releases {
+/* #releases {
   display: flex;
   flex-flow: column;
   padding-left: 3vh;
 }
 
-.release {
-  display: flex; 
-  flex-flow: column;
-  align-items: center;
-  justify-content: stretch;
-  padding-bottom: 2vh;
-  font-size: 1.75vh;
-  margin-right: 1vh;
-}
+#artists */
 
-.displayGrid {
-  min-width: 84vh;
-  max-height: 55vh;
-  display: flex;
-  justify-content: space-between;
-  /* flex-flow: row wrap; */
-  /* padding-left: 1.5vh; */
-}
-
-.displayGrid::after {
-  content: "";
-  flex: auto;
-}
 .cover {
   width: 30vh;
   height: 30vh;
@@ -73,8 +52,33 @@
 .description {
   min-height: 3vh;
   width: 100%;
-  height: 20%;
   align-content: center;
+}
+
+.release {
+  display: flex; 
+  flex-flow: column;
+  align-items: center;
+  /* justify-content: stretch; */
+  padding-bottom: 2vh;
+  font-size: 1.75vh;
+  margin-right: 1vh;
+}
+
+.displayGrid {
+  min-width: 84vh;
+  display: flex;
+  justify-content: stretch;
+  flex-flow: row wrap;
+}
+
+.displayGrid::after {
+  content: "";
+  flex: auto;
+}
+
+.loadMore {
+  text-align: center;
 }
 
 #about {
