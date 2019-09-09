@@ -20,14 +20,6 @@ const Release = props => {
 
 class Releases extends Component {
 
-    // onComponentDidMount = () => {
-    //     return ({
-    //         this.setState({
-    //             itemsToRender: (this.state.co)
-    //         })
-    //     })
-    // }
-
     state = {
         itemsToRender: 4
     }
@@ -52,15 +44,21 @@ class Releases extends Component {
             <div className="content" id="releases">
                 <div className="sectionHeader">Releases</div>
                 <div className="displayGrid">
-                    {releaseData.slice(0, this.state.itemsToRender).map((release, index, hoverHandler) => {
-                        return (
-                            <Release release={release} key={index} onMouseOver={this.hoverHandler} />
-                        )
-                    })}
+                    {
+                        releaseData.slice(0, this.state.itemsToRender).map((release, index, hoverHandler) => {
+                            return (
+                                <Release release={release} key={index} onMouseOver={this.hoverHandler} />
+                            )
+                        })
+                    }
                 </div>
-                <button className="loadMore" id="loadReleases" onClick={ this.loadMoreHandler }>Load more...</button>
+                {
+                    (releaseData.length > this.state.itemsToRender) ? 
+                        <button className="loadMore" id="loadReleases" onClick={this.loadMoreHandler}>Load more...</button>
+                    : null 
+                }
+                
             </div>
-
         )
     }
 }
