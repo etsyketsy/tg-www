@@ -18,8 +18,8 @@ const Artist = props => {
 class Artists extends Component {
 
   state = {
-    itemsToRender: 4
-}
+    artistsToRender: 8
+  }
 
   // function detecting mouse movements
   hoverHandler = event => {
@@ -32,9 +32,9 @@ class Artists extends Component {
 
   loadMoreHandler = event => {
     this.setState({
-        itemsToRender: (this.state.itemsToRender + 4)
+      artistsToRender: (this.state.artistsToRender + 4)
     })
-}
+  }
 
 
   render() {
@@ -42,15 +42,17 @@ class Artists extends Component {
       <div className="content" id="artists">
         <div className="sectionHeader">Artists</div>
         <div className="displayGrid">
-          {releaseData.slice(0, this.itemsToRender).map((artist, index, hoverHandler) => {
-            return (
-              <Artist artist={artist} key={index} onMouseOver={this.hoverHandler} />
-            )
-          })}
+          {
+            releaseData.slice(0, this.state.artistsToRender).map((artist, index, hoverHandler) => {
+              return (
+                <Artist artist={artist} key={index} onMouseOver={this.hoverHandler} />
+              )
+            })
+          }
         </div>
         {
-          (releaseData.length > this.state.itemsToRender) ?
-            <button className="loadMore" id="loadReleases" onClick={this.loadMoreHandler}>Load more...</button>
+          (releaseData.length > this.state.artistsToRender) ?
+            <button className="loadMore" id="loadArtists" onClick={this.loadMoreHandler}>Load more...</button>
             : null
         }
       </div>

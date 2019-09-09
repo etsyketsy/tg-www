@@ -24,11 +24,13 @@
   font-size: 3.75vh;
 }
 
-#releases {
+/* #releases {
   display: flex;
   flex-flow: column;
   padding-left: 3vh;
 }
+
+#artists */
 
 .cover {
   width: 30vh;
@@ -68,7 +70,6 @@
   display: flex;
   justify-content: stretch;
   flex-flow: row wrap;
-  /* padding-left: 1.5vh; */
 }
 
 .displayGrid::after {
