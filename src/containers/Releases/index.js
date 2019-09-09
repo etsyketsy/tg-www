@@ -53,11 +53,11 @@ class Releases extends Component {
                     }
                 </div>
                 {
-                    (releaseData.length > this.state.itemsToRender) ? 
+                    (releaseData.length > this.state.itemsToRender) ?
                         <button className="loadMore" id="loadReleases" onClick={this.loadMoreHandler}>Load more...</button>
-                    : null 
+                        : null
                 }
-                
+
             </div>
         )
     }
