@@ -20,6 +20,18 @@ const Release = props => {
 
 class Releases extends Component {
 
+    // onComponentDidMount = () => {
+    //     return ({
+    //         this.setState({
+    //             itemsToRender: (this.state.co)
+    //         })
+    //     })
+    // }
+
+    state = {
+        itemsToRender: 4
+    }
+
     // function detecting mouse movements
     hoverHandler = event => {
         console.log(event.currentTarget.id)
@@ -29,17 +41,24 @@ class Releases extends Component {
         })
     }
 
+    loadMoreHandler = event => {
+        this.setState({
+            itemsToRender: (this.state.itemsToRender + 4)
+        })
+    }
+
     render() {
         return (
             <div className="content" id="releases">
                 <div className="sectionHeader">Releases</div>
                 <div className="displayGrid">
-                    {releaseData.map((release, index, hoverHandler) => {
+                    {releaseData.slice(0, this.state.itemsToRender).map((release, index, hoverHandler) => {
                         return (
                             <Release release={release} key={index} onMouseOver={this.hoverHandler} />
                         )
                     })}
                 </div>
+                <button className="loadMore" id="loadReleases" onClick={ this.loadMoreHandler }>Load more...</button>
             </div>
 
         )
