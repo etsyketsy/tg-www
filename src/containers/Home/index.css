@@ -1,15 +1,15 @@
 .app {
-    text-align: center;
-    font-family: sans-serif, "Helvetica";
-    background-color: #FFFFFF;
-    color: #2C2A2D;
-    width: 100%;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+  text-align: center;
+  font-family: sans-serif, "Helvetica";
+  background-color: #FFFFFF;
+  color: #2C2A2D;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .content {
   text-align: left;
@@ -24,14 +24,6 @@
   font-size: 3.75vh;
 }
 
-/* #releases {
-  display: flex;
-  flex-flow: column;
-  padding-left: 3vh;
-}
-
-#artists */
-
 .cover {
   width: 30vh;
   height: 30vh;
@@ -42,11 +34,10 @@
   flex-flow: column;
   text-align: center;
   justify-content: center;
-  font-size: 1.75vh;
+  font-size: 1.5vh;
   border: 1px solid slategray;
   min-width: 20vh;
   min-height: 20vh;
-  margin-right: 1vh;
 }
 
 .description {
@@ -59,7 +50,6 @@
   display: flex; 
   flex-flow: column;
   align-items: center;
-  /* justify-content: stretch; */
   padding-bottom: 2vh;
   font-size: 1.75vh;
   margin-right: 1vh;
