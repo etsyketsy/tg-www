@@ -1,10 +1,4 @@
-.app {
-  text-align: center;
-  font-family: sans-serif, "Helvetica";
-  background-color: #FFFFFF;
-  color: #2C2A2D;
-  width: 100%;
-}
+
 
 a {
   text-decoration: none;
@@ -13,8 +7,8 @@ a {
 
 .content {
   text-align: left;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   padding: 3vh 1vh 4vh 3vh;
   width: 100%
 }
@@ -30,14 +24,15 @@ a {
 }
 
 .artist {
-  display: flex; 
+  /* display: flex; 
   flex-flow: column;
-  text-align: center;
+  text-align: center; */
   justify-content: center;
   font-size: 1.5vh;
   border: 1px solid slategray;
   min-width: 20vh;
   min-height: 20vh;
+  grid-area: artists;
 }
 
 .description {
@@ -47,8 +42,8 @@ a {
 }
 
 .release {
-  display: flex; 
-  flex-flow: column;
+  /* display: flex; 
+  flex-flow: column; */
   align-items: center;
   padding-bottom: 2vh;
   font-size: 1.75vh;
@@ -56,27 +51,64 @@ a {
 }
 
 .displayGrid {
-  min-width: 84vh;
+  /* min-width: 84vh;
   display: flex;
   justify-content: stretch;
-  flex-flow: row wrap;
+  flex-flow: row wrap; */
 }
 
 .displayGrid::after {
   content: "";
   flex: auto;
 }
-
 .loadMore {
   text-align: center;
 }
 
-#about {
-  width: 80%;
+#releases {
+  grid-area: releases;
 }
 
-#lastRow {
+#Header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-content: center;
+  border: solid 1px red;
+  grid-area: sidebar;
 }
 
+#logo {
+  display: grid;
+}
+
+#navLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid;
+}
+
+
+#about {
+  grid-area: about;
+}
+
+#news {
+  grid-area: news;
+}
+
+.app {
+  text-align: center;
+  font-family: sans-serif, "Helvetica";
+  background-color: #FFFFFF;
+  color: #2C2A2D;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 15% 30% 30%;
+  grid-template-rows: 20% 30% 30% 20%; 
+  grid-template-areas: 
+  'sidebar header header'
+  'sidebar news releases'
+  'sidebar artists about'
+  'footer footer footer'
+}
