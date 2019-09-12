@@ -1,22 +1,21 @@
-.app {
-    text-align: center;
-    font-family: sans-serif, "Helvetica";
-    background-color: #FFFFFF;
-    color: #2C2A2D;
-    width: 100%;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: left;
+}
+
+#news {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
 
 .content {
   text-align: left;
-  display: flex;
-  flex-direction: column;
   padding: 3vh 1vh 4vh 3vh;
-  width: 100%
+
 }
 
 .sectionHeader {
@@ -24,29 +23,18 @@
   font-size: 3.75vh;
 }
 
-/* #releases {
-  display: flex;
-  flex-flow: column;
-  padding-left: 3vh;
-}
-
-#artists */
-
 .cover {
   width: 30vh;
   height: 30vh;
 }
 
 .artist {
-  display: flex; 
-  flex-flow: column;
-  text-align: center;
   justify-content: center;
-  font-size: 1.75vh;
+  font-size: 1.5vh;
   border: 1px solid slategray;
   min-width: 20vh;
   min-height: 20vh;
-  margin-right: 1vh;
+  grid-area: artists;
 }
 
 .description {
@@ -56,37 +44,79 @@
 }
 
 .release {
-  display: flex; 
-  flex-flow: column;
   align-items: center;
-  /* justify-content: stretch; */
   padding-bottom: 2vh;
   font-size: 1.75vh;
   margin-right: 1vh;
 }
 
 .displayGrid {
-  min-width: 84vh;
   display: flex;
-  justify-content: stretch;
-  flex-flow: row wrap;
+  flex-flow: wrap;
 }
 
 .displayGrid::after {
   content: "";
   flex: auto;
 }
-
 .loadMore {
   text-align: center;
 }
 
-#about {
-  width: 80%;
+#releases {
+  grid-area: releases;
 }
 
-#lastRow {
+
+
+#logo {
+  width: auto;
+  object-fit: contain;
+  padding-top: 1vh;
+  padding-left: 1vh;
+}
+
+#navLinks {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  /* align-items: left; */
+  padding-left: 1vh;
+  padding-top: 1vh;
+  object-fit: contain;
 }
 
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+
+#about {
+  grid-area: about;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+/* global styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  text-align: left;
+  font-family: sans-serif, "Helvetica";
+  background-color: #FFFFFF;
+  color: #2C2A2D;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 12vmin repeat(2, 42vmin);
+  grid-template-rows: 30vmin repeat(2, 35vmin); 
+  grid-template-areas: 
+  'sidebar header  header'
+  'sidebar news    releases'
+  'sidebar artists about';
+}

@@ -21,12 +21,12 @@ const Release = props => {
 class Releases extends Component {
 
     state = {
-        itemsToRender: 4
+        itemsToRender: 2
     }
 
     // function detecting mouse movements
     hoverHandler = event => {
-        console.log(event.currentTarget.id)
+        console.log(event.currentTarget)
         this.setState({
             item: event.currentTarget.releaseNumber,
             active: true,
