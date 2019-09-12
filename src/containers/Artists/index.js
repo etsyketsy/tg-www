@@ -18,7 +18,7 @@ const Artist = props => {
 class Artists extends Component {
 
   state = {
-    artistsToRender: 8
+    artistsToRender: 2
   }
 
   // function detecting mouse movements

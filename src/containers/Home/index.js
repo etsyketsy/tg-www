@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Header from '../Header/';
+import Header from '../Header';
+import Sidebar from '../Sidebar';
 import Releases from '../Releases/index.js';
 import Artists from '../Artists/index.js';
 import News from '../News/index.js';
@@ -14,6 +15,7 @@ class Home extends Component {
     return (
       <div className="app">
         <Header />
+        <Sidebar />
         <News />
         <Releases />
         <Artists />
