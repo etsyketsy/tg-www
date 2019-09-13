@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 import releaseData from './releaseData.js';
+import ItemInfo from '../ItemInfo';
 
 
 const Release = props => {
+    console.log(props.release)
     return (
         <div className="release"
             onMouseOver={props.onMouseOver}
+            onClick={props.onClick}
             id={props.release.releaseNumber}
+            isActive={'False'}
         >
-            <img src={props.release.img} className="cover" alt={props.release.name} />
-            <div className="description">
-                <div>{props.release.name}</div>
-                <div>{props.release.artist}</div>
-            </div>
+            {
+                (props.release.isActive) ?
+                    <img src={props.release.img} className="cover" alt={props.release.name}/>
+                    :
+                    <div className="description">
+                        <div>{props.release.name}</div>
+                        <div>{props.release.artist}</div>
+                    </div>
+            }
         </div>
     )
 }
@@ -25,12 +33,10 @@ class Releases extends Component {
     }
 
     // function detecting mouse movements
-    hoverHandler = event => {
+    clickHandler = (event, props) => {
+        console.log(event.currentTarget.id)
         console.log(event.currentTarget)
-        this.setState({
-            item: event.currentTarget.releaseNumber,
-            active: true,
-        })
+        {event.currentTarget.isActive=True}
     }
 
     loadMoreHandler = event => {
@@ -47,7 +53,7 @@ class Releases extends Component {
                     {
                         releaseData.slice(0, this.state.itemsToRender).map((release, index, hoverHandler) => {
                             return (
-                                <Release release={release} key={index} onMouseOver={this.hoverHandler} />
+                                <Release release={release} key={index} onClick={this.clickHandler} />
                             )
                         })
                     }

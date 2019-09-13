@@ -14,8 +14,6 @@
 
 .content {
   text-align: left;
-  padding: 3vh 1vh 4vh 3vh;
-
 }
 
 .sectionHeader {
@@ -24,16 +22,26 @@
 }
 
 .cover {
-  width: 30vh;
-  height: 30vh;
+  width: 20vh;
+  height: 20vh;
+}
+
+.artistInfo {
+  width: 50vh;
+  height: 50vh;
+  background: lightgray;
 }
 
 .artist {
-  justify-content: center;
+  display: flex;
+  text-align: center;
+  align-items: center;
   font-size: 1.5vh;
   border: 1px solid slategray;
-  min-width: 20vh;
-  min-height: 20vh;
+  width: 20vmin;
+  height: 20vmin;
+  font-size: 1.75vh;
+  word-wrap: break-word;
   grid-area: artists;
 }
 
@@ -44,10 +52,15 @@
 }
 
 .release {
-  align-items: center;
-  padding-bottom: 2vh;
+  display: grid;
+  margin-bottom: 2vh;
   font-size: 1.75vh;
   margin-right: 1vh;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  width: 20vmin;
+  height: 20vmin;
+  border: solid slategray;
 }
 
 .displayGrid {
@@ -76,21 +89,23 @@
   padding-left: 1vh;
 }
 
-#navLinks {
-  display: flex;
-  flex-direction: column;
-  /* align-items: left; */
-  padding-left: 1vh;
-  padding-top: 1vh;
-  object-fit: contain;
-}
-
 .sidebar {
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
   align-items: left;
 }
+
+.sidebar #navLinks {
+  display: flex;
+  flex-direction: column;
+  padding-left: 4vh;
+  margin-top: 3vh;
+  object-fit: contain;
+  justify-content: space-between;
+  height: 17vmin;
+}
+
 
 
 #about {
@@ -107,14 +122,12 @@ a {
 }
 
 .app {
-  text-align: left;
   font-family: sans-serif, "Helvetica";
   background-color: #FFFFFF;
   color: #2C2A2D;
   display: grid;
-  width: 100%;
-  grid-template-columns: 12vmin repeat(2, 42vmin);
-  grid-template-rows: 30vmin repeat(2, 35vmin); 
+  grid-template-columns: 20vmin auto auto;
+  grid-template-rows: 35vmin auto auto; 
   grid-template-areas: 
   'sidebar header  header'
   'sidebar news    releases'
