@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import releaseData from './releaseData.js';
+import ItemInfo from '../ItemInfo';
 
 
 const Release = props => {
