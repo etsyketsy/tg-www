@@ -47,7 +47,7 @@ class Releases extends Component {
                     {
                         releaseData.slice(0, this.state.itemsToRender).map((release, index, hoverHandler) => {
                             return (
-                                <Release release={release} key={index} onMouseOver={this.hoverHandler} />
+                                <Release className="release" release={release} key={index} onMouseOver={this.hoverHandler} />
                             )
                         })
                     }

@@ -22,16 +22,26 @@
 }
 
 .cover {
-  width: 30vh;
-  height: 30vh;
+  width: 20vh;
+  height: 20vh;
+}
+
+.artistInfo {
+  width: 50vh;
+  height: 50vh;
+  background: lightgray;
 }
 
 .artist {
-  justify-content: center;
+  display: flex;
+  text-align: center;
+  align-items: center;
   font-size: 1.5vh;
   border: 1px solid slategray;
-  min-width: 20vh;
-  min-height: 20vh;
+  width: 20vmin;
+  height: 20vmin;
+  font-size: 1.75vh;
+  word-wrap: break-word;
   grid-area: artists;
 }
 
@@ -42,10 +52,14 @@
 }
 
 .release {
-  align-items: center;
-  padding-bottom: 2vh;
+  display: grid;
+  margin-bottom: 2vh;
   font-size: 1.75vh;
   margin-right: 1vh;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 20vmin;
+
 }
 
 .displayGrid {
@@ -93,7 +107,6 @@
 
 
 
-
 #about {
   grid-area: about;
   overflow-wrap: break-word;
@@ -108,7 +121,6 @@ a {
 }
 
 .app {
-  text-align: left;
   font-family: sans-serif, "Helvetica";
   background-color: #FFFFFF;
   color: #2C2A2D;
