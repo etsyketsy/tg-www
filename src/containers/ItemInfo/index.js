@@ -5,7 +5,7 @@ class ArtistInfo extends Component {
     
     clickOutHandler = () =>{
         return (
-            pass
+            console.log('closing item')
         )
     }
 
