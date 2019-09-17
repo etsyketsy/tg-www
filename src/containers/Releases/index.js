@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import releaseData from './releaseData.js';
 import ItemInfo from '../ItemInfo';
+import { throwStatement } from '@babel/types';
 
+const ReleaseInfo = props => {
+    
+    console.log('in info ' + props.release)
+
+    return (
+        <div className="releaseInfo" id={props.release.releaseNumber} img={props.release.img}>
+            ReleaseInfo
+            <p>release number: {props.release}</p>
+            <div>cover art here!!!</div>
+            <p>{props.release.name}</p>
+        </div>
+    )
+}
 
 const Release = props => {
-    console.log(props.release)
     return (
         <div className="release"
             onMouseOver={props.onMouseOver}
             onClick={props.onClick}
             id={props.release.releaseNumber}
-            isActive={'False'}
         >
             {
-                (props.release.isActive) ?
-                    <img src={props.release.img} className="cover" alt={props.release.name}/>
-                    :
+                    // <img src={props.release.img} className="cover" alt={props.release.name}/>
                     <div className="description">
                         <div>{props.release.name}</div>
                         <div>{props.release.artist}</div>
@@ -29,14 +39,17 @@ const Release = props => {
 class Releases extends Component {
 
     state = {
-        itemsToRender: 2
+        itemsToRender: 2,
+        activeRelease: null
     }
 
     // function detecting mouse movements
     clickHandler = (event, props) => {
-        console.log(event.currentTarget.id)
-        console.log(event.currentTarget)
-        {event.currentTarget.isActive=True}
+        console.log('in the click ' + event.currentTarget.name)
+        this.setState(
+            {activeRelease: event.currentTarget.id}
+        )
+        
     }
 
     loadMoreHandler = event => {
@@ -51,10 +64,15 @@ class Releases extends Component {
                 <div className="sectionHeader">Releases</div>
                 <div className="displayGrid">
                     {
-                        releaseData.slice(0, this.state.itemsToRender).map((release, index, hoverHandler) => {
-                            return (
-                                <Release release={release} key={index} onClick={this.clickHandler} />
-                            )
+                        (this.state.activeRelease) ?
+                        <ReleaseInfo release={this.state.activeRelease} img={this.state.activeRelease}>
+                        </ReleaseInfo>
+
+                        :
+                            releaseData.slice(0, this.state.itemsToRender).map((release, index, hoverHandler) => {
+                                return (
+                                    <Release release={release} key={index} onClick={this.clickHandler}/>
+                                )
                         })
                     }
                 </div>
