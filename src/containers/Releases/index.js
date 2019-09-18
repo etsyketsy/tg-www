@@ -45,7 +45,7 @@ class Releases extends Component {
 
     // function detecting mouse movements
     clickHandler = (event, props) => {
-        console.log('in the click ' + event.currentTarget.name)
+        console.log('in the click ' + this.props.release)
         this.setState(
             {activeRelease: event.currentTarget.id}
         )
@@ -65,6 +65,9 @@ class Releases extends Component {
                 <div className="displayGrid">
                     {
                         (this.state.activeRelease) ?
+                        { current = releaseData.filter(item => item.id===this.state.activeRelease);
+                        console.log('in the current render ' + current)
+                        }
                         <ReleaseInfo release={this.state.activeRelease} img={this.state.activeRelease}>
                         </ReleaseInfo>
 
