@@ -52,14 +52,17 @@
 }
 
 .release {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   margin-bottom: 2vh;
   font-size: 1.75vh;
   margin-right: 1vh;
   overflow-wrap: break-word;
   hyphens: auto;
   width: 20vmin;
-  height: 30vmin;
+  height: 20vmin;
   border: solid slategray .5px;
 }
 

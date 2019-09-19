@@ -4,11 +4,11 @@ import releaseData from './releaseData.js';
 
 
 const ReleaseInfo = props => {
-    let current =  releaseData.filter(release => release.releaseNumber  === this.state.activeRelease);
+    let current = releaseData.filter(release => release.releaseNumber === this.state.activeRelease);
     console.log(current)
     return (
         <div className="ReleaseInfo" release={current} id={current.releaseNumber}>
-           {current.releaseNumber} is active
+            {current.releaseNumber} is active
         </div>
     )
 }
@@ -25,34 +25,31 @@ class Release extends Component {
     }
 
     render() {
-        console.log('release state check ' + this.state.showInfo)
 
-      
         return (
             (this.state.showInfo) ?
-            <div className="release"
-                id={this.props.data.releaseNumber}
-                onClick={this.clickHandler}
-            >
-                <img src={this.props.data.img} className="cover" alt={this.props.data.name} />
-                <div className="description">
+                <div className="release"
+                    id={this.props.data.releaseNumber}
+                    onClick={this.clickHandler}
+                >
+
                     <div>{this.props.data.name}</div>
                     <div>{this.props.data.artist}</div>
                     <div> Release: {this.props.data.releaseNumber}</div>
-                </div>
-            </div>
-        
-        :
 
-            <div className="release"
-                id={this.props.data.releaseNumber}
-                onClick={this.clickHandler}
-            >
-                <div className="description">
-                    <div>{this.props.data.name}</div>
-                    <div>{this.props.data.artist}</div>
                 </div>
-            </div>
+
+                :
+
+                <div className="release"
+                    id={this.props.data.releaseNumber}
+                    onClick={this.clickHandler}
+                >
+                    <img src={this.props.data.img} className="cover" alt={this.props.data.name} />
+                    {/* <div>{this.props.data.name}</div>
+                    <div>{this.props.data.artist}</div> */}
+
+                </div>
         )
     }
 
@@ -82,10 +79,10 @@ class Releases extends Component {
                     {
                         releaseData.slice(0, this.state.itemsToRender).map((release, index) => {
                             return (
-                                <Release 
-                                className="release"
+                                <Release
+                                    className="release"
                                     data={release}
-                                    key={index} 
+                                    key={index}
                                 />
                             )
                         })
