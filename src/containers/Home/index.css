@@ -90,9 +90,11 @@
 
 #logo {
   width: auto;
+  align-items: center;
   object-fit: contain;
   padding-top: 1vh;
-  padding-left: 1vh;
+  padding-left: 3vh;
+  width: 16vh;
 }
 
 .sidebar {
