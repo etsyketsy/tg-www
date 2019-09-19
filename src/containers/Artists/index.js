@@ -2,17 +2,36 @@ import React, { Component } from 'react';
 import releaseData from '../Releases/releaseData';
 
 
-const Artist = props => {
-  return (
-    <div className="artist"
-      onMouseOver={props.onMouseOver}
-      id={props.artist.artist}
-    >
-      <div className="description">
-        <div>{props.artist.artist}</div>
+class Artist extends Component {
+  state = {
+    showInfo: false
+}
+clickHandler = event => {
+  this.setState({
+    showInfo: !this.state.showInfo
+  })
+}
+
+  render() {
+    return (
+      (this.state.showInfo) ?
+
+      <div className="artist"
+        onClick={this.clickHandler}
+        id={this.props.artist.artist}
+      >
+          <div>Picture coming</div>
       </div>
-    </div>
-  )
+    :
+    <div className="artist"
+        onClick={this.clickHandler}
+        id={this.props.artist.artist}
+      >
+          <div>{this.props.artist.artist}</div>
+      </div>
+    )
+  }
+
 }
 
 class Artists extends Component {
@@ -21,21 +40,11 @@ class Artists extends Component {
     artistsToRender: 2
   }
 
-  // function detecting mouse movements
-  hoverHandler = event => {
-    console.log(event.currentTarget.id)
-    this.setState({
-      item: event.currentTarget.artist,
-      active: true,
-    })
-  }
-
-  loadMoreHandler = event => {
+  loadMoreHandler = () => {
     this.setState({
       artistsToRender: (this.state.artistsToRender + 4)
     })
   }
-
 
   render() {
     return (
@@ -45,7 +54,7 @@ class Artists extends Component {
           {
             releaseData.slice(0, this.state.artistsToRender).map((artist, index, hoverHandler) => {
               return (
-                <Artist artist={artist} key={index} onMouseOver={this.hoverHandler} />
+                <Artist artist={artist} key={index}/>
               )
             })
           }

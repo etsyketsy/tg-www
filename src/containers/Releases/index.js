@@ -1,59 +1,73 @@
 import React, { Component } from 'react';
 import releaseData from './releaseData.js';
-import ItemInfo from '../ItemInfo';
 
 
-const Release = props => {
-    console.log(props.release)
-    return (
-        <div className="release"
-            onMouseOver={props.onMouseOver}
-            onClick={props.onClick}
-            id={props.release.releaseNumber}
-            isActive={'False'}
-        >
-            {
-                (props.release.isActive) ?
-                    <img src={props.release.img} className="cover" alt={props.release.name}/>
-                    :
-                    <div className="description">
-                        <div>{props.release.name}</div>
-                        <div>{props.release.artist}</div>
-                    </div>
-            }
-        </div>
-    )
+class Release extends Component {
+    state = {
+        showInfoState: false
+    }
+
+    clickHandler = (event, item) => {
+        this.setState({
+            showInfo: !this.state.showInfo
+        })
+    }
+
+    render() {
+
+        return (
+            (this.state.showInfo) ?
+                <div className="release"
+                    id={this.props.data.releaseNumber}
+                    onClick={this.clickHandler}
+                >
+
+                    <div>{this.props.data.name}</div>
+                    <div>{this.props.data.artist}</div>
+                    <div> Release: {this.props.data.releaseNumber}</div>
+
+                </div>
+                :
+                <div className="release"
+                    id={this.props.data.releaseNumber}
+                    onClick={this.clickHandler}
+                >
+                    <img src={this.props.data.img} className="cover" alt={this.props.data.name} />
+                </div>
+        )
+    }
+
 }
+
 
 
 class Releases extends Component {
 
     state = {
-        itemsToRender: 2
+        itemsToRender: 2,
     }
 
-    // function detecting mouse movements
-    clickHandler = (event, props) => {
-        console.log(event.currentTarget.id)
-        console.log(event.currentTarget)
-        {event.currentTarget.isActive=True}
-    }
 
-    loadMoreHandler = event => {
+    loadMoreHandler = () => {
         this.setState({
             itemsToRender: (this.state.itemsToRender + 4)
         })
     }
 
     render() {
+        console.log('state check ' + this.state.showInfoState)
         return (
             <div className="content" id="releases">
                 <div className="sectionHeader">Releases</div>
                 <div className="displayGrid">
                     {
-                        releaseData.slice(0, this.state.itemsToRender).map((release, index, hoverHandler) => {
+                        releaseData.slice(0, this.state.itemsToRender).map((release, index) => {
                             return (
-                                <Release release={release} key={index} onClick={this.clickHandler} />
+                                <Release
+                                    className="release"
+                                    data={release}
+                                    key={index}
+                                />
                             )
                         })
                     }
