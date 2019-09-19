@@ -30,7 +30,7 @@ class Artists extends Component {
     })
   }
 
-  loadMoreHandler = event => {
+  loadMoreHandler = () => {
     this.setState({
       artistsToRender: (this.state.artistsToRender + 4)
     })

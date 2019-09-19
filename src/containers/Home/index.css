@@ -59,8 +59,8 @@
   overflow-wrap: break-word;
   hyphens: auto;
   width: 20vmin;
-  height: 20vmin;
-  border: solid slategray;
+  height: 30vmin;
+  border: solid slategray .5px;
 }
 
 .displayGrid {
