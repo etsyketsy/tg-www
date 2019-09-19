@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
 import releaseData from './releaseData.js';
-// import Release from '../Release';
 
-
-const ReleaseInfo = props => {
-    let current = releaseData.filter(release => release.releaseNumber === this.state.activeRelease);
-    console.log(current)
-    return (
-        <div className="ReleaseInfo" release={current} id={current.releaseNumber}>
-            {current.releaseNumber} is active
-        </div>
-    )
-}
 
 class Release extends Component {
     state = {
@@ -38,17 +27,12 @@ class Release extends Component {
                     <div> Release: {this.props.data.releaseNumber}</div>
 
                 </div>
-
                 :
-
                 <div className="release"
                     id={this.props.data.releaseNumber}
                     onClick={this.clickHandler}
                 >
                     <img src={this.props.data.img} className="cover" alt={this.props.data.name} />
-                    {/* <div>{this.props.data.name}</div>
-                    <div>{this.props.data.artist}</div> */}
-
                 </div>
         )
     }
