@@ -34,15 +34,18 @@
 
 .artist {
   display: flex;
+  flex-direction: column;
   text-align: center;
-  align-items: center;
-  font-size: 1.5vh;
-  border: 1px solid slategray;
+  justify-content: center;
+  font-size: 1.75vh;
+  border: .5px solid slategray;
   width: 20vmin;
   height: 20vmin;
-  font-size: 1.75vh;
   word-wrap: break-word;
+  hyphens: auto;
   grid-area: artists;
+  margin-right: 1vh;
+  margin-bottom: 1vh;
 }
 
 .description {
@@ -56,9 +59,9 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-bottom: 2vh;
-  font-size: 1.75vh;
+  margin-bottom: 1vh;
   margin-right: 1vh;
+  font-size: 1.75vh;
   overflow-wrap: break-word;
   hyphens: auto;
   width: 20vmin;
