@@ -15,7 +15,6 @@ class Home extends Component {
     return (
       <div className="app">
         <Header />
-        <Sidebar />
         <News />
         <Releases />
         <Artists />

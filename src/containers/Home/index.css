@@ -1,8 +1,10 @@
 
 .header {
   grid-area: header;
+  /* height: 35vmin;
+  width: 100%;
   display: flex;
-  justify-content: left;
+  flex-direction: column; */
 }
 
 #news {
@@ -10,6 +12,15 @@
   flex-wrap: wrap;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  grid-area: news;
+}
+
+#releases {
+  grid-area: releases;
+}
+
+#artsist {
+  grid-area: artists;
 }
 
 .content {
@@ -26,12 +37,6 @@
   height: 20vh;
 }
 
-.artistInfo {
-  width: 50vh;
-  height: 50vh;
-  background: lightgray;
-}
-
 .artist {
   display: flex;
   flex-direction: column;
@@ -43,7 +48,6 @@
   height: 20vmin;
   word-wrap: break-word;
   hyphens: auto;
-  grid-area: artists;
   margin-right: 1vh;
   margin-bottom: 1vh;
 }
@@ -87,21 +91,20 @@
 }
 
 
-
 #logo {
-  width: auto;
-  align-items: center;
+  align-items: left;
   object-fit: contain;
   padding-top: 1vh;
-  padding-left: 3vh;
+  margin-bottom: 2vh;
   width: 16vh;
 }
 
 .sidebar {
   grid-area: sidebar;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: left;
+  object-fit: contain;
 }
 
 .sidebar #navLinks {
@@ -113,7 +116,6 @@
   justify-content: space-between;
   height: 17vmin;
 }
-
 
 
 #about {
@@ -134,10 +136,11 @@ a {
   background-color: #FFFFFF;
   color: #2C2A2D;
   display: grid;
-  grid-template-columns: 20vmin auto auto;
-  grid-template-rows: 35vmin auto auto; 
+  grid-auto-flow: row dense;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 40vmin auto auto;
   grid-template-areas: 
-  'sidebar header  header'
-  'sidebar news    releases'
-  'sidebar artists about';
+  'header  header'
+  'news    releases'
+  'artists about';
 }
