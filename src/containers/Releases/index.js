@@ -21,7 +21,6 @@ class Release extends Component {
                     id={this.props.data.releaseNumber}
                     onClick={this.clickHandler}
                 >
-
                     <div>{this.props.data.name}</div>
                     <div>{this.props.data.artist}</div>
                     <div> Release: {this.props.data.releaseNumber}</div>
@@ -32,7 +31,10 @@ class Release extends Component {
                     id={this.props.data.releaseNumber}
                     onClick={this.clickHandler}
                 >
-                    <img src={this.props.data.img} className="cover" alt={this.props.data.name} />
+                    <img src={this.props.data.img} 
+                        className="cover" 
+                        alt={this.props.data.name}
+                    />
                 </div>
         )
     }
@@ -61,20 +63,27 @@ class Releases extends Component {
                 <div className="sectionHeader">Releases</div>
                 <div className="displayGrid">
                     {
-                        releaseData.slice(0, this.state.itemsToRender).map((release, index) => {
-                            return (
-                                <Release
-                                    className="release"
-                                    data={release}
-                                    key={index}
-                                />
-                            )
-                        })
+                        releaseData.slice(0, this.state.itemsToRender).map(
+                            (release, index) => {
+                                return (
+                                    <Release
+                                        className="release"
+                                        data={release}
+                                        key={index}
+                                    />
+                                )
+                            }
+                        )
                     }
                 </div>
                 {
                     (releaseData.length > this.state.itemsToRender) ?
-                        <button className="loadMore" id="loadReleases" onClick={this.loadMoreHandler}>Load more...</button>
+                        <button className="loadMore" 
+                            id="loadReleases" 
+                            onClick={this.loadMoreHandler}
+                        >
+                            Load more...
+                        </button>
                         : null
                 }
 

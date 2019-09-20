@@ -52,16 +52,23 @@ class Artists extends Component {
         <div className="sectionHeader">Artists</div>
         <div className="displayGrid">
           {
-            releaseData.slice(0, this.state.artistsToRender).map((artist, index, hoverHandler) => {
-              return (
-                <Artist artist={artist} key={index}/>
-              )
-            })
+            releaseData.slice(0, this.state.artistsToRender).map(
+              (artist, index) => {
+                return (
+                  <Artist artist={artist} key={index}/>
+                )
+              }
+            )
           }
         </div>
         {
           (releaseData.length > this.state.artistsToRender) ?
-            <button className="loadMore" id="loadArtists" onClick={this.loadMoreHandler}>Load more...</button>
+            <button className="loadMore" 
+              id="loadArtists" 
+              onClick={this.loadMoreHandler}
+            >
+              Load more...
+            </button>
             : null
         }
       </div>
