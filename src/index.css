@@ -1,4 +1,16 @@
+
+/* global styling */
 body {
   margin: 0;
   font-family: sans-serif, "Helvetica Neu";
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited{
+  color: black;
 }

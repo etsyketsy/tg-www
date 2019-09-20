@@ -1,10 +1,6 @@
 
-.header {
+#header {
   grid-area: header;
-  /* height: 35vmin;
-  width: 100%;
-  display: flex;
-  flex-direction: column; */
 }
 
 #news {
@@ -90,34 +86,6 @@
   grid-area: releases;
 }
 
-
-#logo {
-  align-items: left;
-  object-fit: contain;
-  padding-top: 1vh;
-  margin-bottom: 2vh;
-  width: 16vh;
-}
-
-.sidebar {
-  grid-area: sidebar;
-  display: flex;
-  flex-direction: row;
-  align-items: left;
-  object-fit: contain;
-}
-
-.sidebar #navLinks {
-  display: flex;
-  flex-direction: column;
-  padding-left: 4vh;
-  margin-top: 3vh;
-  object-fit: contain;
-  justify-content: space-between;
-  height: 17vmin;
-}
-
-
 #about {
   grid-area: about;
   overflow-wrap: break-word;
@@ -127,8 +95,7 @@
 
 /* global styling */
 a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration:none;
 }
 
 .app {
@@ -138,7 +105,7 @@ a {
   display: grid;
   grid-auto-flow: row dense;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 40vmin auto auto;
+  grid-template-rows: 52vmin auto auto;
   grid-template-areas: 
   'header  header'
   'news    releases'

@@ -1,18 +1,32 @@
-.Header {
-  min-height: 10vh;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3vh 2vh 2vh 3vh;
-  margin-bottom: 10vh;
+
+#logo {
+  align-items: left;
+  padding-top: 1vh;
+  margin-bottom: 2vh;
+  object-fit: contain;
+  width: auto;
+  min-height: 15vh;
 }
 
-#navLinks {
-display: flex;
-justify-content: space-between;
-width: 40%;
-min-width: 40vh;
-padding-right: 4vh;
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 100%;
+}
+
+.sidebar #navLinks {
+  display: flex;
+  flex-direction: column;
+  padding-left: 4vh;
+  margin-top: 3vh;
+  justify-content: space-between;
+  height: 17vmin;
+  width: 15vmin;
+  color: black;
+}
+
+.a {
+  text-decoration: none;
 }
