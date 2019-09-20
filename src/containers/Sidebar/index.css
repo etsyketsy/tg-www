@@ -1,7 +1,6 @@
 
 #logo {
   align-items: left;
-  padding-top: 1vh;
   margin-bottom: 2vh;
   object-fit: contain;
   width: auto;
@@ -20,7 +19,6 @@
   display: flex;
   flex-direction: column;
   padding-left: 4vh;
-  margin-top: 3vh;
   justify-content: space-between;
   height: 17vmin;
   width: 15vmin;
