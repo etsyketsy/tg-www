@@ -2,19 +2,6 @@ import React, { Component } from 'react';
 import releaseData from '../Releases/releaseData';
 
 
-<<<<<<< HEAD
-const Artist = props => {
-  return (
-    <div className="artist"
-      onMouseOver={props.onMouseOver}
-      id={props.artist.artist}
-    >
-      <div className="description">
-        <div>{props.artist.artist}</div>
-      </div>
-    </div>
-  )
-=======
 class Artist extends Component {
   state = {
     showInfo: false
@@ -45,7 +32,6 @@ class Artist extends Component {
     )
   }
 
->>>>>>> 68e7993... WIP: Working on connecting Frontend to API
 }
 
 class Artists extends Component {
@@ -69,8 +55,6 @@ class Artists extends Component {
     })
   }
 
-<<<<<<< HEAD
-=======
   componentDidMount() {
     fetch('http://localhost:8000/backend/api/artist/')
       .then(response => response.json())
@@ -80,7 +64,6 @@ class Artists extends Component {
         )
       })
   }
->>>>>>> 68e7993... WIP: Working on connecting Frontend to API
 
   render() {
     return (
@@ -99,21 +82,6 @@ class Artists extends Component {
             }
           </div>
           {
-<<<<<<< HEAD
-            releaseData.slice(0, this.state.artistsToRender).map((artist, index, hoverHandler) => {
-              return (
-                <Artist artist={artist} key={index} onMouseOver={this.hoverHandler} />
-              )
-            })
-          }
-        </div>
-        {
-          (releaseData.length > this.state.artistsToRender) ?
-            <button className="loadMore" id="loadArtists" onClick={this.loadMoreHandler}>Load more...</button>
-            : null
-        }
-      </div>
-=======
             (releaseData.length > this.state.artistsToRender) ?
               <button className="loadMore"
                 id="loadArtists"
@@ -126,7 +94,6 @@ class Artists extends Component {
           </div>
         :
         <h1>loading...</h1>
->>>>>>> 68e7993... WIP: Working on connecting Frontend to API
 
     )
   }
