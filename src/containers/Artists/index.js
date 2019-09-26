@@ -66,12 +66,14 @@ class Artists extends Component {
   }
 
   render() {
+
     return (
-      this.state.artists.length ?
-        <div className="content" id="artists">
-          <div className="sectionHeader">Artists</div>
-          <div className="displayGrid">
-            {
+      <div className="content" id="artists">
+        <div className="sectionHeader">Artists</div>
+        <div className="displayGrid">
+          {
+            (this.state.artists) ?
+
               this.state.artists.slice(0, this.state.artistsToRender).map(
                 (artist, index) => {
                   return (
@@ -79,21 +81,21 @@ class Artists extends Component {
                   )
                 }
               )
-            }
-          </div>
-          {
-            (releaseData.length > this.state.artistsToRender) ?
-              <button className="loadMore"
-                id="loadArtists"
-                onClick={this.loadMoreHandler}
-              >
-                Load more...
-              </button>
-              : null
+            :
+              <h1>Loading...</h1>
           }
-          </div>
-        :
-        <h1>loading...</h1>
+        </div>
+        {
+          (releaseData.length > this.state.artistsToRender) ?
+            <button className="loadMore"
+              id="loadArtists"
+              onClick={this.loadMoreHandler}
+            >
+              Load more...
+            </button>
+            : null
+        }
+      </div>
 
     )
   }
