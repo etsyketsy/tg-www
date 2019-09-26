@@ -18,16 +18,16 @@ class Artist extends Component {
 
         <div className="artist"
           onClick={this.clickHandler}
-          id={this.props.artist.artist}
+          id={this.props.artist.name}
         >
           <div>Picture coming</div>
         </div>
-        :
+      :
         <div className="artist"
           onClick={this.clickHandler}
-          id={this.props.artist.artist}
+          id={this.props.artist.name}
         >
-          <div>{this.props.artist.artist}</div>
+          <div>{this.props.artist.name}</div>
         </div>
     )
   }
