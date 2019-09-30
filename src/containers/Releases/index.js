@@ -9,14 +9,6 @@ class Releases extends Component {
         itemsToRender: (releaseData.length-1),
     }
 
-    // function detecting mouse movements
-    hoverHandler = event => {
-        console.log(event.currentTarget.id)
-        this.setState({
-            item: event.currentTarget.releaseNumber,
-            active: true,
-        })
-    }
 
     loadMoreHandler = () => {
         this.props.history.push('/releases');

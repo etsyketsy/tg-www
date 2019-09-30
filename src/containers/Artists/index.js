@@ -37,19 +37,10 @@ class Artist extends Component {
 class Artists extends Component {
 
   state = {
-    artistsToRender: 8
+    artistsToRender: 2
   }
 
-  // function detecting mouse movements
-  hoverHandler = event => {
-    console.log(event.currentTarget.id)
-    this.setState({
-      item: event.currentTarget.artist,
-      active: true,
-    })
-  }
-
-  loadMoreHandler = event => {
+  loadMoreHandler = () => {
     this.setState({
       artistsToRender: (this.state.artistsToRender + 4)
     })

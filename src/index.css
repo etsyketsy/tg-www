@@ -1,25 +1,16 @@
+
+/* global styling */
 body {
   margin: 0;
   font-family: sans-serif, "Helvetica Neu";
+  text-decoration: none;
 }
 
-.App {
-  text-align: center;
-  font-family: sans-serif;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+a:visited{
+  color: black;
 }
