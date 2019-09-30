@@ -1,27 +1,12 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import releaseData from './releaseData.js';
-
-
-const Release = props => {
-    return (
-        <div className="release"
-            onMouseOver={props.onMouseOver}
-            id={props.release.releaseNumber}
-        >
-            <img src={props.release.img} className="cover" alt={props.release.name} />
-            <div className="description">
-                <div>{props.release.name}</div>
-                <div>{props.release.artist}</div>
-            </div>
-        </div>
-    )
-}
-
+import Release from '../Release/index.js';
 
 class Releases extends Component {
 
     state = {
-        itemsToRender: 4
+        itemsToRender: (releaseData.length-1),
     }
 
     // function detecting mouse movements
@@ -33,34 +18,36 @@ class Releases extends Component {
         })
     }
 
-    loadMoreHandler = event => {
-        this.setState({
-            itemsToRender: (this.state.itemsToRender + 4)
-        })
+    loadMoreHandler = () => {
+        this.props.history.push('/releases');
+
     }
 
+
     render() {
+        console.log('state check ' + this.state.itemsToRender)
+
         return (
             <div className="content" id="releases">
                 <div className="sectionHeader">Releases</div>
                 <div className="displayGrid">
                     {
-                        releaseData.slice(0, this.state.itemsToRender).map((release, index, hoverHandler) => {
-                            return (
-                                <Release release={release} key={index} onMouseOver={this.hoverHandler} />
-                            )
-                        })
+                        releaseData.map(
+                            (release, index) => {
+                                return (
+                                    <Release
+                                        className="release"
+                                        data={release}
+                                        key={index}
+                                    />
+                                )
+                            }
+                        )
                     }
                 </div>
-                {
-                    (releaseData.length > this.state.itemsToRender) ?
-                        <button className="loadMore" id="loadReleases" onClick={this.loadMoreHandler}>Load more...</button>
-                        : null
-                }
-
             </div>
         )
     }
 }
 
-export default Releases;
+export default withRouter(Releases);
