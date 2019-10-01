@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+
+import './index.css';
 import releaseData from './releaseData.js';
 import Release from '../Release/index.js';
+import Carousel from '../Carousel/index.js';
 
 class Releases extends Component {
 
     state = {
         itemsToRender: (releaseData.length-1),
-    }
-
-
-    loadMoreHandler = () => {
-        this.props.history.push('/releases');
-
     }
 
 
@@ -37,6 +34,7 @@ class Releases extends Component {
                         )
                     }
                 </div>
+                <Carousel className="carousel"/>
             </div>
         )
     }
