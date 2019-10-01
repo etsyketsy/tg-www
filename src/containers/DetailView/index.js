@@ -29,17 +29,14 @@ const Slide = (item) => {
     )
 }
 
-class DetailView extends Component {
-   state = {
-       currentSlide: this.props.match.params.id
-   }
+const DetailView = (item) => {
+//    this.setState (state = {
+//        currentSlide: this.props.match.params.id,
+//        currentType: this.props.match.params.class
+//    }
 
-   onComponentWillMount = () => {
-       //find index of currentSlide
-   }
-
-    render() {
-        console.log(this.state.currentSlide)
+  
+  
         return (
             <div className="content" id="releaseSlides">
                 <div className="carousel">
@@ -57,16 +54,16 @@ class DetailView extends Component {
                             }
                         )
                     } */}
-                    <Slide className="release" id={this.state.currentSlide}/>
+                    <Slide className="release" item={item}/>
 
                     <NextArrow />
                 </div>
             </div>
         )
 
-    }
+    
 
 }
 
 
-export default withRouter(DetailView);
+export default DetailView;

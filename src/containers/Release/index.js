@@ -8,9 +8,12 @@ class Release extends Component {
     }
 
     clickHandler = (e) => {
-        let url = '/releases/' + e.currentTarget.id
-        console.log(url)
-        this.props.history.push(url)
+        // let url = '/release/' + e.currentTarget.id
+        // console.log(e.currentTarget)
+        // this.props.history.push(url)
+        this.setState(
+            { showDetail: !this.state.showDetail}
+        )
 
     }
 

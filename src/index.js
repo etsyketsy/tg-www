@@ -19,7 +19,6 @@ ReactDOM.render(
                 <Route exact path='/' component={Home} />
                 <Route exact path='/news' component={News} />
                 <Route exact path='/releases' component={Releases} />
-                <Route exact path='/releases/:id' component={DetailView} />
                 <Route exact path='/artists' component={Artists} />
                 <Route exact path='/about' component={About} />
             </Sidebar>
