@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import './index.css';
 import releaseData from './releaseData.js';
 import Release from '../Release/index.js';
-import Carousel from '../Carousel/index.js';
 
 class Releases extends Component {
 
@@ -26,15 +25,15 @@ class Releases extends Component {
                                 return (
                                     <Release
                                         className="release"
-                                        data={release}
+                                        item={release}
                                         key={index}
+                                        history={this.props.history}
                                     />
                                 )
                             }
                         )
                     }
                 </div>
-                <Carousel className="carousel"/>
             </div>
         )
     }

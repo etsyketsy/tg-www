@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+
 import releaseData from '../Releases/releaseData';
 
 
@@ -18,23 +20,24 @@ const NextArrow = (direction, clickFunction) => {
 }
 
 
-const Slide = ( data ) => {
+const Slide = ( item ) => {
     return (
 
         <div>
-            <img className='release' id='slide' src={data.data.img} alt='cover'></img>
+            <img className='release' id='slide' src={null} alt='cover'></img>
         </div>
     )
 }
 
-class Carousel extends Component{
+class DetailView extends Component{
 
     render(){
+        console.log('in the render')
         return(
             <div className="content" id="releaseSlides">
                 <div className="carousel">
                     <PreviousArrow />
-                    {
+                    {/* {
                         releaseData.map(
                             (release, index) => {
                                 return (
@@ -46,7 +49,9 @@ class Carousel extends Component{
                                 )
                             }
                         )
-                    }
+                    } */}
+                    <Slide className="release">hello</Slide>
+
                     <NextArrow />
                 </div>
             </div>
@@ -55,4 +60,4 @@ class Carousel extends Component{
 }
 
 
-export default Carousel;
+export default withRouter(DetailView);

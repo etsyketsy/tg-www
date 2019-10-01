@@ -1,23 +1,21 @@
 .sectionHeader{
     grid-area: sectionHeader;
     display: flex;
-    border: solid;
+    margin-top: 8vmin;
 }
 
 .displayGrid{
     grid-area: displayGrid;
-    border: solid red;
     display: flex;
 }
 
 .carousel{
     grid-area: carousel;
-    border: solid green;
     display: flex;
     flex-flow: wrap;
 }
 
-#releases{
+/* #releases{
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: 50% 50%;
@@ -25,4 +23,4 @@
     grid-template-areas: 
     'sectionHeader sectionHeader'
     'displayGrid carousel';
-}
+} */

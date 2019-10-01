@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DetailView from '../DetailView'
 
 
 class Release extends Component {
@@ -6,10 +7,9 @@ class Release extends Component {
         showInfoState: false
     }
 
-    clickHandler = (event, item) => {
-        this.setState({
-            showInfo: !this.state.showInfo
-        })
+    clickHandler = (e) => {
+
+        this.props.history.push('/release_detail')
     }
 
     render() {
@@ -17,22 +17,22 @@ class Release extends Component {
         return (
             (this.state.showInfo) ?
                 <div className="release"
-                    id={this.props.data.releaseNumber}
+                    id={this.props.item.releaseNumber}
                     onClick={this.clickHandler}
                 >
-                    <div>{this.props.data.name}</div>
-                    <div>{this.props.data.artist}</div>
-                    <div> Release: {this.props.data.releaseNumber}</div>
+                    <div>{this.props.item.name}</div>
+                    <div>{this.props.item.artist}</div>
+                    <div> Release: {this.props.item.releaseNumber}</div>
 
                 </div>
                 :
                 <div className="release"
-                    id={this.props.data.releaseNumber}
+                    id={this.props.item.releaseNumber}
                     onClick={this.clickHandler}
                 >
-                    <img src={this.props.data.img}
+                    <img src={this.props.item.img}
                         className="cover"
-                        alt={this.props.data.name}
+                        alt={this.props.item.name}
                     />
                 </div>
         )
