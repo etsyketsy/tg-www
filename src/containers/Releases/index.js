@@ -13,7 +13,6 @@ class Releases extends Component {
 
 
     render() {
-        console.log('state check ' + this.state.itemsToRender)
 
         return (
             <div className="content" id="releases">

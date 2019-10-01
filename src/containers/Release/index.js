@@ -8,7 +8,10 @@ class Release extends Component {
     }
 
     clickHandler = (e) => {
-        this.props.history.push('/release_detail')
+        let url = '/releases/' + e.currentTarget.id
+        console.log(url)
+        this.props.history.push(url)
+
     }
 
     hoverHandler = () => {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
 import releaseData from '../Releases/releaseData';
 
 
@@ -9,18 +8,19 @@ const PreviousArrow = (direction, clickFunction) => {
     return (
         <button id='leftArrow' onClick={console.log('clicked left arrow')} >BACK</button>
     )
-    
+
 }
 
 
 const NextArrow = (direction, clickFunction) => {
-    return(
+    return (
         <button id='leftArrow' onClick={console.log('clicked right arrow')}>NEXT</button>
     )
 }
 
 
-const Slide = ( item ) => {
+const Slide = (item) => {
+
     return (
 
         <div>
@@ -29,11 +29,18 @@ const Slide = ( item ) => {
     )
 }
 
-class DetailView extends Component{
+class DetailView extends Component {
+   state = {
+       currentSlide: this.props.match.params.id
+   }
 
-    render(){
-        console.log('in the render')
-        return(
+   onComponentWillMount = () => {
+       //find index of currentSlide
+   }
+
+    render() {
+        console.log(this.state.currentSlide)
+        return (
             <div className="content" id="releaseSlides">
                 <div className="carousel">
                     <PreviousArrow />
@@ -50,13 +57,15 @@ class DetailView extends Component{
                             }
                         )
                     } */}
-                    <Slide className="release">hello</Slide>
+                    <Slide className="release" id={this.state.currentSlide}/>
 
                     <NextArrow />
                 </div>
             </div>
         )
+
     }
+
 }
 
 
