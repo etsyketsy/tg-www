@@ -73,7 +73,7 @@ class Artists extends Component {
                 }
               )
             :
-              <h1>Loading...</h1>
+              <h1>&#8635;</h1>
           }
         </div>
         {

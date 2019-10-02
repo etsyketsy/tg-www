@@ -16,7 +16,7 @@ class Releases extends Component {
     lastSlideHandler = (e) => {
         this.setState(
             {
-                currentIndex: (Number(e.currentTarget.parentNode.id)-1),
+                currentIndex: (Number(e.currentTarget.parentNode.parentNode.id)-1),
             }
         )
     }
@@ -24,7 +24,7 @@ class Releases extends Component {
     nextSlideHandler = (e) => {
         this.setState(
             {
-                currentIndex: (Number(e.currentTarget.parentNode.id)+1),
+                currentIndex: (Number(e.currentTarget.parentNode.parentNode.id)+1),
             }
         )
     }
@@ -65,7 +65,7 @@ class Releases extends Component {
                 </div>
                 :
 
-                <div>
+                <div className="detailView">
                     <DetailView
                         index={this.state.currentIndex}
                         item={releaseData[this.state.currentIndex]}
