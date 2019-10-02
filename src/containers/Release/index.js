@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DetailView from '../DetailView'
+import { release } from 'os';
 
 
 class Release extends Component {
@@ -7,13 +8,9 @@ class Release extends Component {
         showInfo: false
     }
 
-    clickHandler = (event) => {
-        console.log('hello ' + this.props.id)
-    }
-
     hoverHandler = (e) => {
         this.setState(
-            {showInfo: !this.state.showInfo}
+            { showInfo: !this.state.showInfo }
         )
     }
 
@@ -21,7 +18,7 @@ class Release extends Component {
         return (
             (this.state.showInfo) ?
                 <div className="release"
-                    id={this.props.item.index}
+                    id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
                 >
@@ -33,7 +30,7 @@ class Release extends Component {
                 </div>
                 :
                 <div className="release"
-                    id={this.props.item.index}
+                    id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
                 >

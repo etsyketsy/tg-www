@@ -13,7 +13,7 @@ class Releases extends Component {
         itemsToRender: (releaseData.length-1)
     }
 
-    clickHandler = (e, id) => {
+    clickHandler = (e) => {
         console.log('in the click ' + e.currentTarget.id)
         this.setState(
             {showDetail: !this.state.showDetail,
@@ -43,9 +43,9 @@ class Releases extends Component {
                             (release, index) => {
                                 return (
                                     <Release
-                                        className="release"
                                         item={release}
                                         id={index}
+                                        key={index}
                                         onClick={this.clickHandler}
                                     />
                                 )
