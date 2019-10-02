@@ -7,7 +7,7 @@ class DetailView extends Component {
     render() {
         return (
             <div className="slide" id={this.props.index}>
-                <button id="cancel">
+                <button id="cancel" onClick={this.props.exitHandler}>
                     &#215;
                 </button>
                 <img

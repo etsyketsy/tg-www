@@ -13,6 +13,12 @@ class Releases extends Component {
         releases: releaseData
     }
 
+    exitHandler = () => {
+        this.setState({
+            currentIndex: null
+        })
+    }
+
     lastSlideHandler = (e) => {
         this.setState(
             {
@@ -32,7 +38,6 @@ class Releases extends Component {
     clickHandler = (e) => {
         this.setState(
             {
-                showDetail: !this.state.showDetail,
                 currentIndex: e.currentTarget.id,
             }
         )
@@ -72,6 +77,7 @@ class Releases extends Component {
                         id={this.state.currentIndex}
                         lastSlideHandler={this.lastSlideHandler}
                         nextSlideHandler={this.nextSlideHandler}
+                        exitHandler={this.exitHandler}
                         releases={this.state.releases}
                     />
                 </div>

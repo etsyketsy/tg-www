@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import DetailView from '../DetailView'
-import { release } from 'os';
+
 
 
 class Release extends Component {
@@ -25,8 +24,6 @@ class Release extends Component {
                     <div>{this.props.item.name}</div>
                     <div>{this.props.item.artist}</div>
                     <div> Release: {this.props.item.releaseNumber}</div>
-                    <div>Test: {this.props.id}</div>
-
                 </div>
                 :
                 <div className="release"
