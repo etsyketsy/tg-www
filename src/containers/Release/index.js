@@ -7,41 +7,35 @@ class Release extends Component {
         showInfo: false
     }
 
-    clickHandler = (e) => {
-        // let url = '/release/' + e.currentTarget.id
-        // console.log(e.currentTarget)
-        // this.props.history.push(url)
-        this.setState(
-            { showDetail: !this.state.showDetail}
-        )
-
+    clickHandler = (event) => {
+        console.log('hello ' + this.props.id)
     }
 
-    hoverHandler = () => {
+    hoverHandler = (e) => {
         this.setState(
             {showInfo: !this.state.showInfo}
         )
     }
 
     render() {
-    
         return (
             (this.state.showInfo) ?
                 <div className="release"
-                    id={this.props.item.releaseNumber}
-                    onClick={this.clickHandler}
+                    id={this.props.item.index}
                     onMouseEnter={this.hoverHandler}
+                    onClick={this.props.onClick}
                 >
                     <div>{this.props.item.name}</div>
                     <div>{this.props.item.artist}</div>
                     <div> Release: {this.props.item.releaseNumber}</div>
+                    <div>Test: {this.props.id}</div>
 
                 </div>
                 :
                 <div className="release"
-                    id={this.props.item.releaseNumber}
-                    onClick={this.clickHandler}
+                    id={this.props.item.index}
                     onMouseEnter={this.hoverHandler}
+                    onClick={this.props.onClick}
                 >
                     <img src={this.props.item.img}
                         className="cover"

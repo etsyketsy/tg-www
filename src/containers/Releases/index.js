@@ -9,26 +9,26 @@ import DetailView from '../DetailView/index.js';
 class Releases extends Component {
 
     state = {
+        showDetail: false,
         itemsToRender: (releaseData.length-1)
     }
 
-    clickHandler = (e) => {
+    clickHandler = (e, id) => {
+        console.log('in the click ' + e.currentTarget.id)
         this.setState(
-            {currentItem: e.currentTarget.id,
-            showDetail: !this.state.showDetail}
+            {showDetail: !this.state.showDetail,
+            currentItem: e.currentTarget.name}
         )
-            
-    
     }
 
     render() {
-        console.log('state check ' + this.state.currentItem)
+        console.log('state check ' + this.state.showDetail)
         return (
             (this.state.currentItem) ?
             
             <div>
-                <DetailView />
-                <p>{this.state}</p>
+                <DetailView show={this.state.showDetail} item={this.state.currentItem}>{this.props.children}</DetailView>
+    
             </div>
 
 
@@ -37,6 +37,7 @@ class Releases extends Component {
             <div className="content" id="releases">
                 <div className="sectionHeader">Releases</div>
                 <div className="displayGrid">
+                    {this.props.children}
                     {
                         releaseData.map(
                             (release, index) => {
@@ -44,8 +45,7 @@ class Releases extends Component {
                                     <Release
                                         className="release"
                                         item={release}
-                                        key={index}
-                                        history={this.props.history}
+                                        id={index}
                                         onClick={this.clickHandler}
                                     />
                                 )

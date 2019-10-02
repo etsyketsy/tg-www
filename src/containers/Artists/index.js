@@ -46,7 +46,7 @@ class Artists extends Component {
     })
   }
 
-  componentDidMount() {
+  componentWillMount() {
     fetch('http://localhost:8000/backend/api/artist/')
       .then(response => response.json())
       .then(data => {
