@@ -20,6 +20,11 @@ button {
     color: black;
 }
 
+#cancel {
+    margin-top: 8vmin;
+    margin-bottom: 1vmin;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -29,9 +34,9 @@ button {
 #slideCover {
     object-fit: contain;
     width: auto;
-    min-height: 15vh;
     display: flex;
-    max-height: 800px;
+    min-height: 400px;
+    max-height: 600px;
 }
 
 .desc {

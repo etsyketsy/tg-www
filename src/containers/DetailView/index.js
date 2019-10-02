@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './index.css';
 import { withRouter } from 'react-router-dom';
 
 
@@ -8,7 +7,9 @@ class DetailView extends Component {
     render() {
         return (
             <div className="slide" id={this.props.index}>
-            <button id="cancel" >,--</button>
+                <button id="cancel">
+                    &#215;
+                </button>
                 <img
                     id="slideCover"
                     src={this.props.item.img}
@@ -28,7 +29,7 @@ class DetailView extends Component {
                         id="backArrow"
                         onClick={this.props.lastSlideHandler}>
                         &larr;
-                            </button>
+                    </button>
                     <button className="arrow"
                         id="nextArrow"
                         onClick={this.props.nextSlideHandler}>
