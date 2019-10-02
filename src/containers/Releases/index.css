@@ -9,18 +9,45 @@
     display: flex;
 }
 
-.carousel{
-    grid-area: carousel;
+
+button {
+    border: none;
+    background: none;
     display: flex;
-    flex-flow: wrap;
+    padding: 0;
+    margin: none;
+    font-size: 2vmin;
+    color: black;
 }
 
-/* #releases{
-    display: grid;
-    grid-auto-flow: dense;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 10vmin auto;
-    grid-template-areas: 
-    'sectionHeader sectionHeader'
-    'displayGrid carousel';
-} */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: none;
+}
+
+#slideCover {
+    object-fit: contain;
+    width: auto;
+    min-height: 15vh;
+    display: flex;
+    max-height: 800px;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2em;
+    height: auto;
+    width: auto;
+    align-content: left;
+    justify-content: center;
+}
+
+
+.detailView {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}

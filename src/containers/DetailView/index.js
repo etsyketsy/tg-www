@@ -1,24 +1,44 @@
 import React, { Component } from 'react';
-import releaseData from '../Releases/releaseData';
+import './index.css';
 import { withRouter } from 'react-router-dom';
 
 
 class DetailView extends Component {
- 
+
     render() {
         return (
-            <div className="content" id="releaseSlides">
-                <div className="carousel">
-                    <div className="slide" id={this.props.index}>
-                        <button id="cancel" >X</button>
-                        <button className="arrow" id="backArrow" onClick={this.props.lastSlideHandler}>BACK</button>
-
-                            <img className="release" id="slide" src={this.props.item.img} alt="cover"></img>
-                            <p>{this.props.item.name}</p>
-                        <button className="arrow" id="nextArrow" onClick={this.props.nextSlideHandler}>NEXT</button>
-                    </div>
+            <div className="slide" id={this.props.index}>
+            <button id="cancel" >,--</button>
+                <img
+                    id="slideCover"
+                    src={this.props.item.img}
+                    alt="cover">
+                </img>
+                <div className="desc">
+                    <p>{this.props.item.name}
+                    <br></br>
+                    {this.props.item.artist}
+                    <br></br>
+                    {this.props.item.releaseNumber}
+                    </p>
                 </div>
+                
+                <div className="nav">
+                    <button className="arrow"
+                        id="backArrow"
+                        onClick={this.props.lastSlideHandler}>
+                        &larr;
+                            </button>
+                    <button className="arrow"
+                        id="nextArrow"
+                        onClick={this.props.nextSlideHandler}>
+                        &rarr;
+                    </button>
+                </div>
+
             </div>
+
+
         )
     }
 }
