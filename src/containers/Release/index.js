@@ -1,38 +1,42 @@
 import React, { Component } from 'react';
+import DetailView from '../DetailView'
+import { release } from 'os';
 
 
 class Release extends Component {
     state = {
-        showInfoState: false
+        showInfo: false
     }
 
-    clickHandler = (event, item) => {
-        this.setState({
-            showInfo: !this.state.showInfo
-        })
+    hoverHandler = (e) => {
+        this.setState(
+            { showInfo: !this.state.showInfo }
+        )
     }
 
     render() {
-
         return (
             (this.state.showInfo) ?
                 <div className="release"
-                    id={this.props.data.releaseNumber}
-                    onClick={this.clickHandler}
+                    id={this.props.id}
+                    onMouseEnter={this.hoverHandler}
+                    onClick={this.props.onClick}
                 >
-                    <div>{this.props.data.name}</div>
-                    <div>{this.props.data.artist}</div>
-                    <div> Release: {this.props.data.releaseNumber}</div>
+                    <div>{this.props.item.name}</div>
+                    <div>{this.props.item.artist}</div>
+                    <div> Release: {this.props.item.releaseNumber}</div>
+                    <div>Test: {this.props.id}</div>
 
                 </div>
                 :
                 <div className="release"
-                    id={this.props.data.releaseNumber}
-                    onClick={this.clickHandler}
+                    id={this.props.id}
+                    onMouseEnter={this.hoverHandler}
+                    onClick={this.props.onClick}
                 >
-                    <img src={this.props.data.img}
+                    <img src={this.props.item.img}
                         className="cover"
-                        alt={this.props.data.name}
+                        alt={this.props.item.name}
                     />
                 </div>
         )

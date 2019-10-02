@@ -1,0 +1,26 @@
+.sectionHeader{
+    grid-area: sectionHeader;
+    display: flex;
+    margin-top: 8vmin;
+}
+
+.displayGrid{
+    grid-area: displayGrid;
+    display: flex;
+}
+
+.carousel{
+    grid-area: carousel;
+    display: flex;
+    flex-flow: wrap;
+}
+
+/* #releases{
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10vmin auto;
+    grid-template-areas: 
+    'sectionHeader sectionHeader'
+    'displayGrid carousel';
+} */

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 import Home from './containers/Home';
 import Releases from './containers/Releases/index.js';
+import DetailView from './containers/DetailView/index.js';
 import Artists from './containers/Artists/index.js';
 import News from './containers/News/index.js';
 import About from './containers/About/index.js';

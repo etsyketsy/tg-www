@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import 	TG001	from	'../../assets/albumArt/TG-001.jpg';
 import 	TG002	from	'../../assets/albumArt/TG-002.jpg';
 import 	TG003	from	'../../assets/albumArt/TG-003.jpg';
