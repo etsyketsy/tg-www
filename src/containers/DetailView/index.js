@@ -1,69 +1,30 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import releaseData from '../Releases/releaseData';
+import { withRouter } from 'react-router-dom';
 
 
-const PreviousArrow = (direction, clickFunction) => {
+class DetailView extends Component {
 
-    return (
-        <button id='leftArrow' onClick={console.log('clicked left arrow')} >BACK</button>
-    )
+    componentWillMount = () => {
+        this.setState({
+            current: releaseData[this.props.index]
+        })
+    }
 
-}
-
-
-const NextArrow = (direction, clickFunction) => {
-    return (
-        <button id='leftArrow' onClick={console.log('clicked right arrow')}>NEXT</button>
-    )
-}
-
-
-const Slide = (item) => {
-
-    return (
-
-        <div>
-            <img className='release' id='slide' src={null} alt='cover'></img>
-        </div>
-    )
-}
-
-const DetailView = (item) => {
-//    this.setState (state = {
-//        currentSlide: this.props.match.params.id,
-//        currentType: this.props.match.params.class
-//    }
-
-  
-  
+    render() {
         return (
             <div className="content" id="releaseSlides">
                 <div className="carousel">
-                    <PreviousArrow />
-                    {/* {
-                        releaseData.map(
-                            (release, index) => {
-                                return (
-                                    <Slide
-                                        className="release"
-                                        data={release}
-                                        key={index}
-                                    />
-                                )
-                            }
-                        )
-                    } */}
-                    <Slide className="release" item={item}/>
-
-                    <NextArrow />
+                    <button id="cancel" onClick={console.log("/releases")}>X</button>
+                    <button className="arrow" id="nextArrow" onClick={console.log("clicked right arrow")}>NEXT</button>
+                    <img className="release" id="slide" src={this.state.current.img} alt="cover"></img>
+                    <p>{this.state.current.name}</p>
+                    <button className="arrow"id="backArrow" onClick={console.log("clicked left arrow'")} >BACK</button>
                 </div>
             </div>
         )
-
-    
-
+    }
 }
 
 
-export default DetailView;
+export default withRouter(DetailView);
