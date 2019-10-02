@@ -1,44 +1,88 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+
+import './index.css';
 import releaseData from './releaseData.js';
 import Release from '../Release/index.js';
-
+import DetailView from '../DetailView/index.js';
 
 class Releases extends Component {
 
     state = {
-        itemsToRender: (releaseData.length-1),
+        itemsToRender: (releaseData.length - 1),
+        releases: releaseData
     }
 
-
-    loadMoreHandler = () => {
-        this.props.history.push('/releases');
-
+    exitHandler = () => {
+        this.setState({
+            currentIndex: null
+        })
     }
+
+    lastSlideHandler = (e) => {
+        this.setState(
+            {
+                currentIndex: (Number(e.currentTarget.parentNode.parentNode.id)-1),
+            }
+        )
+    }
+
+    nextSlideHandler = (e) => {
+        this.setState(
+            {
+                currentIndex: (Number(e.currentTarget.parentNode.parentNode.id)+1),
+            }
+        )
+    }
+
+    clickHandler = (e) => {
+        this.setState(
+            {
+                currentIndex: e.currentTarget.id,
+            }
+        )
+    }
+
 
 
     render() {
-        console.log('state check ' + this.state.itemsToRender)
-
+        console.log('view state ' + this.state.currentIndex)
         return (
-            <div className="content" id="releases">
-                <div className="sectionHeader">Releases</div>
-                <div className="displayGrid">
-                    {
-                        releaseData.map(
-                            (release, index) => {
-                                return (
-                                    <Release
-                                        className="release"
-                                        data={release}
-                                        key={index}
-                                    />
-                                )
-                            }
-                        )
-                    }
+            (!this.state.currentIndex) ?
+                <div className="content" id="releases">
+                    <div className="sectionHeader">Releases</div>
+                    <div className="displayGrid">
+                        {
+                            this.state.releases.map(
+                                (release, index) => {
+                                    return (
+                                        <Release
+                                            item={release}
+                                            id={index}
+                                            key={index}
+                                            onClick={this.clickHandler}
+                                        />
+                                    )
+                                }
+                            )
+                        }
+                    </div>
                 </div>
-            </div>
+                :
+
+                <div className="detailView">
+                    <DetailView
+                        index={this.state.currentIndex}
+                        item={releaseData[this.state.currentIndex]}
+                        id={this.state.currentIndex}
+                        lastSlideHandler={this.lastSlideHandler}
+                        nextSlideHandler={this.nextSlideHandler}
+                        exitHandler={this.exitHandler}
+                        releases={this.state.releases}
+                    />
+                </div>
+
+
         )
     }
 }
