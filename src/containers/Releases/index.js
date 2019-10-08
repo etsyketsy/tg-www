@@ -21,7 +21,7 @@ class Releases extends Component {
     startCheck = (e) => {
         let current = Number(e.currentTarget.parentNode.parentNode.id)
         let start = 0
-        return(
+        return (
             (current === start) ? true : false
         )
     }
@@ -29,8 +29,8 @@ class Releases extends Component {
     // Returns true if item is last in array so further advancing is blocked
     endCheck = (e) => {
         let current = Number(e.currentTarget.parentNode.parentNode.id)
-        let end = this.state.releases.length-1
-        return(
+        let end = this.state.releases.length - 1
+        return (
             (current === end) ? true : false
         )
     }
@@ -39,26 +39,26 @@ class Releases extends Component {
     // ID is set as the item index and stored in the target div's grandparent
     lastSlideHandler = (e) => {
         (this.startCheck(e)) ?
-            this.setState({currentIndex: Number(e.currentTarget.parentNode.parentNode.id)})
-        :
-        this.setState(
-            {currentIndex: (Number(e.currentTarget.parentNode.parentNode.id)-1),}
-        )
+            this.setState({ currentIndex: Number(e.currentTarget.parentNode.parentNode.id) })
+            :
+            this.setState(
+                { currentIndex: (Number(e.currentTarget.parentNode.parentNode.id) - 1), }
+            )
     }
 
     // If item is last item, return the same item indefinitely
     // ID is set as the item index and stored in the target div's grandparent
     nextSlideHandler = (e) => {
         (this.endCheck(e)) ?
-            this.setState({currentIndex: Number(e.currentTarget.parentNode.parentNode.id)})
-        :
-            this.setState({currentIndex: (Number(e.currentTarget.parentNode.parentNode.id)+1)}
-        )
+            this.setState({ currentIndex: Number(e.currentTarget.parentNode.parentNode.id) })
+            :
+            this.setState({ currentIndex: (Number(e.currentTarget.parentNode.parentNode.id) + 1) }
+            )
     }
 
     // Opens up detailed view of clicked item
     clickHandler = (e) => {
-        this.setState({currentIndex: e.currentTarget.id})
+        this.setState({ currentIndex: e.currentTarget.id })
     }
 
     componentDidMount() {
@@ -76,7 +76,7 @@ class Releases extends Component {
 
     // Renders release display grid with all releases if no item is selected
     render() {
-        
+
         return (
             (this.state.currentIndex == null) ?
                 <div className="content" id="releases">
@@ -101,7 +101,6 @@ class Releases extends Component {
                     </div>
                 </div>
             :
-
                 <div className="releaseSlide">
                     <ReleaseSlide
                         index={this.state.currentIndex}
@@ -113,8 +112,6 @@ class Releases extends Component {
                         releases={this.state.releases}
                     />
                 </div>
-
-
         )
     }
 }
