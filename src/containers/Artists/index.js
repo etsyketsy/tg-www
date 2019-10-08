@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Artist from '../Artist/index.js';
-import DetailView from '../DetailView/index.js';
+import ArtistSlide from '../ArtistSlide/index.js';
 
 
 class Artists extends Component {
@@ -28,7 +28,7 @@ class Artists extends Component {
   // Returns true if item is last in array so further advancing is blocked
   endCheck = (e) => {
     let current = Number(e.currentTarget.parentNode.parentNode.id)
-    let end = this.state.releases.length - 1
+    let end = this.state.artists.length - 1
     return (
       (current === end) ? true : false
     )
@@ -62,7 +62,7 @@ class Artists extends Component {
 
 
 
-  componentWillMount() {
+  componentDidMount() {
     fetch('http://localhost:8000/backend/api/artist/')
       .then(response => response.json())
       .then(data => {
@@ -99,7 +99,7 @@ class Artists extends Component {
           </div>
         </div>
         :
-          <DetailView className='detailView'
+          <ArtistSlide className='slide'
             index={this.state.currentIndex}
             item={this.state.artists[this.state.currentIndex]}
             id={this.state.currentIndex}
