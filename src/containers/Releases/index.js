@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import './index.css';
-import releaseData from './releaseData.js';
 import Release from '../Release/index.js';
-import DetailView from '../DetailView/index.js';
+import ReleaseSlide from '../ReleaseSlide/index.js';
 
 class Releases extends Component {
 
     state = {
-        itemsToRender: (releaseData.length - 1),
-        releases: releaseData
+        currentIndex: null,
     }
 
     // Pushes user back to 'All Releases' page by clearing selected item
@@ -63,6 +61,18 @@ class Releases extends Component {
         this.setState({currentIndex: e.currentTarget.id})
     }
 
+    componentDidMount() {
+        console.log('trying fetch')
+        fetch('http://localhost:8000/backend/api/release/')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+          this.setState(
+            { releases: data }
+          )
+        })
+    }
+
 
     // Renders release display grid with all releases if no item is selected
     render() {
@@ -72,28 +82,30 @@ class Releases extends Component {
                 <div className="content" id="releases">
                     <div className="sectionHeader">Releases</div>
                     <div className="displayGrid">
-                        {
-                            this.state.releases.map(
-                                (release, index) => {
-                                    return (
-                                        <Release
-                                            item={release}
-                                            id={index}
-                                            key={index}
-                                            onClick={this.clickHandler}
-                                        />
-                                    )
-                                }
-                            )
+                        {   (this.state.releases) ?
+                                this.state.releases.map(
+                                    (release, index) => {
+                                        return (
+                                            <Release
+                                                item={release}
+                                                id={index}
+                                                key={index}
+                                                onClick={this.clickHandler}
+                                            />
+                                        )
+                                    }
+                                )
+                            :
+                            <h1>&#8635;</h1>
                         }
                     </div>
                 </div>
             :
 
-                <div className="detailView">
-                    <DetailView
+                <div className="releaseSlide">
+                    <ReleaseSlide
                         index={this.state.currentIndex}
-                        item={releaseData[this.state.currentIndex]}
+                        item={this.state.releases[this.state.currentIndex]}
                         id={this.state.currentIndex}
                         lastSlideHandler={this.lastSlideHandler}
                         nextSlideHandler={this.nextSlideHandler}
