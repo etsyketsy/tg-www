@@ -19,37 +19,39 @@ class Releases extends Component {
         })
     }
 
-    // Returns true if item is first or last in array so further advancing is blocked
-    // Called in the last/next handlers before increasing or decreasing current index
-    listEndCheck = (e) => {
-        
+    // Returns true if item is first in array so further advancing is blocked
+    startCheck = (e) => {
+        let current = Number(e.currentTarget.parentNode.parentNode.id)
+        let start = 0
+        return(
+            (current === start) ? true : false
+        )
+    }
+
+    // Returns true if item is last in array so further advancing is blocked
+    endCheck = (e) => {
         let current = Number(e.currentTarget.parentNode.parentNode.id)
         let end = this.state.releases.length-1
-        let start = 0
-
         return(
-            (current === end || current === start) ? true : false
+            (current === end) ? true : false
         )
     }
 
     // If item is first item, return the same item indefinitely
     // ID is set as the item index and stored in the target div's grandparent
     lastSlideHandler = (e) => {
-        (this.listEndCheck(e)) ?
-            
+        (this.startCheck(e)) ?
             this.setState({currentIndex: Number(e.currentTarget.parentNode.parentNode.id)})
         :
         this.setState(
-            {
-                currentIndex: (Number(e.currentTarget.parentNode.parentNode.id)-1),
-            }
+            {currentIndex: (Number(e.currentTarget.parentNode.parentNode.id)-1),}
         )
     }
 
     // If item is last item, return the same item indefinitely
     // ID is set as the item index and stored in the target div's grandparent
     nextSlideHandler = (e) => {
-        (this.listEndCheck(e)) ?
+        (this.endCheck(e)) ?
             this.setState({currentIndex: Number(e.currentTarget.parentNode.parentNode.id)})
         :
             this.setState({currentIndex: (Number(e.currentTarget.parentNode.parentNode.id)+1)}
@@ -58,9 +60,7 @@ class Releases extends Component {
 
     // Opens up detailed view of clicked item
     clickHandler = (e) => {
-        this.setState(
-            {currentIndex: e.currentTarget.id}
-        )
+        this.setState({currentIndex: e.currentTarget.id})
     }
 
 
