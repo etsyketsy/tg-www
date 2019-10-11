@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Artist from '../Artist/index.js';
 import ArtistSlide from '../ArtistSlide/index.js';
+import ArtistPreview from '../Artists/ArtistPreview.js'
 
 
 class Artists extends Component {
@@ -67,7 +68,7 @@ class Artists extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState(
-          { artists: data}
+          { artists: data }
         )
       })
   }
@@ -81,36 +82,42 @@ class Artists extends Component {
           <div className="displayGrid">
             {
               (this.state.artists) ?
-
-                this.state.artists.map(
-                  (artist, index) => {
-                    return (
-                      <Artist
-                        artist={artist}
-                        key={index}
-                        onClick={this.clickHandler}
-                      />
-                    )
-                  }
-                )
-              :
+                (window.location.pathname === '/artists') ?
+                  this.state.artists.map(
+                    (artist, index) => {
+                      return (
+                        <Artist
+                          artist={artist}
+                          key={index}
+                          id={index}
+                          onClick={this.clickHandler}
+                          hidden={false}
+                        />
+                      )
+                    }
+                  )
+                  :
+                  <ArtistPreview 
+                  artists={this.state.artists}/>
+      
+                :
                 <h1>&#8635;</h1>
             }
           </div>
         </div>
         :
-          <ArtistSlide className='slide'
-            index={this.state.currentIndex}
-            item={this.state.artists[this.state.currentIndex]}
-            id={this.state.currentIndex}
-            lastSlideHandler={this.lastSlideHandler}
-            nextSlideHandler={this.nextSlideHandler}
-            exitHandler={this.exitHandler}
-            artists={this.state.artists}
-          />
-        
-      )
-    }
+        <ArtistSlide className='slide'
+          index={this.state.currentIndex}
+          item={this.state.artists[this.state.currentIndex]}
+          id={this.state.currentIndex}
+          lastSlideHandler={this.lastSlideHandler}
+          nextSlideHandler={this.nextSlideHandler}
+          exitHandler={this.exitHandler}
+          artists={this.state.artists}
+        />
+
+    )
+  }
 }
 
 export default withRouter(Artists);

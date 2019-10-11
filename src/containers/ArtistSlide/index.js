@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class ArtistSlide extends Component {
 
     render() {
-        console.log(this.props.item)
+
         return (
             <div className="slide" id={this.props.index}>
                 <button id="cancel" onClick={this.props.exitHandler}>
