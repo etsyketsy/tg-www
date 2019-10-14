@@ -28,8 +28,6 @@ class ReleasePreview extends Component {
 
 
     render() {
-        console.log('state check ' + this.state.homeDisplay)
-
         return (
             <div className="content" id="releasePreview">
                 <div className="sectionHeader">Releases</div>
@@ -40,7 +38,7 @@ class ReleasePreview extends Component {
                                 return (
                                     <Release
                                         className="release"
-                                        data={release}
+                                        item={release}
                                         key={index}
                                     />
                                 )
