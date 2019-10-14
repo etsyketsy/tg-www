@@ -22,17 +22,18 @@ class ArtistPreview extends Component {
     render() {
         return (
             <div className="content" id="artistPreview">
-                <div className="sectionHeader">Artists</div>
                 <div className="displayGrid">
                     {
                         this.props.artists.slice(0, this.state.itemsToRender).map(
                             (artist, index) => {
+                                console.log('in the artist ' + this.props.onClick)
                                 return (
                                     <Artist
                                         className="artist"
                                         artist={artist}
                                         key={index}
                                         id={index}
+                                        onClick={this.props.clickHandler}
                                     />
                                 )
                             }

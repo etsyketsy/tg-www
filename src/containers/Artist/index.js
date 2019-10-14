@@ -13,7 +13,6 @@ class Artist extends Component {
     }
   
     render() {
-      console.log(this.props)
       return (
         (this.state.showInfo) ?
   
