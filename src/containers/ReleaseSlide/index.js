@@ -2,26 +2,24 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 
-class DetailView extends Component {
+class ReleaseSlide extends Component {
 
     render() {
+        console.log(this.props.item)
         return (
             <div className="slide" id={this.props.index}>
                 <button id="cancel" onClick={this.props.exitHandler}>
                     &#215;
                 </button>
-                <img
-                    id="slideCover"
-                    src={this.props.item.img}
-                    alt="cover">
-                </img>
+                
                 <div className="desc">
-                    <p>{this.props.item.name}
-                    <br></br>
+                    <h2>{this.props.item.release_title}</h2>
                     {this.props.item.artist}
+                    {this.props.item.tracklisting}
                     <br></br>
-                    {this.props.item.releaseNumber}
-                    </p>
+                    {this.props.item.cat_num}
+                    <br></br>
+                    
                 </div>
                 
                 <div className="nav">
@@ -45,4 +43,4 @@ class DetailView extends Component {
 }
 
 
-export default withRouter(DetailView);
+export default withRouter(ReleaseSlide);
