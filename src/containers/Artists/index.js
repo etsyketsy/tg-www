@@ -85,20 +85,21 @@ class Artists extends Component {
                 (window.location.pathname === '/artists') ?
                   this.state.artists.map(
                     (artist, index) => {
+                      console.log('on the artist page')
                       return (
                         <Artist
                           artist={artist}
                           key={index}
                           id={index}
                           onClick={this.clickHandler}
-                          hidden={false}
                         />
                       )
                     }
                   )
                   :
                   <ArtistPreview 
-                  artists={this.state.artists}/>
+                  artists={this.state.artists}
+                  clickHandler={this.clickHandler}/>
       
                 :
                 <h1>&#8635;</h1>
