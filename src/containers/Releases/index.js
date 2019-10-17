@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+
 import './index.css';
 import Release from '../Release/index.js';
 import ReleaseSlide from '../ReleaseSlide/index.js';
@@ -58,15 +59,14 @@ class Releases extends Component {
 
     // Opens up detailed view of clicked item
     clickHandler = (e) => {
-        this.setState({ currentIndex: e.currentTarget.id })
+        // this.setState({ currentIndex: e.currentTarget.id })
+        this.props.history.push('releases/' + e.currentTarget.id)
     }
 
     componentDidMount() {
-        console.log('trying fetch')
         fetch('http://localhost:8000/backend/api/release/')
         .then(response => response.json())
         .then(data => {
-            console.log(data)
           this.setState(
             { releases: data }
           )
@@ -76,7 +76,6 @@ class Releases extends Component {
 
     // Renders release display grid with all releases if no item is selected
     render() {
-
         return (
             (this.state.currentIndex == null) ?
                 <div className="content" id="releases">

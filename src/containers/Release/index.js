@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Router, Route } from "react-router-dom";
 
 
 class Release extends Component {
@@ -14,7 +14,6 @@ class Release extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             (this.state.showInfo) ?
                 <div className="release"
