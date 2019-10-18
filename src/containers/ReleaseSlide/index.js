@@ -22,9 +22,9 @@ class ReleaseSlide extends Component {
       };
 
     componentDidMount() {
-        let current = this.props.match.params.id
+        let current = this.props.match.params
         let allReleases = this.props.releases 
-        console.log(this.props)
+        console.log(this.props.match)
 
         // 1. set id to cat_num
         // 2. pass cat_num in url
@@ -46,7 +46,7 @@ class ReleaseSlide extends Component {
     }
 
     render() {
-        
+        console.log('in the release slide ' + this.props.match.params)
         return (
             <div className="slide" id={this.props.index}>
                 <button id="cancel" onClick={this.props.exitHandler}>

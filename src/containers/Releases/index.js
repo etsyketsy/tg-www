@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import './index.css';
 import Release from '../Release/index.js';
@@ -58,10 +58,10 @@ class Releases extends Component {
     }
 
     // Opens up detailed view of clicked item
-    clickHandler = (e) => {
-        // this.setState({ currentIndex: e.currentTarget.id })
-        this.props.history.push('releases/' + e.currentTarget.id)
-    }
+    // clickHandler = (e) => {
+    //     // this.setState({ currentIndex: e.currentTarget.id })
+    //     this.props.history.push('releases/' + e.currentTarget.id)
+    // }
 
     componentDidMount() {
         fetch('http://localhost:8000/backend/api/release/')
@@ -85,12 +85,17 @@ class Releases extends Component {
                                 this.state.releases.map(
                                     (release, index) => {
                                         return (
-                                            <Release
+                                            <Link to={`/release/${release.cat_num}`
+                                            }>
+                                                <Release
                                                 item={release}
                                                 id={index}
                                                 key={index}
-                                                onClick={this.clickHandler}
-                                            />
+                                                // onClick={this.clickHandler}
+                                                />
+                                                    
+                                             </Link>
+                                      
                                         )
                                     }
                                 )
