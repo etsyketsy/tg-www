@@ -1,0 +1,27 @@
+
+#logo {
+  align-items: left;
+  margin-bottom: 2vh;
+  object-fit: contain;
+  width: auto;
+  min-height: 15vh;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 100%;
+}
+
+.sidebar #navLinks {
+  display: flex;
+  flex-direction: column;
+  padding-left: 4vh;
+  justify-content: space-between;
+  height: 17vmin;
+  width: 15vmin;
+  color: black;
+  margin-right: 5vmin;
+}

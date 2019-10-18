@@ -1,64 +1,124 @@
 import React, { Component } from 'react';
-import releaseData from '../Releases/releaseData';
+import { withRouter } from 'react-router-dom';
+import Artist from '../Artist/index.js';
+import ArtistSlide from '../ArtistSlide/index.js';
+import ArtistPreview from '../Artists/ArtistPreview.js'
 
-
-const Artist = props => {
-  return (
-    <div className="artist"
-      onMouseOver={props.onMouseOver}
-      id={props.artist.artist}
-    >
-      <div className="description">
-        <div>{props.artist.artist}</div>
-      </div>
-    </div>
-  )
-}
 
 class Artists extends Component {
 
   state = {
-    artistsToRender: 8
+    currentIndex: null
   }
-
-  // function detecting mouse movements
-  hoverHandler = event => {
-    console.log(event.currentTarget.id)
+  // Pushes user back to 'All Releases' page by clearing selected item
+  exitHandler = () => {
     this.setState({
-      item: event.currentTarget.artist,
-      active: true,
+      currentIndex: null
     })
   }
 
-  loadMoreHandler = event => {
-    this.setState({
-      artistsToRender: (this.state.artistsToRender + 4)
-    })
+  // Returns true if item is first in array so further advancing is blocked
+  startCheck = (e) => {
+    let current = Number(e.currentTarget.parentNode.parentNode.id)
+    let start = 0
+    return (
+      (current === start) ? true : false
+    )
   }
 
+  // Returns true if item is last in array so further advancing is blocked
+  endCheck = (e) => {
+    let current = Number(e.currentTarget.parentNode.parentNode.id)
+    let end = this.state.artists.length - 1
+    return (
+      (current === end) ? true : false
+    )
+  }
+
+  // If item is first item, return the same item indefinitely
+  // ID is set as the item index and stored in the target div's grandparent
+  lastSlideHandler = (e) => {
+    (this.startCheck(e)) ?
+      this.setState({ currentIndex: Number(e.currentTarget.parentNode.parentNode.id) })
+      :
+      this.setState(
+        { currentIndex: (Number(e.currentTarget.parentNode.parentNode.id) - 1), }
+      )
+  }
+
+  // If item is last item, return the same item indefinitely
+  // ID is set as the item index and stored in the target div's grandparent
+  nextSlideHandler = (e) => {
+    (this.endCheck(e)) ?
+      this.setState({ currentIndex: Number(e.currentTarget.parentNode.parentNode.id) })
+      :
+      this.setState({ currentIndex: (Number(e.currentTarget.parentNode.parentNode.id) + 1) }
+      )
+  }
+
+  // Opens up detailed view of clicked item
+  clickHandler = (e) => {
+    this.setState({ currentIndex: e.currentTarget.id })
+  }
+
+
+
+  componentDidMount() {
+    fetch('http://localhost:8000/backend/api/artist/')
+      .then(response => response.json())
+      .then(data => {
+        this.setState(
+          { artists: data }
+        )
+      })
+  }
 
   render() {
+
     return (
-      <div className="content" id="artists">
-        <div className="sectionHeader">Artists</div>
-        <div className="displayGrid">
-          {
-            releaseData.slice(0, this.state.artistsToRender).map((artist, index, hoverHandler) => {
-              return (
-                <Artist artist={artist} key={index} onMouseOver={this.hoverHandler} />
-              )
-            })
-          }
+      (this.state.currentIndex == null) ?
+        <div className="content" id="artists">
+          <div className="sectionHeader">Artists</div>
+          <div className="displayGrid">
+            {
+              (this.state.artists) ?
+                (window.location.pathname === '/artists') ?
+                  this.state.artists.map(
+                    (artist, index) => {
+                      console.log('on the artist page')
+                      return (
+                        <Artist
+                          artist={artist}
+                          key={index}
+                          id={index}
+                          onClick={this.clickHandler}
+                        />
+                      )
+                    }
+                  )
+                  :
+                  <ArtistPreview 
+                  artists={this.state.artists}
+                  clickHandler={this.clickHandler}/>
+      
+                :
+                <h1>&#8635;</h1>
+            }
+          </div>
         </div>
-        {
-          (releaseData.length > this.state.artistsToRender) ?
-            <button className="loadMore" id="loadArtists" onClick={this.loadMoreHandler}>Load more...</button>
-            : null
-        }
-      </div>
+        :
+        <ArtistSlide className='slide'
+          index={this.state.currentIndex}
+          item={this.state.artists[this.state.currentIndex]}
+          id={this.state.currentIndex}
+          lastSlideHandler={this.lastSlideHandler}
+          nextSlideHandler={this.nextSlideHandler}
+          exitHandler={this.exitHandler}
+          artists={this.state.artists}
+        />
 
     )
   }
 }
 
-export default Artists;
+export default withRouter(Artists);
