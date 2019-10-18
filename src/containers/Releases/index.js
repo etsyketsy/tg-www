@@ -85,15 +85,15 @@ class Releases extends Component {
                                 this.state.releases.map(
                                     (release, index) => {
                                         return (
-                                            <Link to={`/release/${release.cat_num}`
-                                            }>
+                                            <Link to={`/releases/${release.cat_num}/`
+                                            }
+                                            key={index}>
                                                 <Release
                                                 item={release}
                                                 id={index}
                                                 key={index}
                                                 // onClick={this.clickHandler}
-                                                />
-                                                    
+                                                />   
                                              </Link>
                                       
                                         )

@@ -8,41 +8,9 @@ class ReleaseSlide extends Component {
         currentRelease: null
     }
 
-    inputHandler = e => {
-        e.preventDefault();
-        this.setState({ input: e.target.value.toUpperCase() });
-    
-        if (this.props.inputFields) {
-          const newElement = this.props.inputFields.find(
-            element =>
-              element.numbering.substr(0, 3) === this.state.input.substr(0, 3)
-          );
-          return this.setState({ elementFound: newElement });
-        }
-      };
-
     componentDidMount() {
-        let current = this.props.match.params
-        let allReleases = this.props.releases 
-        console.log(this.props.match)
+        console.log('mounted ' + this.props.match.params.cat_num)
 
-        // 1. set id to cat_num
-        // 2. pass cat_num in url
-        // 3. get array of releases
-        // 4. use .find to match currentRelease to release with matching cat_num
-        // allReleases.map(
-        //     (release) => {
-        //         (release.id == current) ?
-        //             this.setState({
-        //                 currentRelease: {release}
-        //             })
-        //         :
-        //         this.state = {
-        //             currentRelease: null
-        //         }
-        //     }
-        // )
-        // console.log(this.state.currentRelease)
     }
 
     render() {

@@ -20,6 +20,7 @@ class Release extends Component {
                     id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
+                    releases={this.props.releases}
                 >
                     <div>{this.props.item.release_title}</div>
                     <div>{this.props.item.artist}</div>
@@ -31,6 +32,7 @@ class Release extends Component {
                     id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
+                    releases={this.props.releases}
                 >
                     cover will go here...
                 </div>
