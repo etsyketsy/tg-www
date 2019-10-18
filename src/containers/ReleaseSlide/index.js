@@ -9,12 +9,14 @@ class ReleaseSlide extends Component {
     }
 
     componentDidMount() {
-        console.log('mounted ' + this.props.match.params.cat_num)
-
+        let current = this.props.match.params
+        let allReleases = this.props.releases 
+        let item = this.props.location.state
+        console.log(this.props.location.state)
     }
 
     render() {
-        console.log('in the release slide ' + this.props.match.params)
+        
         return (
             <div className="slide" id={this.props.index}>
                 <button id="cancel" onClick={this.props.exitHandler}>

@@ -65,12 +65,12 @@ class Releases extends Component {
 
     componentDidMount() {
         fetch('http://localhost:8000/backend/api/release/')
-        .then(response => response.json())
-        .then(data => {
-          this.setState(
-            { releases: data }
-          )
-        })
+            .then(response => response.json())
+            .then(data => {
+                this.setState(
+                    { releases: data }
+                )
+            })
     }
 
 
@@ -81,30 +81,40 @@ class Releases extends Component {
                 <div className="content" id="releases">
                     <div className="sectionHeader">Releases</div>
                     <div className="displayGrid">
-                        {   (this.state.releases) ?
-                                this.state.releases.map(
-                                    (release, index) => {
-                                        return (
-                                            <Link to={`/releases/${release.cat_num}/`
+                        {(this.state.releases) ?
+                            this.state.releases.map(
+                                (release, index) => {
+                                    return (
+                                        <Link
+                                            to={{
+                                                pathname: `/releases/${release.cat_num}/`,
+                                                state: {
+                                                    `${release}`
+                                                    // cat_num: release.cat_num,
+                                                    // track_listing: release.track_listing,
+                                                    // fk_artist: release.fk_artist
+                                                }
                                             }
-                                            key={index}>
-                                                <Release
+                                            }
+                                            key={index}
+                                            item={release}>
+                                            <Release
                                                 item={release}
                                                 id={index}
                                                 key={index}
-                                                // onClick={this.clickHandler}
-                                                />   
-                                             </Link>
-                                      
-                                        )
-                                    }
-                                )
+                                            // onClick={this.clickHandler}
+                                            />
+                                        </Link>
+
+                                    )
+                                }
+                            )
                             :
                             <h1>&#8635;</h1>
                         }
                     </div>
                 </div>
-            :
+                :
                 <div className="releaseSlide">
                     <ReleaseSlide
                         index={this.state.currentIndex}
