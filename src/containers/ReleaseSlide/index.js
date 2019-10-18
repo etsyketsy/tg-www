@@ -9,27 +9,29 @@ class ReleaseSlide extends Component {
     }
 
     componentDidMount() {
-        let current = this.props.match.params
-        let allReleases = this.props.releases 
-        let item = this.props.location.state
-        console.log(this.props.location.state)
+   
+        this.setState({
+            item: this.props.location.state.release
+        })
+        console.log(this.props.location.state.release)
     }
 
     render() {
-        
         return (
+
+            (this.state.item) ?
             <div className="slide" id={this.props.index}>
                 <button id="cancel" onClick={this.props.exitHandler}>
                     &#215;
                 </button>
                 
                 <div className="desc">
-                    {/* <h2>{this.props.item.release_title}</h2>
-                    {this.props.item.artist}
-                    {this.props.item.tracklisting}
+                    <h2>{this.state.item.release_title}</h2>
+                    {this.state.item.fk_artist}
+                    {this.state.item.tracklisting}
                     <br></br>
-                    {this.props.item.cat_num}
-                    <br></br> */}
+                    {this.state.item.cat_num}
+                    <br></br> 
                     
                 </div>
                 
@@ -47,6 +49,8 @@ class ReleaseSlide extends Component {
                 </div>
 
             </div>
+            :
+            <h2>loading...</h2>
 
 
         )

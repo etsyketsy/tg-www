@@ -88,12 +88,12 @@ class Releases extends Component {
                                         <Link
                                             to={{
                                                 pathname: `/releases/${release.cat_num}/`,
-                                                state: {
-                                                    `${release}`
+                                                state: 
+                                                    {release}
                                                     // cat_num: release.cat_num,
                                                     // track_listing: release.track_listing,
                                                     // fk_artist: release.fk_artist
-                                                }
+                                                
                                             }
                                             }
                                             key={index}
