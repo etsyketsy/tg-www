@@ -1,39 +1,47 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 
 class ArtistSlide extends Component {
+    state = {
+        item: null
+    }
+
+    componentDidMount() {
+        (!this.props.location.state) ?
+
+        fetch(`http://localhost:8000/backend/api/artist/${this.props.match.params.artist_nice_name}/`)
+        .then(response => response.json())
+        .then(data => {
+            this.setState(
+                { item: data[0] }
+            )
+        })
+        :
+        this.setState({
+            item: this.props.location.state.artist
+        })
+    }
 
     render() {
-
         return (
-            <div className="slide" id={this.props.index}>
-                <button id="cancel" onClick={this.props.exitHandler}>
-                    &#215;
-                </button>
+            (!this.state.item) ?
+                <h2>loading...</h2>
+            :
+            
+            <div className="artistSlide" id={this.props.index}>
+                <Link to="/artists" replace id="exit">&#215;</Link>
                
                 <div className="desc">
-                    <h2>{this.props.item.artist}</h2>
-                    {this.props.item.artist_bio}
-                    <p>{this.props.item.artist_location}</p>
+                    <img src={this.state.item.image} alt='img'/>
+                    <h2>{this.state.item.artist}</h2>
+                    {this.state.item.artist_bio}
+                    <p>{this.state.item.artist_location}</p>
                     
-                </div>
-                
-                <div className="nav">
-                    <button className="arrow"
-                        id="backArrow"
-                        onClick={this.props.lastSlideHandler}>
-                        &larr;
-                    </button>
-                    <button className="arrow"
-                        id="nextArrow"
-                        onClick={this.props.nextSlideHandler}>
-                        &rarr;
-                    </button>
+                    
                 </div>
 
             </div>
-
-
         )
     }
 }
