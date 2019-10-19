@@ -9,7 +9,6 @@ class ReleaseSlide extends Component {
     }
 
     componentDidMount() {
-        
         (!this.props.location.state) ?
         
         fetch(`http://localhost:8000/backend/api/release/${this.props.match.params.cat_num}/`)
@@ -17,8 +16,8 @@ class ReleaseSlide extends Component {
         .then(data => {
             this.setState(
                 { item: data[0] }
-        )
-    })
+            )
+        })
         :
         this.setState({
             item: this.props.location.state.release
@@ -26,14 +25,13 @@ class ReleaseSlide extends Component {
     }
 
     render() {
-        // console.log(this.state)
         return (
 
             (!this.state.item) ?
             <h2>loading...</h2>
             :
             
-            <div className="slide" id={this.props.index}>
+            <div className="releaseSlide" id={this.props.index}>
                 <Link to="/releases" replace id="exit">&#215;</Link>
                 
                 <div className="desc">
@@ -43,7 +41,6 @@ class ReleaseSlide extends Component {
                     <br></br>
                     {this.state.item.cat_num}
                     <br></br> 
-                    
                 </div>
                 
             </div>
