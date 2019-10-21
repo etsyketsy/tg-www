@@ -30,7 +30,7 @@ class ArtistPreview extends Component {
                                 return (
                                     <Artist
                                         className="artist"
-                                        artist={artist}
+                                        item={artist}
                                         key={index}
                                         id={index}
                                         onClick={this.props.clickHandler}

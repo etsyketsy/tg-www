@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Router, Route } from "react-router-dom";
 
 
 class Release extends Component {
@@ -14,13 +14,13 @@ class Release extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             (this.state.showInfo) ?
                 <div className="release"
                     id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
+                    releases={this.props.releases}
                 >
                     <div>{this.props.item.release_title}</div>
                     <div>{this.props.item.artist}</div>
@@ -32,6 +32,7 @@ class Release extends Component {
                     id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
+                    releases={this.props.releases}
                 >
                     cover will go here...
                 </div>
