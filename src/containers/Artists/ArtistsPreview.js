@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Artist from '../Artist/index.js';
 
-class ArtistPreview extends Component {
+class ArtistsPreview extends Component {
 
     state = {
         itemsToRender: 4,
@@ -46,4 +46,4 @@ class ArtistPreview extends Component {
     }
 }
 
-export default ArtistPreview;
+export default ArtistsPreview;

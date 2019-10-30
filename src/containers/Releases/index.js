@@ -6,7 +6,9 @@ import Release from '../Release/index.js';
 import ReleaseSlide from '../ReleaseSlide/index.js';
 
 class Releases extends Component {
-    state = {}
+    state = {
+
+    }
 
     componentDidMount() {
         fetch('http://localhost:8000/backend/api/release/')
