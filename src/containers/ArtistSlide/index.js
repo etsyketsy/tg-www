@@ -30,8 +30,8 @@ class ArtistSlide extends Component {
             :
             
             <div className="artistSlide" id={this.props.index}>
-                <Link to="/artists" replace id="exit">&#215;</Link>
-               
+                {/* <Link to="/artists" replace id="exit">&#215;</Link> */}
+               <button onClick={this.props.history.goBack}>&#215;</button>
                 <div className="desc">
                     <img src={this.state.item.image} alt='img'/>
                     <h2>{this.state.item.artist}</h2>

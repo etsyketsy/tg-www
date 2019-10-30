@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Artist from '../Artist/index.js';
 import ArtistSlide from '../ArtistSlide/index.js';
-import ArtistPreview from '../Artists/ArtistPreview.js'
+import ArtistsPreview from './ArtistsPreview.js';
 
 
 class Artists extends Component {
@@ -35,7 +35,7 @@ class Artists extends Component {
                 (window.location.pathname === '/artists') ?
                   this.state.artists.map(
                     (artist, index) => {
-                      console.log('on the artist page')
+
                       return (
                         <Link to={{
                             pathname: `/artists/${artist.artist_nice_name}/`,
@@ -53,8 +53,9 @@ class Artists extends Component {
                     }
                   )
               :
-                  <ArtistPreview 
-                  artists={this.state.artists}/>
+                  <ArtistsPreview 
+                  artists={this.state.artists}
+                  />
             }
             </div>
           </div> 
