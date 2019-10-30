@@ -26,15 +26,20 @@ class ArtistsPreview extends Component {
                     {
                         this.props.artists.slice(0, this.state.itemsToRender).map(
                             (artist, index) => {
-                                console.log('in the artist ' + this.props.onClick)
+
                                 return (
-                                    <Artist
-                                        className="artist"
+                                    <Link to={{
+                                        pathname: `/artists/${artist.artist_nice_name}/`,
+                                        state: {artist}
+                                      }}
+                                      key={index}
+                                    >
+                                      <Artist
                                         item={artist}
                                         key={index}
                                         id={index}
-                                        onClick={this.props.clickHandler}
-                                    />
+                                      />
+                                    </Link >
                                 )
                             }
                         )

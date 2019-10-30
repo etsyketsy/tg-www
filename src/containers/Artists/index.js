@@ -35,8 +35,7 @@ class Artists extends Component {
                 (window.location.pathname === '/artists') ?
                   this.state.artists.map(
                     (artist, index) => {
-                      console.log('on the artist page')
-                      console.log(this.props)
+
                       return (
                         <Link to={{
                             pathname: `/artists/${artist.artist_nice_name}/`,
@@ -48,7 +47,6 @@ class Artists extends Component {
                             item={artist}
                             key={index}
                             id={index}
-                            artists={this.state.artists}
                           />
                         </Link >
                       )
@@ -56,7 +54,8 @@ class Artists extends Component {
                   )
               :
                   <ArtistsPreview 
-                  artists={this.state.artists}/>
+                  artists={this.state.artists}
+                  />
             }
             </div>
           </div> 
