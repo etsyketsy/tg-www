@@ -30,11 +30,19 @@ class ReleasesPreview extends Component {
                         this.props.releases.slice(0, this.state.itemsToRender).map(
                             (release, index) => {
                                 return (
-                                    <Release
-                                        className="release"
-                                        item={release}
+                                    <Link
+                                        to={{
+                                            pathname: `/releases/${release.cat_num}/`,
+                                            state: { release }
+                                        }}
                                         key={index}
-                                    />
+                                    >
+                                        <Release
+                                            item={release}
+                                            id={index}
+                                            key={index}
+                                        />
+                                    </Link>
                                 )
                             }
                         )

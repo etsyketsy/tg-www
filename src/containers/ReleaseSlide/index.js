@@ -32,8 +32,8 @@ class ReleaseSlide extends Component {
             :
             
             <div className="releaseSlide" id={this.props.index}>
-                <Link to="/releases" replace id="exit">&#215;</Link>
-                
+                {/* <Link to="/releases" replace id="exit">&#215;</Link> */}
+                <button onClick={this.props.history.goBack}>&#215;</button>
                 <div className="desc">
                     <h2>{this.state.item.release_title}</h2>
                     {this.state.item.fk_artist}
