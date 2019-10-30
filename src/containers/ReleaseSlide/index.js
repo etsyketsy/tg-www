@@ -8,6 +8,14 @@ class ReleaseSlide extends Component {
         item: null
     }
 
+    clickHandler = (props) => {
+
+        (!this.props.location.state) ?
+            this.props.history.push('/releases')
+        :
+            this.props.history.goBack()
+    }
+
     componentDidMount() {
         (!this.props.location.state) ?
         
@@ -25,15 +33,16 @@ class ReleaseSlide extends Component {
     }
 
     render() {
+        console.log('in release detail')
+        console.log(this.props)
         return (
-
             (!this.state.item) ?
             <h2>loading...</h2>
             :
             
             <div className="releaseSlide" id={this.props.index}>
                 {/* <Link to="/releases" replace id="exit">&#215;</Link> */}
-                <button onClick={this.props.history.goBack}>&#215;</button>
+                <button onClick={this.clickHandler}>&#215;</button>
                 <div className="desc">
                     <h2>{this.state.item.release_title}</h2>
                     {this.state.item.fk_artist}
