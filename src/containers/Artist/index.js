@@ -29,7 +29,7 @@ class Artist extends Component {
             id={this.props.id}
             onClick={this.props.onClick}
           >
-            <div>{this.props.artist.artist}</div>
+            <div>{this.props.item.artist}</div>
           </div>
       )
     }

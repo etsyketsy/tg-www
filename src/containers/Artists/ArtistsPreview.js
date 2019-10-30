@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Artist from '../Artist/index.js';
 
-class ArtistPreview extends Component {
+class ArtistsPreview extends Component {
 
     state = {
         itemsToRender: 4,
@@ -26,15 +26,20 @@ class ArtistPreview extends Component {
                     {
                         this.props.artists.slice(0, this.state.itemsToRender).map(
                             (artist, index) => {
-                                console.log('in the artist ' + this.props.onClick)
+
                                 return (
-                                    <Artist
-                                        className="artist"
-                                        artist={artist}
+                                    <Link to={{
+                                        pathname: `/artists/${artist.artist_nice_name}/`,
+                                        state: {artist}
+                                      }}
+                                      key={index}
+                                    >
+                                      <Artist
+                                        item={artist}
                                         key={index}
                                         id={index}
-                                        onClick={this.props.clickHandler}
-                                    />
+                                      />
+                                    </Link >
                                 )
                             }
                         )
@@ -46,4 +51,4 @@ class ArtistPreview extends Component {
     }
 }
 
-export default ArtistPreview;
+export default ArtistsPreview;
