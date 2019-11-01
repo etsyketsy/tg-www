@@ -3,7 +3,8 @@ import { withRouter, Link } from 'react-router-dom';
 
 import './index.css';
 import Release from '../Release/index.js';
-import ReleaseSlide from '../ReleaseSlide/index.js';
+import ReleasesPreview from './ReleasesPreview.js';
+
 
 class Releases extends Component {
     state = {
@@ -26,35 +27,41 @@ class Releases extends Component {
         return (
             (!this.state.releases) ?
                 <h1>&#8635;</h1>
-            :
+                :
                 <div className="content" id="releases">
                     <div className="sectionHeader">Releases</div>
                     <div className="displayGrid">
-        
-                            {this.state.releases.map(
-                                (release, index) => {
-                                    return (
-                                        <Link
-                                            to={{
-                                                pathname: `/releases/${release.cat_num}/`,
-                                                state: {release}    
-                                            }}
-                                            key={index}
-                                            >
-                                            <Release
-                                                item={release}
-                                                id={index}
-                                                key={index}
-                                            />
-                                        </Link>
+                        {
+                            (window.location.pathname === '/releases') ?
 
-                                    )
-                                }
-                            )
+                            this.state.releases.map(
+                            (release, index) => {
+                                return (
+                                    <Link
+                                        to={{
+                                            pathname: `/releases/${release.cat_num}/`,
+                                            state: { release }
+                                        }}
+                                        key={index}
+                                    >
+                                        <Release
+                                            item={release}
+                                            id={index}
+                                            key={index}
+                                        />
+                                    </Link>
+
+                                )
+                            }
+                        )
+                        :
+                            <ReleasesPreview
+                                releases={this.state.releases}
+                            />
                         }
                     </div>
                 </div>
-                
+
         )
     }
 }

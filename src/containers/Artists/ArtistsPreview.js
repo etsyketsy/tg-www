@@ -9,15 +9,15 @@ class ArtistsPreview extends Component {
     }
 
 
-    componentDidMount() {
-        fetch('http://localhost:8000/backend/api/artist/')
-          .then(response => response.json())
-          .then(data => {
-            this.setState(
-              { artists: data }
-            )
-          })
-      }
+    // componentDidMount() {
+    //     fetch('http://localhost:8000/backend/api/artist/')
+    //       .then(response => response.json())
+    //       .then(data => {
+    //         this.setState(
+    //           { artists: data }
+    //         )
+    //       })
+    //   }
 
     render() {
         return (
