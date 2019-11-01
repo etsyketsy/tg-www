@@ -47,6 +47,21 @@ class ReleaseSlide extends Component {
                         <br></br>
                         {this.state.item.cat_num}
                         <br></br>
+
+                        <div>Tracks:
+                        <ol>
+                            {
+                                this.state.item.tracks.map(
+                                    (track) => {
+                                        return (
+                                            <li>{track.title}</li>
+                                        )
+                                        
+                                    }
+                                )
+                            }
+                        </ol>
+                    </div>
                     </div>
 
                 </div>
