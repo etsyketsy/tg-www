@@ -24,7 +24,6 @@ class ReleasesPreview extends Component {
         return (
 
             <div className="content" id="releasePreview">
-                <div className="sectionHeader">Releases</div>
                 <div className="displayGrid">
                     {
                         this.props.releases.slice(0, this.state.itemsToRender).map(
@@ -48,7 +47,7 @@ class ReleasesPreview extends Component {
                         )
                     }
                 </div>
-                <Link to="releases">ALL RELEASES</Link>
+                <Link to="/releases" replace>ALL RELEASES</Link>
             </div>
         )
     }
