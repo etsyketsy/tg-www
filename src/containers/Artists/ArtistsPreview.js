@@ -45,7 +45,7 @@ class ArtistsPreview extends Component {
                         )
                     }
                 </div>
-                <Link to="artists">ALL ARTIST</Link>
+                <Link to="/artists" replace>ALL ARTIST</Link>
             </div>
         )
     }

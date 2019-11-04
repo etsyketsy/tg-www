@@ -48,7 +48,7 @@ class ReleasesPreview extends Component {
                         )
                     }
                 </div>
-                <Link to="releases">ALL RELEASES</Link>
+                <Link to="/releases" replace>ALL RELEASES</Link>
             </div>
         )
     }
