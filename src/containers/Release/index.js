@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Route } from "react-router-dom";
-
+import './index.css';
 
 class Release extends Component {
     state = {
@@ -14,6 +14,7 @@ class Release extends Component {
     }
 
     render() {
+        console.log(this.props.item)
         return (
             (this.state.showInfo) ?
                 <div className="release"
@@ -34,7 +35,7 @@ class Release extends Component {
                     onClick={this.props.onClick}
                     releases={this.props.releases}
                 >
-                    cover will go here...
+                    <img src={this.props.item.image} alt='cover' id='coverTile'/>
                 </div>
         )
     }

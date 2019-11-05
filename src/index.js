@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 import Home from './containers/Home';
 import Releases from './containers/Releases/index.js';
-import ReleaseSlide from './containers/ReleaseSlide/index.js';
+import ReleaseDetail from './containers/ReleaseDetail/index.js';
 import Artists from './containers/Artists/index.js';
 import ArtistSlide from './containers/ArtistSlide/index.js';
 import News from './containers/News/index.js';
@@ -22,7 +22,7 @@ ReactDOM.render(
                 <Route exact path='/releases' component={Releases} />
                 <Route 
                     exact path='/releases/:cat_num' 
-                    component={ReleaseSlide}
+                    component={ReleaseDetail}
                 />
                 <Route exact path='/artists' component={Artists} />
                 <Route 
