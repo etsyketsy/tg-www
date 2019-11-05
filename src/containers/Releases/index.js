@@ -12,7 +12,7 @@ class Releases extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8000/backend/api/release/')
+        fetch('http://localhost:8000/api/releases/')
             .then(response => response.json())
             .then(data => {
                 this.setState(

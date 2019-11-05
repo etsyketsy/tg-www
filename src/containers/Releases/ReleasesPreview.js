@@ -9,17 +9,6 @@ class ReleasesPreview extends Component {
         itemsToRender: 4,
     }
 
-    // onComponentDidMount() {
-    //     fetch('http://localhost:8000/backend/api/release/')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //       this.setState(
-    //         { releases: data }
-    //       )
-    //     })
-    // }
-
-
     render() {
         return (
 

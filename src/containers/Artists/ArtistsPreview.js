@@ -8,17 +8,6 @@ class ArtistsPreview extends Component {
         itemsToRender: 4,
     }
 
-
-    // componentDidMount() {
-    //     fetch('http://localhost:8000/backend/api/artist/')
-    //       .then(response => response.json())
-    //       .then(data => {
-    //         this.setState(
-    //           { artists: data }
-    //         )
-    //       })
-    //   }
-
     render() {
         return (
             <div className="content" id="artistPreview">

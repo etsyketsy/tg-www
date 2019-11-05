@@ -11,7 +11,7 @@ class Artists extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/backend/api/artist/')
+    fetch('http://localhost:8000/api/artists/')
       .then(response => response.json())
       .then(data => {
         this.setState(
