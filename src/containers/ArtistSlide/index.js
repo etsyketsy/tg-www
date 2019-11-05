@@ -10,7 +10,7 @@ class ArtistSlide extends Component {
     componentDidMount() {
         (!this.props.location.state) ?
 
-        fetch(`http://localhost:8000/backend/api/artist/${this.props.match.params.artist_nice_name}/`)
+        fetch(`http://localhost:8000/api/artists/${this.props.match.params.artist_nice_name}/`)
         .then(response => response.json())
         .then(data => {
             this.setState(

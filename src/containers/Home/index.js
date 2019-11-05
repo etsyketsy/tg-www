@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header';
-import ReleasePreview from '../Releases/ReleasePreview';
+import Releases from '../Releases/index.js';
 import Artists from '../Artists/index.js';
 import News from '../News/index.js';
 import About from '../About/index.js';
@@ -16,7 +16,7 @@ class Home extends Component {
       <div className="app">
         <Header />
         <News />
-        <ReleasePreview />
+        <Releases />
         <Artists />
         <div id="lastRow">
           <About />

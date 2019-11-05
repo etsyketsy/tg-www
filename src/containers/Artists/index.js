@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Artist from '../Artist/index.js';
-import ArtistSlide from '../ArtistSlide/index.js';
 import ArtistsPreview from './ArtistsPreview.js';
 
 
@@ -12,7 +11,7 @@ class Artists extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/backend/api/artist/')
+    fetch('http://localhost:8000/api/artists/')
       .then(response => response.json())
       .then(data => {
         this.setState(
@@ -54,7 +53,7 @@ class Artists extends Component {
                   )
               :
                   <ArtistsPreview 
-                  artists={this.state.artists}
+                    artists={this.state.artists}
                   />
             }
             </div>
