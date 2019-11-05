@@ -19,7 +19,7 @@ class ReleaseSlide extends Component {
     componentDidMount() {
         (!this.props.location.state) ?
 
-            fetch(`http://localhost:8000/backend/api/release/${this.props.match.params.cat_num}/`)
+            fetch(`http://localhost:8000/api/releases/${this.props.match.params.cat_num}/`)
                 .then(response => response.json())
                 .then(data => {
                     this.setState(
