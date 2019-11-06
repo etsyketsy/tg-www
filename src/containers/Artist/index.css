@@ -1,0 +1,13 @@
+.artist {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.75vh;
+    width: 20vmin;
+    height: 20vmin;
+    word-wrap: break-word;
+    hyphens: auto;
+    margin-right: 1vh;
+    margin-bottom: 1vh;
+  }
