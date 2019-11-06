@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import './index.css';
 
-
-class ArtistSlide extends Component {
+class ArtistDetail extends Component {
     state = {
         item: null
     }
@@ -29,7 +28,7 @@ class ArtistSlide extends Component {
                 <h2>loading...</h2>
             :
             
-            <div className="artistSlide" id={this.props.index}>
+            <div className="artistDetail" id={this.props.index}>
                 {/* <Link to="/artists" replace id="exit">&#215;</Link> */}
                <button onClick={this.props.history.goBack}>&#215;</button>
                 <div className="desc">
@@ -47,4 +46,4 @@ class ArtistSlide extends Component {
 }
 
 
-export default ArtistSlide;
+export default ArtistDetail;

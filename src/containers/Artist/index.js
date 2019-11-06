@@ -18,7 +18,6 @@ class Artist extends Component {
   
           <div className="artist"
             onMouseOver={this.hoverHandler}
-            id={this.props.id}
             onClick={this.props.onClick}
           >
             <div>Picture coming</div>
@@ -26,7 +25,6 @@ class Artist extends Component {
         :
           <div className="artist"
             onMouseOver={this.hoverHandler}
-            id={this.props.id}
             onClick={this.props.onClick}
           >
             <div>{this.props.item.artist}</div>

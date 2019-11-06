@@ -53,7 +53,7 @@ class ReleaseDetail extends Component {
                         <br></br>
                         {this.state.item.cat_num}
                         <br></br>
-
+                        {this.state.item.bio}
                         <div>Tracks:
                         <ol>
                             {

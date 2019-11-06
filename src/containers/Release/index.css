@@ -16,3 +16,7 @@
     width: 20vmin;
     height: 20vmin;
   }
+
+.release:hover img {
+    opacity: 0.3;
+  }
