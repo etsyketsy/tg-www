@@ -14,7 +14,6 @@ class Release extends Component {
     }
 
     render() {
-        console.log(this.props.item)
         return (
             (this.state.showInfo) ?
                 <div className="release"

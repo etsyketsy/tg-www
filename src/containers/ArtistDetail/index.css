@@ -6,7 +6,7 @@
     width: 100%;
 }
 
-.releaseDetail{
+.artistDetail{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
