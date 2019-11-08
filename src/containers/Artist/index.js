@@ -1,4 +1,5 @@
-import React,    { Component } from 'react';
+import React, { Component } from 'react';
+import './index.css';
 
 
 class Artist extends Component {
@@ -15,14 +16,14 @@ class Artist extends Component {
     render() {
       console.log(this.props)
       return (
-        (this.state.showInfo) ?
+        (!this.state.showInfo) ?
   
           <div className="artist"
             onMouseEnter={this.hoverHandler}
             id={this.props.id}
             onClick={this.props.onClick}
           >
-            <img className='artistPhotos' src={this.props.item.image} alt='artistPhoto' />
+            <img className='artistPreview' src={this.props.item.image} alt='artistPhoto' />
           </div>
         :
           <div className="artist"
