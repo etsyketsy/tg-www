@@ -38,27 +38,28 @@ class News extends Component {
     // }
 
     parsePost = (content, index) => {
-        let wrapper = document.createElement('div');
-        wrapper.innerHTML = content;
-        wrapper.id = index;
+        // let wrapper = document.createElement('div');
+        // wrapper.innerHTML = content;
+        // wrapper.id = index;
         
 
         
-        let els = wrapper.getElementsByTagName('*');
-        let divs = [''];
-        console.log(els)
+        // let els = wrapper.getElementsByTagName('*');
+        // let divs = [''];
+        // console.log(els)
 
-        for (let i = 0; i < els.length; i++) {
-            divs.push(els[i])
-        }
+        // for (let i = 0; i < els.length; i++) {
+        //     divs.push(els[i])
+        // }
 
-        // console.log(divs)
-        divs.forEach(element => {
-            let parent = element.parentNode
-            let section = document.createElement(`${element.tagName}`)
-            section.innerHTML = `${element.innerHTML}`
+        // // console.log(divs)
+        // divs.forEach(element => {
+        //     let parent = element.parentNode
+        //     let section = document.createElement(`${element.tagName}`)
+        //     section.innerHTML = `${element.innerHTML}`
             
-        })
+        // })
+   
        
     }
 
@@ -83,10 +84,12 @@ class News extends Component {
                  
                         this.state.posts.map((post, index) => {
                             
+                            console.log(post)
                             return (
                                 <div className='post' key={index}>
                                     <h4>{post.title}</h4>
-                                    {this.parsePost(post.content, index)}
+                                    {/* {this.parsePost(post.content, index)} */}
+                                    {post.output}
                                     <a href={post.link}>view post</a>
 
                                 </div>
