@@ -13,19 +13,20 @@ class Artist extends Component {
     }
   
     render() {
+      console.log(this.props)
       return (
         (this.state.showInfo) ?
   
           <div className="artist"
-            onMouseOver={this.hoverHandler}
+            onMouseEnter={this.hoverHandler}
             id={this.props.id}
             onClick={this.props.onClick}
           >
-            <div>Picture coming</div>
+            <img className='artistPhotos' src={this.props.item.image} alt='artistPhoto' />
           </div>
         :
           <div className="artist"
-            onMouseOver={this.hoverHandler}
+            onMouseEnter={this.hoverHandler}
             id={this.props.id}
             onClick={this.props.onClick}
           >
