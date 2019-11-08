@@ -18,7 +18,6 @@ class Release extends Component {
         return (
             (this.state.showInfo) ?
                 <div className="release"
-                    id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
                     releases={this.props.releases}
@@ -30,7 +29,6 @@ class Release extends Component {
                 </div>
                 :
                 <div className="release"
-                    id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
                     releases={this.props.releases}

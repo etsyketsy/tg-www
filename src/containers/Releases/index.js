@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 
-import './index.css';
 import Release from '../Release/index.js';
 import ReleasesPreview from './ReleasesPreview.js';
 
