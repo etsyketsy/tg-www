@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import RSSParser from 'rss-parser';
 
 
@@ -37,17 +37,36 @@ class News extends Component {
     //     }
     // }
 
-    parsePost = (content) => {
-        let wrapper = document.createElement("textarea");
+    parsePost = (content, index) => {
+        let wrapper = document.createElement('div');
         wrapper.innerHTML = content;
-        console.log(wrapper)
-        return wrapper.textContent
+        wrapper.id = index;
+        
+
+        
+        let els = wrapper.getElementsByTagName('*');
+        let divs = [''];
+        console.log(els)
+
+        for (let i = 0; i < els.length; i++) {
+            divs.push(els[i])
+        }
+
+        // console.log(divs)
+        divs.forEach(element => {
+            let parent = element.parentNode
+            let section = document.createElement(`${element.tagName}`)
+            section.innerHTML = `${element.innerHTML}`
+            
+        })
+       
     }
 
     // *** best so far
     componentDidMount() {
         let parser = new RSSParser();
-        parser.parseURL('https://cors-anywhere.herokuapp.com/https://blog.tgrex.com/rss')
+
+        parser.parseURL('https://cors-anywhere.herokuapp.com/http://blog.tgrex.com/rss')
             .then(feed => {
                 this.setState({ posts: feed.items })
             })
@@ -61,16 +80,15 @@ class News extends Component {
                     (!this.state.posts) ?
                         <div>'coming soon'</div>
                         :
-
+                 
                         this.state.posts.map((post, index) => {
-               
-                
+                            
                             return (
                                 <div className='post' key={index}>
-                                    {/* <h4>{post.title}</h4>
-                                    
-                                    <a href={post.link}>view post</a> */}
-                                    {post.content}
+                                    <h4>{post.title}</h4>
+                                    {this.parsePost(post.content, index)}
+                                    <a href={post.link}>view post</a>
+
                                 </div>
                             )
 
