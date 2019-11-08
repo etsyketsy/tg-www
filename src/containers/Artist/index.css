@@ -11,3 +11,10 @@
     margin-right: 1vh;
     margin-bottom: 1vh;
   }
+
+.artistPreview {
+    display: flex;
+    object-fit: cover;
+    height: 100%;
+}
+
