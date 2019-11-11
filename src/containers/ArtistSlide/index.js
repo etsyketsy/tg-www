@@ -42,10 +42,10 @@ class ArtistSlide extends Component {
                         </p>
                     </p>
                         <img src={this.state.item.image} alt='img' className='artistPhoto'/>
-                    </div>
-                    <p className='bio'>
-                        {this.state.item.artist_bio}
-                    </p>   
+                </div>
+                <p className='bio'>
+                    {this.state.item.artist_bio}
+                </p>   
                 
 
             </div>
