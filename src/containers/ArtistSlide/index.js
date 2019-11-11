@@ -26,28 +26,21 @@ class ArtistSlide extends Component {
     render() {
         return (
             (!this.state.item) ?
-                <h2>loading...</h2>
+                <div />
             :
-            
             <div className="artistSlide" id={this.props.index}>
-                {/* <Link to="/artists" replace id="exit">&#215;</Link> */}
                <button onClick={this.props.history.goBack}>&#215;</button>
+               
                 <div className="desc">
-                    
-                    <p className='name'>
+                    <div className='name'> 
                         {this.state.item.artist}
                         <br />
-                        <p className='location'>  
-                          {this.state.item.artist_location}
-                        </p>
-                    </p>
+                        <div className='location'>{this.state.item.artist_location}
+                        </div>
+                    </div>
                         <img src={this.state.item.image} alt='img' className='artistPhoto'/>
                 </div>
-                <p className='bio'>
-                    {this.state.item.artist_bio}
-                </p>   
-                
-
+                <p className='bio'>{this.state.item.artist_bio}</p>   
             </div>
         )
     }
