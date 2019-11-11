@@ -23,23 +23,23 @@ class Artists extends Component {
   render() {
 
     return (
-      
+
       (!this.state.artists) ?
-      <h1>&#8635;</h1>
-      :
+        <h1>&#8635;</h1>
+        :
         <div className="content" id="artists">
           <div className="sectionHeader">Artists</div>
           <div className="displayGrid">
             {
-                (window.location.pathname === '/artists') ?
-                  this.state.artists.map(
-                    (artist, index) => {
-
+              (window.location.pathname === '/artists') ?
+                this.state.artists.map(
+                  (artist, index) => {
+                    if (artist.artist_type === 'artist') {
                       return (
                         <Link to={{
-                            pathname: `/artists/${artist.artist_nice_name}/`,
-                            state: {artist}
-                          }}
+                          pathname: `/artists/${artist.artist_nice_name}/`,
+                          state: { artist }
+                        }}
                           key={index}
                         >
                           <Artist
@@ -50,14 +50,15 @@ class Artists extends Component {
                         </Link >
                       )
                     }
-                  )
-              :
-                  <ArtistsPreview 
-                    artists={this.state.artists}
-                  />
+                  }
+                )
+                :
+                <ArtistsPreview
+                  artists={this.state.artists}
+                />
             }
-            </div>
-          </div> 
+          </div>
+        </div>
     )
   }
 }
