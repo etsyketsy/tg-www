@@ -13,7 +13,7 @@ class Sidebar extends Component {
         <div id="navLinks">
           <img src={logo2} alt="Logo" id="logo" />
           <Link to="/" replace>HOME</Link>
-          <a href="https://blog.tgrex.com/" target="_blank">NEWS</a>
+          <Link to="/news" replace>NEWS</Link>
           <Link to="/releases" replace>RELEASES</Link>
           <Link to="/artists" replace>ARTISTS</Link>
           <a href="https://music.tgrex.com/" target="_blank">AUDIO</a>
