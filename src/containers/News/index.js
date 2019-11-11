@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RSSParser from 'rss-parser';
-
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 class News extends Component {
     state = {
@@ -60,7 +60,8 @@ class News extends Component {
             
         // })
    
-       
+       let html = content;
+       return <div></div>
     }
 
     // *** best so far
@@ -84,11 +85,12 @@ class News extends Component {
                  
                         this.state.posts.map((post, index) => {
                             
-                            console.log(post)
+                            let html = post.content;
+
                             return (
                                 <div className='post' key={index}>
                                     <h4>{post.title}</h4>
-                                    {/* {this.parsePost(post.content, index)} */}
+                                    <div>{ ReactHtmlParser(html)}</div>
                                     {post.output}
                                     <a href={post.link}>view post</a>
 
