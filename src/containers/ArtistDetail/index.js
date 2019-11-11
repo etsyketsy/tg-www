@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 
-
-class ArtistSlide extends Component {
+class ArtistDetail extends Component {
     state = {
         item: null
     }
@@ -47,4 +46,4 @@ class ArtistSlide extends Component {
 }
 
 
-export default ArtistSlide;
+export default ArtistDetail;

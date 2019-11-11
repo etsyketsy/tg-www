@@ -23,50 +23,6 @@
   text-align: left;
 }
 
-.sectionHeader {
-  padding-bottom: 1vh;
-  font-size: 3.75vh;
-}
-
-.cover {
-  width: 20vh;
-  height: 20vh;
-}
-
-.description {
-  min-height: 3vh;
-  width: 100%;
-  align-content: center;
-}
-
-.release {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 1vh;
-  margin-right: 1vh;
-  font-size: 1.75vh;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  width: 20vmin;
-  height: 20vmin;
-  border: solid slategray .5px;
-}
-
-.displayGrid {
-  display: flex;
-  flex-flow: wrap;
-}
-
-.displayGrid::after {
-  content: "";
-  flex: auto;
-}
-.loadMore {
-  text-align: center;
-}
-
 #releases {
   grid-area: releases;
 }
@@ -79,6 +35,32 @@
 
 
 /* global styling */
+button {
+  border: none;
+  font-size: 2vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionHeader{
+  grid-area: sectionHeader;
+  display: flex;
+  margin-top: 8vmin;
+  padding-bottom: 1vh;
+  font-size: 3.75vh;
+}
+
+.displayGrid{
+  grid-area: displayGrid;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.displayGrid::after {
+  content: "";
+  flex: auto;
+}
+
 .app {
   font-family: sans-serif, "Helvetica";
   background-color: #FFFFFF;

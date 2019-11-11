@@ -16,9 +16,9 @@ class Sidebar extends Component {
           <Link to="/news" replace>NEWS</Link>
           <Link to="/releases" replace>RELEASES</Link>
           <Link to="/artists" replace>ARTISTS</Link>
-          <a href="https://music.tgrex.com/" target="_blank">AUDIO</a>
+          <Link to="/audio" replace>AUDIO</Link>
           <Link to="/about" replace>ABOUT</Link>
-          <a href="http://store.tgrex.com/" target="_blank">STORE</a>
+          <Link to="/store" replace>STORE</Link>
         </div>
         {this.props.children}
       </div>

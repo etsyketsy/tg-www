@@ -14,11 +14,9 @@ class Release extends Component {
     }
 
     render() {
-        console.log(this.props.item)
         return (
             (this.state.showInfo) ?
                 <div className="release"
-                    id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
                     releases={this.props.releases}
@@ -26,11 +24,10 @@ class Release extends Component {
                     <div>{this.props.item.release_title}</div>
                     <div>{this.props.item.artist}</div>
                     <div> Release: {this.props.item.cat_num}</div>
-  
+
                 </div>
                 :
                 <div className="release"
-                    id={this.props.id}
                     onMouseEnter={this.hoverHandler}
                     onClick={this.props.onClick}
                     releases={this.props.releases}
