@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import './index.css';
 
 
 class ArtistSlide extends Component {
@@ -33,13 +33,20 @@ class ArtistSlide extends Component {
                 {/* <Link to="/artists" replace id="exit">&#215;</Link> */}
                <button onClick={this.props.history.goBack}>&#215;</button>
                 <div className="desc">
-                    <img src={this.state.item.image} alt='img'/>
-                    <h2>{this.state.item.artist}</h2>
-                    {this.state.item.artist_bio}
-                    <p>{this.state.item.artist_location}</p>
                     
-                    
-                </div>
+                    <p className='name'>
+                        {this.state.item.artist}
+                        <br />
+                        <p className='location'>  
+                          {this.state.item.artist_location}
+                        </p>
+                    </p>
+                        <img src={this.state.item.image} alt='img' className='artistPhoto'/>
+                    </div>
+                    <p className='bio'>
+                        {this.state.item.artist_bio}
+                    </p>   
+                
 
             </div>
         )
