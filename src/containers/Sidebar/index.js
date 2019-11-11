@@ -13,12 +13,13 @@ class Sidebar extends Component {
         <div id="navLinks">
           <img src={logo2} alt="Logo" id="logo" />
           <Link to="/" replace>HOME</Link>
-          <Link to="/news" replace>NEWS</Link>
+          <a href="https://blog.tgrex.com/" target="_blank">NEWS</a>
           <Link to="/releases" replace>RELEASES</Link>
           <Link to="/artists" replace>ARTISTS</Link>
-          <Link to="/audio" replace>AUDIO</Link>
+          <a href="https://music.tgrex.com/" target="_blank">AUDIO</a>
           <Link to="/about" replace>ABOUT</Link>
-          <Link to="/store" replace>STORE</Link>
+          <a href="https://deathwishinc.com/collections/twelve-gauge" 
+            target="_blank">STORE</a>
         </div>
         {this.props.children}
       </div>
