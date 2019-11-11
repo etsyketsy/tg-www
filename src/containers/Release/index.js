@@ -24,7 +24,7 @@ class Release extends Component {
                     <div>{this.props.item.release_title}</div>
                     <div>{this.props.item.artist}</div>
                     <div> Release: {this.props.item.cat_num}</div>
-  
+
                 </div>
                 :
                 <div className="release"

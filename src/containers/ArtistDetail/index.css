@@ -1,23 +1,51 @@
-.desc {
+button {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 3vh;
+}
+
+.name {
+    font-size: 2em;
     display: flex;
     flex-direction: column;
-    line-height: 1.2em;
-    height: 100%;
-    width: 100%;
 }
 
-.artistDetail{
+
+.location {
+    font-size: .5em;
+    line-height: 1em;
+    margin-top: 1vh;
+}
+
+.artistPhoto {
+    max-width: 216px;
+    height: 116px;
+    object-fit: cover;
+    padding: 0;
+    display: flex;
+}
+
+.bio {
+    padding: 0;
+    height: auto;
+    margin: 0;
+    border-top: solid #ffcebe;
+    padding-top: 1vh;
+}
+
+.desc {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    width: 100%;
-    margin-top: 5vh;
-    margin-left: 5vh;
+    justify-content: space-between;
+    height: auto;
+    margin-bottom: 1.5vh;
+
 }
 
-
-#coverDetail {
+.artistSlide {
+    width: 60vh;
+    height: auto;
     display: flex;
-    width: 300px;
-    height: 300px;
+    flex-direction: column;
+    padding-top: 5vh;
 }
