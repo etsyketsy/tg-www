@@ -15,7 +15,7 @@
   grid-area: releases;
 }
 
-#artsist {
+#artist {
   grid-area: artists;
 }
 
@@ -31,21 +31,6 @@
 .cover {
   width: 20vh;
   height: 20vh;
-}
-
-.artist {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  font-size: 1.75vh;
-  border: .5px solid slategray;
-  width: 20vmin;
-  height: 20vmin;
-  word-wrap: break-word;
-  hyphens: auto;
-  margin-right: 1vh;
-  margin-bottom: 1vh;
 }
 
 .description {

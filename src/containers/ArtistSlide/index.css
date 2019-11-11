@@ -8,11 +8,12 @@ button {
     font-size: 2em;
     display: flex;
     flex-direction: column;
-    line-height: 1em;
 }
 
 .location {
     font-size: .5em;
+    line-height: 1em;
+    margin-top: 1vh;
 }
 
 .artistPhoto {
@@ -27,6 +28,8 @@ button {
     padding: 0;
     height: auto;
     margin: 0;
+    border-top: solid #ffcebe;
+    padding-top: 1vh;
 }
 
 .desc {
@@ -35,6 +38,7 @@ button {
     justify-content: space-between;
     height: auto;
     margin-bottom: 1.5vh;
+
 }
 
 .artistSlide {
