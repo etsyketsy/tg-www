@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import './index.css';
 
 
-class ReleaseSlide extends Component {
+class ReleaseDetail extends Component {
 
     state = {
         item: null
@@ -33,17 +34,22 @@ class ReleaseSlide extends Component {
     }
 
     render() {
+        console.log(this.state)
         return (
             (!this.state.item) ?
                 <h2>loading...</h2>
                 :
 
-                <div className="releaseSlide" id={this.props.index}>
+                <div className="releaseDetail">
                     <button onClick={this.clickHandler}>&#215;</button>
                     <div className="desc">
+                        <img 
+                            src={this.state.item.image} 
+                            alt='cover' 
+                            id='coverDetail' 
+                        />
                         <h2>{this.state.item.release_title}</h2>
                         {this.state.item.fk_artist}
-                        {this.state.item.tracklisting}
                         <br></br>
                         {this.state.item.cat_num}
                         <br></br>
@@ -54,7 +60,8 @@ class ReleaseSlide extends Component {
                                 this.state.item.tracks.map(
                                     (track) => {
                                         return (
-                                            <li>{track.title}</li>
+                                            <li key={track.track_number}>           {track.title}
+                                            </li>
                                         )
                                         
                                     }
@@ -72,4 +79,4 @@ class ReleaseSlide extends Component {
 }
 
 
-export default withRouter(ReleaseSlide);
+export default withRouter(ReleaseDetail);

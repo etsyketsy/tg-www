@@ -9,7 +9,6 @@
     display: flex;
 }
 
-
 button {
     border: none;
     background: none;
@@ -31,28 +30,3 @@ button {
     padding: none;
 }
 
-#slideCover {
-    object-fit: contain;
-    width: auto;
-    display: flex;
-    min-height: 400px;
-    max-height: 600px;
-}
-
-.desc {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2em;
-    height: auto;
-    width: auto;
-    align-content: left;
-    justify-content: center;
-}
-
-
-.detailView {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-content: center;
-}
