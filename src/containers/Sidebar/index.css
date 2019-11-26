@@ -8,7 +8,6 @@
 }
 
 .sidebar {
-  grid-area: sidebar;
   display: flex;
   flex-direction: row;
   align-items: left;
@@ -20,9 +19,10 @@
   flex-direction: column;
   padding-left: 4vh;
   justify-content: space-between;
-  height: 17vmin;
+  height: 15vmin;
   width: 15vmin;
   color: black;
   margin-right: 5vmin;
   font-family: 'Inconsolata', monospace;
+  font-size: 3vmin;
 }

@@ -6,18 +6,15 @@
     height: 40vh;
     overflow: hidden;
     object-fit: contain;
-    border: solid green;
     max-height: 30vh;
 }
 
 .postPreview img {
-    border: solid orange;
     max-width: 15vh;
     display: flex;
 }
 
 .postPreview div {
-    border: solid pink;
     display: flex;
     flex-direction: column;
     overflow-wrap: break-word;
