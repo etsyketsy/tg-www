@@ -21,6 +21,8 @@
 
 #releases {
   grid-area: releases;
+  overflow: hidden;
+  height: auto;
 }
 
 #about {
@@ -63,7 +65,7 @@ button {
   margin-right: 1vh;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 15vh auto auto;
+  grid-template-rows: 8vh auto auto;
   grid-template-areas: 
   'header  header'
   'news    releases'
