@@ -1,6 +1,7 @@
 
 #header {
   grid-area: header;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #news {
