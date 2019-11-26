@@ -1,0 +1,25 @@
+.postTitle {
+    font-family: 'Inconsolata', monospace;
+    display: flex;
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+#news {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* overflow-wrap: break-word;
+    word-wrap: break-word; */
+
+}
+
+

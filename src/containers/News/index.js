@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RSSParser from 'rss-parser';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import './index.css';
 
 class News extends Component {
     state = {
@@ -77,10 +78,10 @@ class News extends Component {
     render() {
         return (
             <div id='news'>
-                <div>'coming soon'</div>
+                <div className="sectionHeader">News</div>
                 {
                     (!this.state.posts) ?
-                        <div>'coming soon'</div>
+                        <div></div>
                         :
                  
                         this.state.posts.map((post, index) => {
@@ -89,7 +90,7 @@ class News extends Component {
 
                             return (
                                 <div className='post' key={index}>
-                                    <h4>{post.title}</h4>
+                                    <h4 className='postTitle'>{post.title}</h4>
                                     <div>{ ReactHtmlParser(html)}</div>
                                     {post.output}
                                     <a href={post.link}>view post</a>

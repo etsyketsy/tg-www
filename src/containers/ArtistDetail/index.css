@@ -8,6 +8,7 @@ button {
     font-size: 2em;
     display: flex;
     flex-direction: column;
+    font-family: 'Inconsolata', monospace;
 }
 
 
