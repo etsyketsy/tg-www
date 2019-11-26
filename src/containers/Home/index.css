@@ -21,6 +21,8 @@
 
 #releases {
   grid-area: releases;
+  overflow: hidden;
+  height: auto;
 }
 
 #about {
