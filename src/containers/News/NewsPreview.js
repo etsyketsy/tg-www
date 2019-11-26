@@ -14,7 +14,7 @@ class NewsPreview extends Component {
                     (!this.props.posts) ?
                         <div></div>
                         :
-                        this.props.posts.map((post, index) => {
+                        this.props.posts.slice(0, 3).map((post, index) => {
 
                             let html = post.content;
 

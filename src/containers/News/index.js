@@ -104,9 +104,9 @@ class News extends Component {
 
                                 return (
                                     <div className='post' key={index}>
-                                        <h4 className='postTitle'>{post.title}</h4>
+                                        <p className='postTitle'>{post.title}</p>
                                         <div>{ReactHtmlParser(html)}</div>
-                                        <a href={post.link}>view post</a>
+                                        <a href={post.link} className='postLink'>view post</a>
 
                                     </div>
                                 )

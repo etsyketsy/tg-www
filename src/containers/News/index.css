@@ -14,7 +14,6 @@
     border: solid orange;
     max-width: 15vh;
     display: flex;
-
 }
 
 .postPreview div {
@@ -24,28 +23,35 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     /* overflow: hidden; */
-    height: 30vh;
+    height: 5vh;
 }
 
 .post img {
-    width: 40vh;
-    border: solid blue;
+    max-width: 40vh;
+
 }
 
 .postTitle {
     font-family: 'Inconsolata', monospace;
     display: flex;
-    font-size: 2vh;
+    font-size: 2.5vh;
     font-weight: bold;
+    padding-bottom: .5vh;
+    margin-block-start: 1em;
+    margin-block-end: .5em;
+    border-bottom: solid #ffcebe;
+}
+
+.postLink {
+    border-bottom: solid #ffcebe;
 }
 
 .post{
     display: flex;
     flex-wrap: wrap;
-    object-fit: scale-down;
     width: 55vh;
     height: auto;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
 }
 
 #newsPreview {

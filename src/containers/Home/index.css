@@ -1,7 +1,6 @@
 
 #header {
   grid-area: header;
-  font-family: 'Montserrat', sans-serif;
 }
 
 #news {
@@ -39,17 +38,14 @@ button {
   flex-direction: column;
 }
 
-.sectionHeader{
-  grid-area: sectionHeader;
-  display: flex;
+.sectionHeader {
   margin-top: 8vmin;
-  padding-bottom: 1vh;
+  margin-bottom: 1vh;
   font-size: 3.75vh;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Karla', sans-serif;
 }
 
-.displayGrid{
-  grid-area: displayGrid;
+.displayGrid {
   display: flex;
   flex-flow: wrap;
 }
