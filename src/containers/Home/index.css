@@ -4,10 +4,6 @@
 }
 
 #news {
-  display: flex;
-  flex-wrap: wrap;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
   grid-area: news;
 }
 
@@ -42,16 +38,14 @@ button {
   flex-direction: column;
 }
 
-.sectionHeader{
-  grid-area: sectionHeader;
-  display: flex;
+.sectionHeader {
   margin-top: 8vmin;
-  padding-bottom: 1vh;
+  margin-bottom: 1vh;
   font-size: 3.75vh;
+  font-family: 'Karla', sans-serif;
 }
 
-.displayGrid{
-  grid-area: displayGrid;
+.displayGrid {
   display: flex;
   flex-flow: wrap;
 }
@@ -62,7 +56,6 @@ button {
 }
 
 .app {
-  font-family: sans-serif, "Helvetica";
   background-color: #FFFFFF;
   color: #2C2A2D;
   width: 100%;
@@ -70,7 +63,7 @@ button {
   margin-right: 1vh;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 37vmin auto auto;
+  grid-template-rows: 8vh auto auto;
   grid-template-areas: 
   'header  header'
   'news    releases'

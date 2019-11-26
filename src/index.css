@@ -2,8 +2,7 @@
 /* global styling */
 body {
   margin: 0;
-  font-family: sans-serif, "Helvetica Neu";
-  text-decoration: none;
+  font-family: 'Karla', sans-serif;
 }
 
 a {
