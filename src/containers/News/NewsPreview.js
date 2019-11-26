@@ -8,7 +8,6 @@ class NewsPreview extends Component {
 
     render() {
         return (
-
             <div id='newsPreview'>
                 {
                     (!this.props.posts) ?
@@ -20,8 +19,8 @@ class NewsPreview extends Component {
 
                             return (
                                 <div className='postPreview' key={index}>
-                                    <h4 className='postTitle'>{post.title}</h4>
-                                    <div>{ReactHtmlParser(html)}</div>
+                                    <p className='postTitle'>{post.title}</p>
+                                    <div className='previewHTML'>{ReactHtmlParser(html)}</div>
                                     <a href={post.link}>view post</a>
 
                                 </div>
