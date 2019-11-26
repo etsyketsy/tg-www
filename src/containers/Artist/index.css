@@ -10,8 +10,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    /* text-align: center;
-    justify-content: center; */
     font-size: 1.75vh;
     width: 20vmin;
     height: 20vmin;

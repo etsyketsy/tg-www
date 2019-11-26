@@ -1,0 +1,30 @@
+.post img {
+    width: 40vh;
+}
+
+.postTitle {
+    font-family: 'Inconsolata', monospace;
+    display: flex;
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+.post{
+    display: flex;
+    flex-wrap: wrap;
+    object-fit: scale-down;
+    width: 55vh;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+
+#news {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+

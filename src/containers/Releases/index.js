@@ -25,7 +25,7 @@ class Releases extends Component {
     render() {
         return (
             (!this.state.releases) ?
-                <h1>&#8635;</h1>
+                <div></div>
                 :
                 <div className="content" id="releases">
                     <div className="sectionHeader">Releases</div>
