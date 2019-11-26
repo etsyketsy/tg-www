@@ -44,6 +44,6 @@
 
 
 #itemTile:hover #info {
-        opacity: .95;
+        opacity: .8;
         transition: opacity .2s;
 }
