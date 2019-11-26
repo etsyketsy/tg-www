@@ -1,5 +1,35 @@
+
+.postPreview {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    object-fit: contain;
+    border: solid green;
+    max-height: 30vh;
+}
+
+.postPreview img {
+    border: solid orange;
+    max-width: 15vh;
+    display: flex;
+
+}
+
+.postPreview div {
+    border: solid pink;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    /* overflow: hidden; */
+    height: 30vh;
+}
+
 .post img {
     width: 40vh;
+    border: solid blue;
 }
 
 .postTitle {
@@ -15,16 +45,22 @@
     object-fit: scale-down;
     width: 55vh;
     height: auto;
-    overflow: hidden;
     margin-bottom: 5vh;
+}
+
+#newsPreview {
+    display: flex;
+    flex-direction: column;
+    width: auto;
 }
 
 #news {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: none;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    overflow: hidden;
 }
 
 

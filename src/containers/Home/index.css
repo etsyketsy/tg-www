@@ -67,7 +67,7 @@ button {
   margin-right: 1vh;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 17vmin auto auto;
+  grid-template-rows: 15vh auto auto;
   grid-template-areas: 
   'header  header'
   'news    releases'

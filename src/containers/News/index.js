@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import RSSParser from 'rss-parser';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import './index.css';
+import NewsPreview from './NewsPreview';
+import * as feed from './feed.rss';
 
 class News extends Component {
     state = {
@@ -42,9 +44,9 @@ class News extends Component {
         // let wrapper = document.createElement('div');
         // wrapper.innerHTML = content;
         // wrapper.id = index;
-        
 
-        
+
+
         // let els = wrapper.getElementsByTagName('*');
         // let divs = [''];
         // console.log(els)
@@ -58,11 +60,11 @@ class News extends Component {
         //     let parent = element.parentNode
         //     let section = document.createElement(`${element.tagName}`)
         //     section.innerHTML = `${element.innerHTML}`
-            
+
         // })
-   
-       let html = content;
-       return <div></div>
+
+        let html = content;
+        return <div></div>
     }
 
     // *** best so far
@@ -71,35 +73,49 @@ class News extends Component {
 
         parser.parseURL('https://cors-anywhere.herokuapp.com/http://blog.tgrex.com/rss')
             .then(feed => {
+                console.log('rssuccess')
                 this.setState({ posts: feed.items })
             })
+            .catch((error) => {
+                console.log(error)
+                console.log('going with existing file')
+                this.setState({
+                    posts: feed.items
+                })
+            });
     }
 
     render() {
         return (
-            <div id='news'>
-                <div className="sectionHeader">News</div>
-                {
-                    (!this.state.posts) ?
-                        <div></div>
-                        :
-                 
-                        this.state.posts.map((post, index) => {
-                            
-                            let html = post.content;
 
-                            return (
-                                <div className='post' key={index}>
-                                    <h4 className='postTitle'>{post.title}</h4>
-                                    <div>{ ReactHtmlParser(html)}</div>
-                                    <a href={post.link}>view post</a>
 
-                                </div>
-                            )
+            (!this.state.posts) ?
+                <div></div>
+                :
+                <div id='news'>
+                    <div className="sectionHeader">News</div>
+                    {
 
-                        })
-                }
-            </div>
+                        (window.location.pathname === '/news') ?
+
+                            this.state.posts.map((post, index) => {
+
+                                let html = post.content;
+
+                                return (
+                                    <div className='post' key={index}>
+                                        <h4 className='postTitle'>{post.title}</h4>
+                                        <div>{ReactHtmlParser(html)}</div>
+                                        <a href={post.link}>view post</a>
+
+                                    </div>
+                                )
+
+                            })
+                            :
+                            <NewsPreview posts={this.state.posts} />
+                    }
+                </div>
         )
     }
 }
