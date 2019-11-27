@@ -18,6 +18,7 @@ class NewsPreview extends Component {
                             let html = post.content;
 
                             return (
+                                
                                 <div className='postPreview' key={index}>
                                     <div className='postTitle'>{post.title}</div>
                                     <div className='previewHTML'>{ReactHtmlParser(html)}</div>
