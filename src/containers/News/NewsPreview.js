@@ -19,10 +19,9 @@ class NewsPreview extends Component {
 
                             return (
                                 <div className='postPreview' key={index}>
-                                    <p className='postTitle'>{post.title}</p>
+                                    <div className='postTitle'>{post.title}</div>
                                     <div className='previewHTML'>{ReactHtmlParser(html)}</div>
-                                    <a href={post.link} className='postLink'>view post</a>
-
+                                    <a href={post.link} className='postLink'>view full post</a>
                                 </div>
                             )
 
