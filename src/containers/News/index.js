@@ -79,9 +79,9 @@ class News extends Component {
             .catch((error) => {
                 console.log(error)
                 console.log('going with existing file')
-                this.setState({
-                    posts: feed.items
-                })
+                // this.setState({
+                //     posts: feed.items
+                // })
             });
     }
 
