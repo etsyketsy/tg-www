@@ -1,0 +1,34 @@
+
+.text {
+  display: inline-flex;
+  border-bottom: solid transparent;
+ }
+ 
+ .active .text {
+   padding: 0em;
+   border-bottom: solid #ffcebe;
+   box-sizing: border-box;
+ }
+
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#navLinks {
+  display: flex;
+  flex-direction: column;
+  padding-left: .75em;
+  justify-content: space-between;
+  object-fit: contain;
+  height: 15vh;
+  width: 6em;
+  color: black;
+  margin-right: 5vh;
+  font-family: 'Inconsolata', monospace;
+  font-size: 3vmin;
+}

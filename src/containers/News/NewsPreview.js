@@ -5,7 +5,6 @@ import './index.css';
 
 class NewsPreview extends Component {
 
-
     render() {
         return (
             <div id='newsPreview'>
