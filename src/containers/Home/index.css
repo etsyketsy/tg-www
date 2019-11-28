@@ -5,14 +5,17 @@
 
 #news {
   grid-area: news;
+  margin-top: 4.5em;
 }
 
 #releases {
   grid-area: releases;
+  margin-top: 4.5em;
 }
 
-#artist {
+#artists {
   grid-area: artists;
+  margin-top: 4.5em;
 }
 
 .content {
@@ -29,17 +32,12 @@
   grid-area: about;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  margin-top: 4.5em;
+  width: 60%;
 }
 
 
 /* global styling */
-button {
-  border: none;
-  font-size: 2vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .sectionHeader {
   margin-top: 8vmin;
   margin-bottom: 1vh;
@@ -65,9 +63,8 @@ button {
   margin-right: 1vh;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 8vh auto auto;
+  grid-template-rows:  auto auto;
   grid-template-areas: 
-  'header  header'
   'news    releases'
   'artists about';
 }

@@ -91,7 +91,7 @@
 .post{
     display: flex;
     flex-wrap: wrap;
-    width: 55vh;
+    width: 60%;
     height: auto;
     margin-bottom: 2vh;
 }
@@ -107,6 +107,7 @@
 #news {
     display: flex;
     flex-direction: column;
+    justify-content: left;
     flex-wrap: wrap;
     overflow-wrap: break-word;
     word-wrap: break-word;

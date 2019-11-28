@@ -16,7 +16,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
     <Router>
         <Switch>
-            <Sidebar className="layout">
+            <Sidebar id="sidebar">
                 <Route exact path='/' component={Home} />
                 <Route exact path='/news' component={News} />
                 <Route exact path='/releases' component={Releases} />
