@@ -106,8 +106,6 @@ class News extends Component {
                                     <div className='post' key={index}>
                                         <div className='postTitle'>{post.title}</div>
                                         <div classname='postHTML'>{ReactHtmlParser(html)}</div>
-                                        <a href={post.link} className='postLink'>view post</a>
-
                                     </div>
                                 )
 
