@@ -10,64 +10,6 @@ class News extends Component {
         posts: ''
     }
 
-    // // shows html, but processed as string, not DOM elements
-    // componentDidMount() {
-    //     let news = document.getElementById( "news" );
-    //     fetch('https://blog.tgrex.com/rss', {
-    //         method: 'GET',
-    //     })
-    //     .then(response => response.text())
-    //     .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
-    //     .then(data => {
-    //         let elements = data.getElementsByTagName('item')
-    //         let dataArray = Array.from(elements)
-    //         console.log(dataArray)
-    //         this.setState({news: dataArray}) 
-
-    //     })
-    // }
-
-    //receives XML doc, but can't parse it
-    // componentDidMount() {
-    //     let request = new XMLHttpRequest();
-
-    //     request.open('GET', 'https://blog.tgrex.com/rss');
-    //     request.send();
-    //     request.onload = () => {
-    //         // console.log(request.responseText)
-    //         let data = JSON.parse(request.responseText)
-    //         console.log(data)
-    //     }
-    // }
-
-    parsePost = (content, index) => {
-        // let wrapper = document.createElement('div');
-        // wrapper.innerHTML = content;
-        // wrapper.id = index;
-
-
-
-        // let els = wrapper.getElementsByTagName('*');
-        // let divs = [''];
-        // console.log(els)
-
-        // for (let i = 0; i < els.length; i++) {
-        //     divs.push(els[i])
-        // }
-
-        // // console.log(divs)
-        // divs.forEach(element => {
-        //     let parent = element.parentNode
-        //     let section = document.createElement(`${element.tagName}`)
-        //     section.innerHTML = `${element.innerHTML}`
-
-        // })
-
-        let html = content;
-        return <div></div>
-    }
-
-    // *** best so far
     componentDidMount() {
         let parser = new RSSParser();
 
@@ -78,17 +20,11 @@ class News extends Component {
             })
             .catch((error) => {
                 console.log(error)
-                console.log('going with existing file')
-                // this.setState({
-                //     posts: feed.items
-                // })
             });
     }
 
     render() {
         return (
-
-
             (!this.state.posts) ?
                 <div></div>
                 :
@@ -105,7 +41,8 @@ class News extends Component {
                                 return (
                                     <div className='post' key={index}>
                                         <div className='postTitle'>{post.title}</div>
-                                        <div className='postHTML'>{ReactHtmlParser(html)}</div>
+                                        <div className='postHTML'>{ReactHtmlParser(html)}
+                                        </div>
                                     </div>
                                 )
 
@@ -113,6 +50,8 @@ class News extends Component {
                             :
                             <NewsPreview posts={this.state.posts} />
                     }
+                    <a href='https://blog.tgrex.com/' id='blogLink'>
+                        <div className='text'>view all posts</div></a>
                 </div>
         )
     }
