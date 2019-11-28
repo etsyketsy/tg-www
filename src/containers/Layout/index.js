@@ -7,17 +7,6 @@ import './index.css';
 
 
 class Layout extends Component {
-  state = {
-
-  }
-
-  checkWindow(id) {
-    console.log(id)
-    return (window.location.pathname === id) ? 'active' : console.log(id);
-
-  }
-
-
 
   render() {
     return (
