@@ -25,27 +25,27 @@ class News extends Component {
 
     render() {
         return (
+            // Data check before rendering
             (!this.state.posts) ?
                 <div></div>
                 :
                 <div id='news'>
                     <div className="sectionHeader">News</div>
                     {
-
+                        // Render a snippet version if user is on the homepage
+                        // ReactHtmlParser is used to make nested HTML elements work with React without using dangerouslySetInnerHTML
                         (window.location.pathname === '/news') ?
-
                             this.state.posts.map((post, index) => {
-
-                                let html = post.content;
-
                                 return (
                                     <div className='post' key={index}>
-                                        <div className='postTitle'>{post.title}</div>
-                                        <div className='postHTML'>{ReactHtmlParser(html)}
+                                        <div className='postTitle'>
+                                            {post.title}
+                                        </div>
+                                        <div className='postHTML'>
+                                            {ReactHtmlParser(post.content)}
                                         </div>
                                     </div>
                                 )
-
                             })
                             :
                             <NewsPreview posts={this.state.posts} />
