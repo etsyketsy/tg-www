@@ -1,0 +1,15 @@
+#logo {
+    display: block;
+    width: 5em;
+    height: auto; 
+    margin-bottom: 1em;
+    margin-top: .5em;
+  }
+  
+  #logoWrapper {
+    display: inline-block;
+    align-items: left;
+    object-fit: scale-down;
+    width: 100%;
+  }
+  
