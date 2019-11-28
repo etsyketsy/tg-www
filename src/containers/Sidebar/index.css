@@ -1,10 +1,17 @@
 
 #logo {
+  display: block;
+  width: 5em;
+  height: auto; 
+  margin-bottom: 1em;
+  margin-top: .5em;
+}
+
+#logoWrapper {
+  display: inline-block;
   align-items: left;
-  margin-bottom: 2vh;
-  object-fit: contain;
-  width: auto;
-  min-height: 15vh;
+  object-fit: scale-down;
+  width: 100%;
 }
 
 .sidebar {
@@ -12,17 +19,20 @@
   flex-direction: row;
   align-items: left;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.sidebar #navLinks {
+#navLinks {
   display: flex;
   flex-direction: column;
-  padding-left: 4vh;
+  padding-left: .75em;
   justify-content: space-between;
-  height: 15vmin;
-  width: 15vmin;
+  object-fit: contain;
+  height: 15vh;
+  width: 6em;
   color: black;
-  margin-right: 5vmin;
+  margin-right: 5vh;
   font-family: 'Inconsolata', monospace;
   font-size: 3vmin;
 }

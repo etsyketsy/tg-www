@@ -11,7 +11,9 @@ class Sidebar extends Component {
     return (
       <div className="sidebar">
         <div id="navLinks">
-          <img src={logo2} alt="Logo" id="logo" />
+          <Link to="/" replace id="logoWrapper">
+            <img src={logo2} alt="Logo" id="logo" />
+          </Link>
           <Link to="/" replace>HOME</Link>
           <Link to="/news" replace>NEWS</Link>
           <Link to="/releases" replace>RELEASES</Link>
