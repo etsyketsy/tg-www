@@ -44,8 +44,13 @@ class News extends Component {
                                         <div className='postHTML'>
                                             {ReactHtmlParser(post.content)}
                                         </div>
-                                        <a href='https://blog.tgrex.com/' id='blogLink'>
-                        <div className='text'>view all posts</div></a>
+                                        <a href='https://blog.tgrex.com/'
+                                            id='blogLink' target="_blank"
+                                        >
+                                            <div className='text'>
+                                                view all posts
+                                            </div>
+                                        </a>
                                     </div>
                                 )
                             })
