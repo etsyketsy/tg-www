@@ -14,7 +14,7 @@
 #navLinks {
   display: flex;
   flex-direction: column;
-  padding-left: .75em;
+  padding-left: 2vh;
   justify-content: space-between;
   object-fit: contain;
   height: 15vh;

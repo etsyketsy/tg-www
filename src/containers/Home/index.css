@@ -57,6 +57,7 @@
   content: "";
   flex: auto;
 }
+
 .app {
   grid-area: app;
   background-color: #FFFFFF;
