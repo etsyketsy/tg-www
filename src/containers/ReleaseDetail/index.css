@@ -1,4 +1,12 @@
-  
+button {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 3vh;
+    width: 1vh;
+    border: none;
+    font-size: 1em;
+}  
+
 .desc {
     display: flex;
     line-height: 1.2em;
@@ -14,7 +22,6 @@
     margin-top: 5vh;
     margin-left: 5vh;
 }
-
 
 #coverDetail {
     display: flex;

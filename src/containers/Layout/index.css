@@ -10,14 +10,6 @@
    box-sizing: border-box;
  }
 
-.sidebar {
-  display: flex;
-  flex-direction: row;
-  align-items: left;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
 
 #navLinks {
   display: flex;
@@ -26,9 +18,24 @@
   justify-content: space-between;
   object-fit: contain;
   height: 15vh;
-  width: 6em;
+  /* width: 6em; */
   color: black;
-  margin-right: 5vh;
   font-family: 'Inconsolata', monospace;
   font-size: 3vmin;
+}
+
+#layout {
+  background-color: #FFFFFF;
+  color: #2C2A2D;
+  width: 100%;
+  height: 100%;
+  margin-right: 1vh;
+  display: grid;
+  grid-template-areas: 
+  'header  header   header'
+  'sidebar news     releases'
+  'sidebar artists  about';
+  grid-template-columns: 16vh 40vh 30vh;
+  grid-template-rows:  15vh 30vh 30vh;
+
 }

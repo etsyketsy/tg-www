@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 //import logo from '../../assets/logo.gif';
 import Header from '../Header';
-import NavLinks from '../NavLinks';
 import './index.css';
 
 
@@ -10,8 +9,8 @@ class Layout extends Component {
 
   render() {
     return (
-      <div className="layout">
-        <Header ></Header>
+      <div id="layout">
+        <Header />
  
         <div id="navLinks">
           
