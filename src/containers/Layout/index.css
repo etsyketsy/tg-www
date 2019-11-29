@@ -18,7 +18,6 @@
   justify-content: space-between;
   object-fit: contain;
   height: 15vh;
-  /* width: 6em; */
   color: black;
   font-family: 'Inconsolata', monospace;
   font-size: 3vmin;
@@ -32,10 +31,8 @@
   margin-right: 1vh;
   display: grid;
   grid-template-areas: 
-  'header  header   header'
-  'sidebar news     releases'
-  'sidebar artists  about';
-  grid-template-columns: 16vh 40vh 30vh;
-  grid-template-rows:  15vh 30vh 30vh;
-
+  'header  header'
+  'sidebar app';
+  grid-template-columns: .5fr 2.5fr;
+  grid-template-rows:  .25fr 3fr;
 }

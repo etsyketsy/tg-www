@@ -43,7 +43,6 @@
 
 /* global styling */
 .sectionHeader {
-  margin-top: 8vmin;
   margin-bottom: 1vh;
   font-size: 3.75vh;
   font-family: 'Karla', sans-serif;
@@ -58,19 +57,18 @@
   content: "";
   flex: auto;
 }
-
 .app {
+  grid-area: app;
   background-color: #FFFFFF;
   color: #2C2A2D;
   width: 100%;
   height: 100%;
-
   display: grid;
   grid-template-areas: 
   'news     releases'
   'artists  about';
-  grid-template-columns: 50vh 50vh;
-  grid-template-rows:  50vh 50vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   column-gap: 1vh;
-  row-gap: 1vh;
+  row-gap: 2vh;
 }
