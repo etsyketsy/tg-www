@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import RSSParser from 'rss-parser';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import ReactHtmlParser from 'react-html-parser';
 import './index.css';
 import NewsPreview from './NewsPreview';
-import * as feed from './feed.rss';
 
 class News extends Component {
     state = {
