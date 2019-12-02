@@ -26,6 +26,7 @@ class ArtistsPreview extends Component {
                 <div></div>
                 :
                 <div className="preview" id="artistPreview">
+                    <div className="sectionHeader">Artists</div>
                     <div className="displayGrid">
                         {
                             this.state.artists.slice(0, this.state.itemsToRender).map(
