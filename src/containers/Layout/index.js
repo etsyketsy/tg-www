@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-//import logo from '../../assets/logo.gif';
+import { NavLink, Link } from 'react-router-dom';
+import logo2 from '../../assets/logo2.jpg';
 import Header from '../Header';
 import './index.css';
 
@@ -10,10 +10,14 @@ class Layout extends Component {
   render() {
     return (
       <div id="layout">
-        <Header />
+        
  
         <div id="navLinks">
-          
+        <div id="logo">
+                <Link to="/" replace id="logoWrapper">
+                    <img src={logo2} alt="Logo" id="logo" />
+                </Link>
+            </div>
           <NavLink to="/" activeClassName="active" exact replace>
             <div className='text'>HOME</div>
           </NavLink>
