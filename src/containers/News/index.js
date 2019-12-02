@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import RSSParser from 'rss-parser';
 import ReactHtmlParser from 'react-html-parser';
 import './index.css';
-import NewsPreview from './NewsPreview';
 
 class News extends Component {
     state = {
@@ -27,7 +26,7 @@ class News extends Component {
             (!this.state.posts) ?
                 <div></div>
                 :
-                <div id='news'>
+                <div id='news' className='content'>
                     <div className="sectionHeader">News</div>
                     {
                         // ReactHtmlParser is used to make nested HTML elements work with React without using dangerouslySetInnerHTML
