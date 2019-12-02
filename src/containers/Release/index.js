@@ -2,36 +2,21 @@ import React, { Component } from 'react';
 import './index.css';
 
 class Release extends Component {
-    state = {
-        showInfo: false
-    }
-
-    hoverHandler = (e) => {
-        this.setState(
-            { showInfo: !this.state.showInfo }
-        )
-    }
 
     render() {
         return (
-            (this.state.showInfo) ?
-                <div className="release"
-                    onMouseEnter={this.hoverHandler}
-                    onClick={this.props.onClick}
-                    releases={this.props.releases}
-                >
-                    <div>{this.props.item.release_title}</div>
-                    <div>{this.props.item.artist}</div>
-                    <div> Release: {this.props.item.cat_num}</div>
-
-                </div>
-                :
-                <div className="release"
-                    onMouseEnter={this.hoverHandler}
-                    onClick={this.props.onClick}
-                    releases={this.props.releases}
-                >
-                    <img src={this.props.item.image} alt='cover' id='coverTile'/>
+                <div id="releaseTile">
+                    <img className='photoPreview' 
+                        src={this.props.item.image} 
+                        alt='releaseCover' />
+                    <div id='info'>
+                        <div className='release_title'>                 
+                            {this.props.item.release_title}
+                        </div>
+                        <div className='release_artist'>
+                            by {this.props.item.artist}
+                        </div>
+                    </div>
                 </div>
         )
     }

@@ -1,23 +1,60 @@
-  
-#coverTile {
-  max-width: 100%;
-  max-height: 100%;
+
+
+.photoPreview {
+  display: flex;
+  object-fit: cover;
+  height: 100%;
 }
 
-.release {
+#releaseTile {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 1vh;
-  margin-right: 1vh;
+  position: relative;
   font-size: 1.75vh;
-  overflow-wrap: break-word;
-  hyphens: auto;
   width: 20vmin;
   height: 20vmin;
+  word-wrap: break-word;
+  hyphens: auto;
+  margin-right: 1vh;
+  margin-bottom: 1vh;
 }
 
-.release:hover img {
-  opacity: 0.3;
+#releaseTile #info {
+  background: #ffcebe;
+  object-fit: contain;
+  word-wrap: break-word;
+  height: 100%;
+  width:100%;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  text-align: left; 
+}
+
+#releaseTile .release_title{
+  font-size: 1.20em;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  margin-left: 1vh;
+  width: 100%;
+  min-height: 40%;
+  max-height: auto;
+  word-wrap: break-wrod;
+}
+
+#info .release_artist {
+  font-size: 1em;
+  height: 25%;
+  bottom: 0;
+  position: absolute;
+  text-align: left;
+  margin-left: 1vh;
+}
+
+#releaseTile:hover #info {
+      opacity: .8;
+      transition: opacity .2s;
 }
