@@ -45,6 +45,7 @@ class News extends Component {
                                         </div>
                                         <a href='https://blog.tgrex.com/'
                                             id='blogLink' target="_blank"
+                                            rel="noopener noreferrer"
                                         >
                                             <div className='text'>
                                                 view all posts
