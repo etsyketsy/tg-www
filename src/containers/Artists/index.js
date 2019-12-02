@@ -23,7 +23,7 @@ class Artists extends Component {
   render() {
 
     return (
-
+      // Check for artist data in state
       (!this.state.artists) ?
         <h1>&#8635;</h1>
         :
@@ -34,6 +34,7 @@ class Artists extends Component {
               (window.location.pathname === '/artists') ?
                 this.state.artists.map(
                   (artist, index) => {
+                    // List only artists, not affiliates
                     if (artist.artist_type === 'artist') {
                       return (
                         <Link to={{
@@ -50,6 +51,7 @@ class Artists extends Component {
                         </Link >
                       )
                     }
+                    else return null;
                   }
                 )
                 :

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './index.css';
 
 
@@ -34,7 +34,6 @@ class ReleaseDetail extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             (!this.state.item) ?
                 <h2>loading...</h2>

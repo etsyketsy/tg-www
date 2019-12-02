@@ -26,12 +26,12 @@ class Layout extends Component {
           <NavLink to="/artists" activeClassName="active" replace>
             <div className='text'>ARTISTS</div>
           </NavLink>
-          <a href="https://music.tgrex.com/" target="_blank">AUDIO</a>
+          <a href="https://music.tgrex.com/" target="_blank" rel="noopener noreferrer">AUDIO</a>
           <NavLink to="/about" activeClassName="active" replace>
             <div className='text'>ABOUT</div>
           </NavLink>
           <a href="https://deathwishinc.com/collections/twelve-gauge"
-            target="_blank">STORE</a>
+            target="_blank" rel="noopener noreferrer">STORE</a>
         </div>
         {this.props.children}
       </div>

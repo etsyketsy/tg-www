@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../Header';
 import Releases from '../Releases/index.js';
 import Artists from '../Artists/index.js';
 import News from '../News/index.js';

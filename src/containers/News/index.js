@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import RSSParser from 'rss-parser';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import ReactHtmlParser from 'react-html-parser';
 import './index.css';
 import NewsPreview from './NewsPreview';
-import * as feed from './feed.rss';
 
 class News extends Component {
     state = {
@@ -15,7 +14,6 @@ class News extends Component {
 
         parser.parseURL('https://cors-anywhere.herokuapp.com/http://blog.tgrex.com/rss')
             .then(feed => {
-                console.log('rssuccess')
                 this.setState({ posts: feed.items })
             })
             .catch((error) => {
@@ -46,6 +44,7 @@ class News extends Component {
                                         </div>
                                         <a href='https://blog.tgrex.com/'
                                             id='blogLink' target="_blank"
+                                            rel="noopener noreferrer"
                                         >
                                             <div className='text'>
                                                 view all posts

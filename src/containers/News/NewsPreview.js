@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import RSSParser from 'rss-parser';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import ReactHtmlParser from 'react-html-parser';
 import './index.css';
 
 class NewsPreview extends Component {
@@ -25,7 +24,7 @@ class NewsPreview extends Component {
                                     <div className='previewHTML'>
                                         {ReactHtmlParser(html)}
                                     </div>
-                                    <a href={post.link} className='postLink' target="_blank">view full post</a>
+                                    <a href={post.link} className='postLink' target="_blank" rel="noopener noreferrer">view full post</a>
                                 </div>
                             )
 
