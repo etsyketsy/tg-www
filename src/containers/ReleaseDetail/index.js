@@ -10,7 +10,7 @@ class ReleaseDetail extends Component {
     }
 
     clickHandler = (props) => {
-
+        // Clicking the exit will push user back to All Releases of homepage depending on the path
         (!this.props.location.state) ?
             this.props.history.push('/releases')
             :
