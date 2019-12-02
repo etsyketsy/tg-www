@@ -14,7 +14,6 @@ class News extends Component {
 
         parser.parseURL('https://cors-anywhere.herokuapp.com/http://blog.tgrex.com/rss')
             .then(feed => {
-                console.log('rssuccess')
                 this.setState({ posts: feed.items })
             })
             .catch((error) => {

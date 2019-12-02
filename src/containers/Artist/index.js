@@ -13,7 +13,7 @@ class Artist extends Component {
     }
   
     render() {
-      console.log(this.props)
+
       return (
           <div id="itemTile">
             <img className='photoPreview' 
