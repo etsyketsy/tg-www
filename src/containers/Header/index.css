@@ -1,9 +1,8 @@
 #logo {
     display: block;
-    width: 5em;
+    width: 15vh;
     height: auto; 
-    margin-bottom: 1em;
-    margin-top: .5em;
+    margin-top: 1vh;
   }
   
   #logoWrapper {
@@ -11,5 +10,7 @@
     align-items: left;
     object-fit: scale-down;
     width: 100%;
+    margin-left: 2vh;
+    margin-bottom: 2vh;
   }
   
