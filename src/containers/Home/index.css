@@ -9,29 +9,19 @@
 
 #news {
   grid-area: news;
-}
 
-#releases {
+
+}
+#releasesPreview {
   grid-area: releases;
 }
 
 #artists {
   grid-area: artists;
-
 }
 
 #lastRow {
   grid-area: about;
-}
-
-.content {
-  text-align: left;
-}
-
-#releases {
-  grid-area: releases;
-  overflow: hidden;
-  height: auto;
 }
 
 #about {
@@ -39,6 +29,13 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
+
+.content {
+  text-align: left;
+}
+
+
+
 
 
 /* global styling */

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Releases from '../Releases/index.js';
+import ReleasesPreview from '../ReleasesPreview/index.js';
 import Artists from '../Artists/index.js';
 import News from '../News/index.js';
 import About from '../About/index.js';
@@ -14,7 +14,7 @@ class Home extends Component {
     return (
       <div className="home">
         <News />
-        <Releases />
+        <ReleasesPreview />
         <Artists />
         <div id="lastRow">
           <About />

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Release from '../Release/index.js';
-import ReleasesPreview from './ReleasesPreview.js';
-
 
 
 class Releases extends Component {
@@ -30,10 +28,7 @@ class Releases extends Component {
                 <div className="content" id="releases">
                     <div className="sectionHeader">Releases</div>
                     <div className="displayGrid">
-                        {
-                            (window.location.pathname === '/releases') ?
-
-                            this.state.releases.map(
+                        {this.state.releases.map(
                             (release, index) => {
                                 return (
                                     <Link
@@ -53,10 +48,7 @@ class Releases extends Component {
                                 )
                             }
                         )
-                        :
-                            <ReleasesPreview
-                                releases={this.state.releases}
-                            />
+    
                         }
                     </div>
                 </div>
