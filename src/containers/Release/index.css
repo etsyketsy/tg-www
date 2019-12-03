@@ -1,30 +1,20 @@
 
 
 .photoPreview {
-  display: flex;
-  object-fit: cover;
-  height: 100%;
+  display: inline-block;
+  object-fit: scale-down;
+  height: auto;
+  width: 100%;
 }
 
-#releaseTile {
+#preview_info {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  font-size: 1.75vh;
-  width: 20vmin;
-  height: 20vmin;
-  word-wrap: break-word;
-  hyphens: auto;
-  margin-right: 1vh;
-  margin-bottom: 1vh;
-}
-
-#releaseTile #info {
+  justify-content: flex-end;
   background: #ffcebe;
   object-fit: contain;
   word-wrap: break-word;
   height: 100%;
-  width:100%;
+  width: 100%;
   opacity: 0;
   bottom: 0;
   left: 0;
@@ -32,29 +22,48 @@
   text-align: left; 
 }
 
-#releaseTile .release_title{
+.preview_title{
+  display: flex;
   font-size: 1.20em;
   bottom: 0;
   left: 0;
   position: absolute;
   text-align: left;
-  margin-left: 1vh;
-  width: 100%;
-  min-height: 40%;
-  max-height: auto;
-  word-wrap: break-wrod;
+  justify-content: space-between;
+  width: 17vmin;
+  margin-bottom: .25em;
+  height: 50%;
+  word-wrap: break-word;
+  hyphens: auto;
+  margin-left: .5vh;
 }
 
-#info .release_artist {
+.release_artist {
+  display: flex;
   font-size: 1em;
-  height: 25%;
+  height: 20%;
   bottom: 0;
+  left: 0;
   position: absolute;
   text-align: left;
-  margin-left: 1vh;
+  margin-left: .5vh;
 }
 
-#releaseTile:hover #info {
+#releaseTile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: 1.75vh;
+  max-width: 20vmin;
+  max-height: 20vmin;
+  word-wrap: break-word;
+  hyphens: auto;
+  margin-right: 1vh;
+  margin-bottom: 1vh;
+  object-fit: scale-down;
+}
+
+#releaseTile:hover #preview_info{
       opacity: .8;
       transition: opacity .2s;
 }
