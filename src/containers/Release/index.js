@@ -9,8 +9,8 @@ class Release extends Component {
                     <img className='photoPreview' 
                         src={this.props.item.image} 
                         alt='releaseCover' />
-                    <div id='info'>
-                        <div className='release_title'>                 
+                    <div id='preview_info'>
+                        <div className='preview_title'>                 
                             {this.props.item.release_title}
                         </div>
                         <div className='release_artist'>

@@ -40,7 +40,7 @@ class ReleaseDetail extends Component {
                 :
 
                 <div className='releaseDetail'>
-                    <button onClick={this.clickHandler}>&#215;</button>
+                    <button onClick={this.clickHandler} id='releaseexit'>&#215;</button>
                     <div className='titleCard'>
                         <div className='info'>
                             <div className='name'>
