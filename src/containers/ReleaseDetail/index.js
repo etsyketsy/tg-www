@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import ReactHtmlParser from 'react-html-parser';
 import './index.css';
 
 
@@ -62,7 +63,7 @@ class ReleaseDetail extends Component {
                     </div>
 
                     <div className='description'>
-                        {this.state.item.bio}
+                        {ReactHtmlParser(this.state.item.bio)}
 
                         <div className='tracks'>Tracks:
                         <ol className='track_list'> 
