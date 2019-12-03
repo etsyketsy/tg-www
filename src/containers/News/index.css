@@ -62,7 +62,7 @@
     hyphens: auto;
     overflow: hidden;
     width: auto;
-    height: auto;
+    height: 20vh;
 }
 
 #newsPreview {

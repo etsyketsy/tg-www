@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import RSSParser from 'rss-parser';
 import ReactHtmlParser from 'react-html-parser';
 import './index.css';
-import NewsPreview from './NewsPreview';
 
 class News extends Component {
     state = {
@@ -27,34 +26,32 @@ class News extends Component {
             (!this.state.posts) ?
                 <div></div>
                 :
-                <div id='news'>
+                <div id='news' className='content'>
                     <div className="sectionHeader">News</div>
                     {
-                        // Render a snippet version if user is on the homepage
                         // ReactHtmlParser is used to make nested HTML elements work with React without using dangerouslySetInnerHTML
-                        (window.location.pathname === '/news') ?
-                            this.state.posts.map((post, index) => {
-                                return (
-                                    <div className='post' key={index}>
-                                        <div className='postTitle'>
-                                            {post.title}
-                                        </div>
-                                        <div className='postHTML'>
-                                            {ReactHtmlParser(post.content)}
-                                        </div>
-                                        <a href='https://blog.tgrex.com/'
-                                            id='blogLink' target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <div className='text'>
-                                                view all posts
-                                            </div>
-                                        </a>
+
+                        this.state.posts.map((post, index) => {
+                            return (
+                                <div className='post' key={index}>
+                                    <div className='postTitle'>
+                                        {post.title}
                                     </div>
-                                )
-                            })
-                            :
-                            <NewsPreview posts={this.state.posts} />
+                                    <div className='postHTML'>
+                                        {ReactHtmlParser(post.content)}
+                                    </div>
+                                    <a href='https://blog.tgrex.com/'
+                                        id='blogLink' target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <div className='text'>
+                                            view all posts
+                                            </div>
+                                    </a>
+                                </div>
+                            )
+                        })
+
                     }
 
                 </div>

@@ -9,35 +9,30 @@
 
 #news {
   grid-area: news;
-}
 
-#releases {
+
+}
+#releasesPreview {
   grid-area: releases;
 }
 
 #artists {
   grid-area: artists;
-
 }
 
 #lastRow {
   grid-area: about;
 }
 
-.content {
-  text-align: left;
-}
-
-#releases {
-  grid-area: releases;
-  overflow: hidden;
-  height: auto;
-}
-
 #about {
   grid-area: about;
   overflow-wrap: break-word;
   word-wrap: break-word;
+}
+
+.content {
+  text-align: left;
+  margin-top: 15vh;
 }
 
 
@@ -58,12 +53,13 @@
   flex: auto;
 }
 
-.app {
+.home {
   grid-area: app;
   background-color: #FFFFFF;
   color: #2C2A2D;
   width: 100%;
   height: 100%;
+  margin-top: 16vh;
   display: grid;
   grid-template-areas: 
   'news     releases'

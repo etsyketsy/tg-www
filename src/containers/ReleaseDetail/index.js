@@ -10,7 +10,7 @@ class ReleaseDetail extends Component {
     }
 
     clickHandler = (props) => {
-
+        // Clicking the exit will push user back to All Releases of homepage depending on the path
         (!this.props.location.state) ?
             this.props.history.push('/releases')
             :
@@ -39,39 +39,50 @@ class ReleaseDetail extends Component {
                 <h2>loading...</h2>
                 :
 
-                <div className="releaseDetail">
+                <div className='releaseDetail'>
                     <button onClick={this.clickHandler}>&#215;</button>
-                    <div className="desc">
-                        <img 
-                            src={this.state.item.image} 
-                            alt='cover' 
-                            id='coverDetail' 
+                    <div className='titleCard'>
+                        <div className='info'>
+                            <div className='name'>
+                                {this.state.item.release_title}
+                            </div>
+                            <div className='artists'>
+                                {this.state.item.fk_artist}
+                            </div>
+                            <div className='release_num'>                            {this.state.item.cat_num}
+                            </div>
+
+                        </div>
+
+                        <img
+                            src={this.state.item.image}
+                            alt='cover'
+                            id='cover'
                         />
-                        <h2>{this.state.item.release_title}</h2>
-                        {this.state.item.fk_artist}
-                        <br></br>
-                        {this.state.item.cat_num}
-                        <br></br>
+                    </div>
+
+                    <div className='description'>
                         {this.state.item.bio}
-                        <div>Tracks:
-                        <ol>
-                            {
-                                this.state.item.tracks.map(
-                                    (track) => {
-                                        return (
-                                            <li key={track.track_number}>           {track.title}
-                                            </li>
-                                        )
-                                        
-                                    }
-                                )
-                            }
-                        </ol>
-                    </div>
-                    </div>
 
+                        <div className='tracks'>Tracks:
+                        <ol className='track_list'> 
+                                {
+                                    this.state.item.tracks.map(
+                                        (track) => {
+                                            return (
+                                                <li key={track.track_number}>           {track.title}
+                                                </li>
+                                            )
+
+                                        }
+                                    )
+                                }
+                            </ol>
+
+                        </div>
+
+                    </div>
                 </div>
-
 
         )
     }

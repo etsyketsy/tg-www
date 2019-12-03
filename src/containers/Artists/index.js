@@ -31,8 +31,7 @@ class Artists extends Component {
           <div className="sectionHeader">Artists</div>
           <div className="displayGrid">
             {
-              (window.location.pathname === '/artists') ?
-                this.state.artists.map(
+            this.state.artists.map(
                   (artist, index) => {
                     // List only artists, not affiliates
                     if (artist.artist_type === 'artist') {
@@ -54,10 +53,6 @@ class Artists extends Component {
                     else return null;
                   }
                 )
-                :
-                <ArtistsPreview
-                  artists={this.state.artists}
-                />
             }
           </div>
         </div>

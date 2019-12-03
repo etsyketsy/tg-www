@@ -52,4 +52,5 @@ button {
     display: flex;
     flex-direction: column;
     padding-top: 5vh;
+    margin-top: 10vh;
 }

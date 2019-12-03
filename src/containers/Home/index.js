@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Releases from '../Releases/index.js';
-import Artists from '../Artists/index.js';
-import News from '../News/index.js';
+import ReleasesPreview from '../ReleasesPreview/index.js';
+import ArtistsPreview from '../Artists/ArtistsPreview.js';
+import NewsPreview from '../News/NewsPreview.js';
 import About from '../About/index.js';
 import Contact from '../Contact/index.js';
 import './index.css';
@@ -12,10 +12,10 @@ class Home extends Component {
 
   render () {
     return (
-      <div className="app">
-        <News />
-        <Releases />
-        <Artists />
+      <div className="home">
+        <NewsPreview />
+        <ReleasesPreview />
+        <ArtistsPreview />
         <div id="lastRow">
           <About />
           <Contact />
