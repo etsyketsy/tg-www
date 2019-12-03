@@ -35,6 +35,7 @@ class ReleaseDetail extends Component {
     }
 
     render() {
+        console.log(this.state.item)
         return (
             (!this.state.item) ?
                 <h2>loading...</h2>
@@ -66,6 +67,12 @@ class ReleaseDetail extends Component {
                         {ReactHtmlParser(this.state.item.bio)}
 
                         <div className='tracks'>Tracks:
+                        {ReactHtmlParser(this.state.item.tracklisting)}
+
+
+                        {/* Commenting out old handling of track listing in case we switch to a separate Track table in the future
+                        - Currently utilizing the Tracklisting data that was stored as HTML in the legacy db
+                        
                         <ol className='track_list'> 
                                 {
                                     this.state.item.tracks.map(
@@ -78,7 +85,7 @@ class ReleaseDetail extends Component {
                                         }
                                     )
                                 }
-                            </ol>
+                            </ol> */}
 
                         </div>
 
