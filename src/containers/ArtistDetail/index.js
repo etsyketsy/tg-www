@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import './index.css';
 
 class ArtistDetail extends Component {
@@ -39,7 +40,9 @@ class ArtistDetail extends Component {
                     </div>
                         <img src={this.state.item.image} alt='img' className='artistPhoto'/>
                 </div>
-                <p className='bio'>{this.state.item.artist_bio}</p>   
+                <div className='bio'>
+                    {ReactHtmlParser(this.state.item.artist_bio)}
+                </div>   
             </div>
         )
     }
