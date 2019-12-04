@@ -1,0 +1,9 @@
+.about {
+    width: 80vh;
+    margin-top: 16vh;
+}
+
+.preview_about {
+    margin-top: 0;
+    border: solid blue;
+}

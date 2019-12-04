@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import './index.css';
 
 
 class About extends Component {
 
     render() {
+        console.log(window.location)
         return (
-            <div id="about">
+            <div className={
+                (window.location.pathname ==='/about') ? 'about' : 'preview_about'
+            }>
                 <div className="sectionHeader">About TG</div>
                 <div className="aboutDisplay">
                     Twelve Gauge Records is an independent record label operating out of San Fransico, CA with a rich roster of hardcore and metal artists like Sabertooth Zombie, Power, Heavy Heavy Low Low, and others.
