@@ -7,6 +7,14 @@ class ArtistDetail extends Component {
         item: null
     }
 
+    exitHandler = (props) => {
+        // Clicking the exit will push user back to All Artists or homepage depending on user's path
+        (!this.props.location.state) ?
+            this.props.history.push('/artists')
+            :
+            this.props.history.goBack()
+    }
+
     componentDidMount() {
         (!this.props.location.state) ?
 
@@ -29,7 +37,7 @@ class ArtistDetail extends Component {
                 <div />
             :
             <div className="artistSlide" id={this.props.index}>
-               <button onClick={this.props.history.goBack}>&#215;</button>
+               <button onClick={this.exitHandler}>&#215;</button>
                
                 <div className="desc">
                     <div className='name'> 
