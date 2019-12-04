@@ -24,34 +24,34 @@ class Artists extends Component {
     return (
       // Check for artist data in state
       (!this.state.artists) ?
-      <p id='loading'>loading...</p>
+        <p id='loading'>loading...</p>
         :
         <div className="content" id="artists">
           <div className="sectionHeader">Artists</div>
           <div className="displayGrid">
             {
-            this.state.artists.map(
-                  (artist, index) => {
-                    // List only artists, not affiliates
-                    if (artist.artist_type === 'artist') {
-                      return (
-                        <Link to={{
-                          pathname: `/artists/${artist.artist_nice_name}/`,
-                          state: { artist }
-                        }}
+              this.state.artists.map(
+                (artist, index) => {
+                  // List only artists, not affiliates
+                  if (artist.artist_type === 'artist') {
+                    return (
+                      <Link to={{
+                        pathname: `/artists/${artist.artist_nice_name}/`,
+                        state: { artist }
+                      }}
+                        key={index}
+                      >
+                        <Artist
+                          item={artist}
                           key={index}
-                        >
-                          <Artist
-                            item={artist}
-                            key={index}
-                            id={index}
-                          />
-                        </Link >
-                      )
-                    }
-                    else return null;
+                          id={index}
+                        />
+                      </Link >
+                    )
                   }
-                )
+                  else return null;
+                }
+              )
             }
           </div>
         </div>
