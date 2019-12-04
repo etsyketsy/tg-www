@@ -68,3 +68,7 @@
   content: "";
   flex: auto;
 }
+
+#loading {
+  margin-top: 21vh;
+}

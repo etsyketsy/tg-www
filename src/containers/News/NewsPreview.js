@@ -23,7 +23,7 @@ class NewsPreview extends Component {
     render() {
         return (
             (!this.state.posts) ?
-                <div></div>
+            <p id='loading'>loading...</p>
                 :
                 <div id='newsPreview' className='preview'>
                     <div className="sectionHeader">News</div>

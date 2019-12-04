@@ -38,7 +38,7 @@ class ReleaseDetail extends Component {
         console.log(this.state.item)
         return (
             (!this.state.item) ?
-                <h2>loading...</h2>
+                <p id='loading'>loading...</p>
                 :
 
                 <div className='releaseDetail'>

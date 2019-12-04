@@ -24,7 +24,7 @@ class Artists extends Component {
     return (
       // Check for artist data in state
       (!this.state.artists) ?
-        <h1>&#8635;</h1>
+      <p id='loading'>loading...</p>
         :
         <div className="content" id="artists">
           <div className="sectionHeader">Artists</div>

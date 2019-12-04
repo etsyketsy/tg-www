@@ -24,7 +24,7 @@ class News extends Component {
         return (
             // Data check before rendering
             (!this.state.posts) ?
-                <div></div>
+            <p id='loading'>loading...</p>
                 :
                 <div id='news' className='content'>
                     <div className="sectionHeader">News</div>

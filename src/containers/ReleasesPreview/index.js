@@ -24,7 +24,7 @@ class ReleasesPreview extends Component {
 
         return (
             (!this.state.releases) ?
-            <div></div>
+            <p id='loading'>loading...</p>
             :
             <div className="preview" id="releasesPreview">
                  <div className="sectionHeader">Releases</div>
