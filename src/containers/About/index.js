@@ -8,6 +8,7 @@ class About extends Component {
      
         return (
             <div className={
+                // Check where component is loaded to apply appropriate CSS
                 (window.location.pathname ==='/about') ? 'about' : 'preview_about'
             }>
                 <div className="sectionHeader">About TG</div>

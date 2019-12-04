@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Artist from '../Artist/index.js';
-import ArtistsPreview from './ArtistsPreview.js';
 
 
 class Artists extends Component {
 
   state = {
-    currentIndex: null
+    artists: null
   }
 
   componentDidMount() {

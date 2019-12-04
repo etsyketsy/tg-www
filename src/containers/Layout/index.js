@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import logo2 from '../../assets/logo2.jpg';
-import Header from '../Header';
 import './index.css';
 
 

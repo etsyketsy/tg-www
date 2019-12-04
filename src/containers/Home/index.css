@@ -35,24 +35,6 @@
   margin-top: 15vh;
 }
 
-
-/* global styling */
-.sectionHeader {
-  margin-bottom: 1vh;
-  font-size: 3.75vh;
-  font-family: 'Karla', sans-serif;
-}
-
-.displayGrid {
-  display: flex;
-  flex-flow: wrap;
-}
-
-.displayGrid::after {
-  content: "";
-  flex: auto;
-}
-
 .home {
   grid-area: app;
   background-color: #FFFFFF;
@@ -69,3 +51,7 @@
   column-gap: 1vh;
   row-gap: 2vh;
 }
+
+
+
+

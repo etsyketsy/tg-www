@@ -6,7 +6,7 @@ class ArtistsPreview extends Component {
 
     state = {
         itemsToRender: 4,
-        artist: null
+        artists: null
     }
 
     componentDidMount() {

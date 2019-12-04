@@ -1,19 +1,11 @@
 import React,    { Component } from 'react';
 import './index.css';
 
+
+// Display Artist Tile for preview and All Artists pages
 class Artist extends Component {
-    state = {
-      showInfo: false
-    }
 
-    hoverHandler = event => {
-      this.setState({
-        showInfo: !this.state.showInfo
-      })
-    }
-  
     render() {
-
       return (
           <div id="itemTile">
             <img className='photoPreview' 
