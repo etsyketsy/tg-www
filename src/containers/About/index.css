@@ -1,9 +1,18 @@
-.about {
-    width: 80vh;
-    margin-top: 16vh;
-}
+
 
 .preview_about {
     margin-top: 0;
-    border: solid blue;
+}
+
+.about .sectionHeader {
+    border-bottom: solid #ffcebe;
+    margin-bottom: 2vh;
+}
+
+.about {
+    width: 70vh;
+    margin-top: 16vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }

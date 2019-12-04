@@ -5,7 +5,7 @@ import './index.css';
 class About extends Component {
 
     render() {
-        console.log(window.location)
+     
         return (
             <div className={
                 (window.location.pathname ==='/about') ? 'about' : 'preview_about'
@@ -20,6 +20,10 @@ class About extends Component {
           <br></br><br></br>
                     Twelve Gauge Records is exclusively distributed by <a href="http://deathwishdirect.com">Deathwish Direct</a>.
           </div>
+          
+          
+          
+         
             </div>
         )
     }
