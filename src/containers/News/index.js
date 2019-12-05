@@ -40,7 +40,13 @@ class News extends Component {
                                     <div className='postHTML'>
                                         {ReactHtmlParser(post.content)}
                                     </div>
-                                    <a href='https://blog.tgrex.com/'
+
+                                </div>
+                            )
+                        })
+
+                    }
+                      <a href='https://blog.tgrex.com/'
                                         id='blogLink' target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -48,12 +54,6 @@ class News extends Component {
                                             view all posts
                                             </div>
                                     </a>
-                                </div>
-                            )
-                        })
-
-                    }
-
                 </div>
         )
     }

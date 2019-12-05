@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import './index.css';
 
 
 class About extends Component {
 
     render() {
+     
         return (
-            <div id="about">
+            <div className={
+                (window.location.pathname ==='/about') ? 'about' : 'preview_about'
+            }>
                 <div className="sectionHeader">About TG</div>
                 <div className="aboutDisplay">
                     Twelve Gauge Records is an independent record label operating out of San Fransico, CA with a rich roster of hardcore and metal artists like Sabertooth Zombie, Power, Heavy Heavy Low Low, and others.
@@ -16,6 +20,10 @@ class About extends Component {
           <br></br><br></br>
                     Twelve Gauge Records is exclusively distributed by <a href="http://deathwishdirect.com">Deathwish Direct</a>.
           </div>
+          
+          
+          
+         
             </div>
         )
     }
