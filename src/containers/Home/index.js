@@ -10,7 +10,7 @@ import './index.css';
 
 class Home extends Component {
 
-  render () {
+  render() {
     return (
       <div className="home">
         <NewsPreview />

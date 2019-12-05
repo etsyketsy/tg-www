@@ -10,7 +10,7 @@ class ReleaseDetail extends Component {
         item: null
     }
 
-    clickHandler = (props) => {
+    exitHandler = (props) => {
         // Clicking the exit will push user back to All Releases of homepage depending on the path
         (!this.props.location.state) ?
             this.props.history.push('/releases')
@@ -38,11 +38,11 @@ class ReleaseDetail extends Component {
         console.log(this.state.item)
         return (
             (!this.state.item) ?
-                <h2>loading...</h2>
+                <p id='loading'>loading...</p>
                 :
 
                 <div className='releaseDetail'>
-                    <button onClick={this.clickHandler} id='releaseexit'>&#215;</button>
+                    <button onClick={this.exitHandler}>&#215;</button>
                     <div className='titleCard'>
                         <div className='info'>
                             <div className='name'>

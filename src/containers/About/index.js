@@ -5,10 +5,11 @@ import './index.css';
 class About extends Component {
 
     render() {
-     
+
         return (
             <div className={
-                (window.location.pathname ==='/about') ? 'about' : 'preview_about'
+                // Check where component is loaded to apply appropriate CSS
+                (window.location.pathname === '/about') ? 'about' : 'preview_about'
             }>
                 <div className="sectionHeader">About TG</div>
                 <div className="aboutDisplay">
@@ -20,10 +21,10 @@ class About extends Component {
           <br></br><br></br>
                     Twelve Gauge Records is exclusively distributed by <a href="http://deathwishdirect.com">Deathwish Direct</a>.
           </div>
-          
-          
-          
-         
+
+
+
+
             </div>
         )
     }
