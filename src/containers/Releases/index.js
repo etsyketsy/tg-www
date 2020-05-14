@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Release from '../Release/index.js';
+import releaseData from '../../assets/releaseData.js';
 
 
 class Releases extends Component {
@@ -9,13 +10,10 @@ class Releases extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8000/api/releases/')
-            .then(response => response.json())
-            .then(data => {
-                this.setState(
-                    { releases: data }
-                )
-            })
+        this.setState(
+            { releases: releaseData }
+        )
+
     }
 
 
@@ -23,7 +21,7 @@ class Releases extends Component {
     render() {
         return (
             (!this.state.releases) ?
-            <p id='loading'>loading...</p>
+                <p id='loading'>loading...</p>
                 :
                 <div className="content" id="releases">
                     <div className="sectionHeader">Releases</div>
@@ -48,7 +46,7 @@ class Releases extends Component {
                                 )
                             }
                         )
-    
+
                         }
                     </div>
                 </div>
