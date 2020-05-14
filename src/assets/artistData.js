@@ -1,4 +1,4 @@
-[
+const artistData = [
     {
         "artist": "Sabertooth Zombie",
         "artist_nice_name": "stz",
@@ -297,3 +297,5 @@
         "image": "http://localhost:8000/media/artists/youthfuneral_photo_thumb.jpg"
     }
 ]
+
+export default artistData;
